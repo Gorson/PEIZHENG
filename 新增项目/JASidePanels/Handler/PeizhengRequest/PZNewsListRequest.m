@@ -193,7 +193,7 @@
 - (BDKNotifyHUD *)notify {
     if (_notify != nil) return _notify;
     _notify = [BDKNotifyHUD notifyHUDWithImage:[UIImage imageNamed:self.imageName] text:self.notificationText];
-    _notify.center = CGPointMake(160, 240);
+    _notify.center = CGPointMake(IPHONE_WIDTH/2, IPHONE_HEIGHT/2);
     [self.notify setHidden:YES];
     return _notify;
 }
