@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="11G63" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="PZNewsDetailData" representedClassName="PZNewsDetailData" syncable="YES">
+        <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="copyfrom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imgurl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="info" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="introduce" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="keywords" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mark" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numOfNews" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subheading" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="titleintact" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="PZNewsListData" representedClassName="PZNewsListData" syncable="YES">
+        <attribute name="databaseid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imgurl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="introduce" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mark" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="newsidNum" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="typeOfNews" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="PZNewsMainPictureData" representedClassName="PZNewsMainPictureData" syncable="YES">
+        <attribute name="databaseid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imgurl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="introduce" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="newsid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="PZNewsDetailData" positionX="160" positionY="192" width="128" height="240"/>
+        <element name="PZNewsListData" positionX="160" positionY="192" width="128" height="165"/>
+        <element name="PZNewsMainPictureData" positionX="160" positionY="192" width="128" height="135"/>
+    </elements>
+</model>

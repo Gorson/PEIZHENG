@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/BSJSONAdditions
+END
+NSArray+BSJSONAdditions.m
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/BSJSONAdditions/NSArray+BSJSONAdditions.m
+END
+BSJSONEncoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/BSJSONAdditions/BSJSONEncoder.h
+END
+NSDictionary+BSJSONAdditions.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/BSJSONAdditions/NSDictionary+BSJSONAdditions.h
+END
+NSString+BSJSONAdditions.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/BSJSONAdditions/NSString+BSJSONAdditions.h
+END
+BSJSONEncoder.m
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/BSJSONAdditions/BSJSONEncoder.m
+END
+NSScanner+BSJSONAdditions.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/BSJSONAdditions/NSScanner+BSJSONAdditions.h
+END
+NSDictionary+BSJSONAdditions.m
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/BSJSONAdditions/NSDictionary+BSJSONAdditions.m
+END
+NSString+BSJSONAdditions.m
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/BSJSONAdditions/NSString+BSJSONAdditions.m
+END
+NSArray+BSJSONAdditions.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/BSJSONAdditions/NSArray+BSJSONAdditions.h
+END
+NSScanner+BSJSONAdditions.m
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/BSJSONAdditions/NSScanner+BSJSONAdditions.m
+END

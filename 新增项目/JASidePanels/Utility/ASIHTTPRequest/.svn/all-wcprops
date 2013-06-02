@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/wendaosns-iphone/!svn/ver/15/trunk/Wendao/Library/ASIHTTPRequest
+END
+ASIHTTPRequest.m
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/wendaosns-iphone/!svn/ver/15/trunk/Wendao/Library/ASIHTTPRequest/ASIHTTPRequest.m
+END
+ASINetworkQueue.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/wendaosns-iphone/!svn/ver/15/trunk/Wendao/Library/ASIHTTPRequest/ASINetworkQueue.h
+END
+ASICacheDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/wendaosns-iphone/!svn/ver/15/trunk/Wendao/Library/ASIHTTPRequest/ASICacheDelegate.h
+END
+ASIProgressDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/wendaosns-iphone/!svn/ver/15/trunk/Wendao/Library/ASIHTTPRequest/ASIProgressDelegate.h
+END
+ASIAuthenticationDialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/wendaosns-iphone/!svn/ver/15/trunk/Wendao/Library/ASIHTTPRequest/ASIAuthenticationDialog.h
+END
+ASIDataDecompressor.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/wendaosns-iphone/!svn/ver/15/trunk/Wendao/Library/ASIHTTPRequest/ASIDataDecompressor.h
+END
+ASIDownloadCache.m
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/wendaosns-iphone/!svn/ver/15/trunk/Wendao/Library/ASIHTTPRequest/ASIDownloadCache.m
+END
+RegexKitLite.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/wendaosns-iphone/!svn/ver/15/trunk/Wendao/Library/ASIHTTPRequest/RegexKitLite.h
+END
+Reachability.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/wendaosns-iphone/!svn/ver/15/trunk/Wendao/Library/ASIHTTPRequest/Reachability.h
+END
+ASINetworkQueue.m
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/wendaosns-iphone/!svn/ver/15/trunk/Wendao/Library/ASIHTTPRequest/ASINetworkQueue.m
+END
+ASIAuthenticationDialog.m
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/wendaosns-iphone/!svn/ver/15/trunk/Wendao/Library/ASIHTTPRequest/ASIAuthenticationDialog.m
+END
+ASIDataDecompressor.m
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/wendaosns-iphone/!svn/ver/15/trunk/Wendao/Library/ASIHTTPRequest/ASIDataDecompressor.m
+END
+ASIFormDataRequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/wendaosns-iphone/!svn/ver/15/trunk/Wendao/Library/ASIHTTPRequest/ASIFormDataRequest.h
+END
+RegexKitLite.m
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/wendaosns-iphone/!svn/ver/15/trunk/Wendao/Library/ASIHTTPRequest/RegexKitLite.m
+END
+Reachability.m
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/wendaosns-iphone/!svn/ver/15/trunk/Wendao/Library/ASIHTTPRequest/Reachability.m
+END
+ASIInputStream.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/wendaosns-iphone/!svn/ver/15/trunk/Wendao/Library/ASIHTTPRequest/ASIInputStream.h
+END
+ASIFormDataRequest.m
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/wendaosns-iphone/!svn/ver/15/trunk/Wendao/Library/ASIHTTPRequest/ASIFormDataRequest.m
+END
+ASIHTTPRequestConfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/wendaosns-iphone/!svn/ver/15/trunk/Wendao/Library/ASIHTTPRequest/ASIHTTPRequestConfig.h
+END
+ASIInputStream.m
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/wendaosns-iphone/!svn/ver/15/trunk/Wendao/Library/ASIHTTPRequest/ASIInputStream.m
+END
+ASIHTTPRequestDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/wendaosns-iphone/!svn/ver/15/trunk/Wendao/Library/ASIHTTPRequest/ASIHTTPRequestDelegate.h
+END
+ASIDataCompressor.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/wendaosns-iphone/!svn/ver/15/trunk/Wendao/Library/ASIHTTPRequest/ASIDataCompressor.h
+END
+ASIHTTPRequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/wendaosns-iphone/!svn/ver/15/trunk/Wendao/Library/ASIHTTPRequest/ASIHTTPRequest.h
+END
+ASIDownloadCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/wendaosns-iphone/!svn/ver/15/trunk/Wendao/Library/ASIHTTPRequest/ASIDownloadCache.h
+END
+ASIDataCompressor.m
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/wendaosns-iphone/!svn/ver/15/trunk/Wendao/Library/ASIHTTPRequest/ASIDataCompressor.m
+END

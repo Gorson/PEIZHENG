@@ -1,0 +1,27 @@
+//
+// Prefix header for all source files of the 'JASidePanels' target in the 'JASidePanels' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+
+#ifdef __OBJC__
+	#import <UIKit/UIKit.h>
+	#import <Foundation/Foundation.h>
+
+#import "PZConstant.h"
+#import "JAAppDelegate.h"
+#import "CustomActivityIndicatorView.h"
+#import "ASIHTTPRequest.h"
+#import "JSONKit.h"
+#import "BSJSONEncoder.h"
+#import "NSString+Additions.h"
+#import "PZNavigationViewController.h"
+#import "BDKNotifyHUD.h"
+#import <CoreData/CoreData.h>
+
+#endif

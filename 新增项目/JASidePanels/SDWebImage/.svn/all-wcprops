@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/SDWebImage
+END
+MKAnnotationView+WebCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/SDWebImage/MKAnnotationView+WebCache.h
+END
+SDWebImageDownloader.m
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/SDWebImage/SDWebImageDownloader.m
+END
+SDWebImageDecoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/SDWebImage/SDWebImageDecoder.h
+END
+SDImageCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/SDWebImage/SDImageCache.h
+END
+MKAnnotationView+WebCache.m
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/SDWebImage/MKAnnotationView+WebCache.m
+END
+SDWebImageManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/SDWebImage/SDWebImageManager.h
+END
+SDWebImageDecoder.m
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/SDWebImage/SDWebImageDecoder.m
+END
+SDImageCache.m
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/SDWebImage/SDImageCache.m
+END
+UIButton+WebCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/SDWebImage/UIButton+WebCache.h
+END
+SDWebImageManager.m
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/SDWebImage/SDWebImageManager.m
+END
+SDWebImageDownloaderOperation.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/SDWebImage/SDWebImageDownloaderOperation.h
+END
+UIImageView+WebCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/SDWebImage/UIImageView+WebCache.h
+END
+SDWebImageCompat.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/SDWebImage/SDWebImageCompat.h
+END
+UIButton+WebCache.m
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/SDWebImage/UIButton+WebCache.m
+END
+SDWebImageDownloaderOperation.m
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/SDWebImage/SDWebImageDownloaderOperation.m
+END
+UIImageView+WebCache.m
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/SDWebImage/UIImageView+WebCache.m
+END
+SDWebImagePrefetcher.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/SDWebImage/SDWebImagePrefetcher.h
+END
+SDWebImageCompat.m
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/SDWebImage/SDWebImageCompat.m
+END
+SDWebImagePrefetcher.m
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/SDWebImage/SDWebImagePrefetcher.m
+END
+SDWebImageDownloader.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/SDWebImage/SDWebImageDownloader.h
+END
+SDWebImageOperation.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ios_sns/!svn/ver/589/trunk/IpiaoSNS/IpiaoSNS/Utils/SDWebImage/SDWebImageOperation.h
+END
