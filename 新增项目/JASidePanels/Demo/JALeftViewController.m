@@ -32,6 +32,7 @@
 #import "PZMainViewController.h"
 #import "Quare4MenuViewController.h"
 #import "PZNewsListTableViewController.h"
+#import "PZCollectionListTableViewController.h"
 #import "PZMapController.h"
 
 #import "PZLeftView.h"
@@ -43,6 +44,7 @@
     RootViewController * peizhengFamily;
     PZComViewController * comViewController;
     Quare4MenuViewController * menuViewController;
+    PZCollectionListTableViewController * collectionListTableViewController;
     PZMapController * mapController;
 }
 
@@ -103,7 +105,7 @@
             break;
         // PC服务队
         case 1004:
-            
+            [self _changeCenterPanelTapped:sender];
             break;
         // 培正地图
         case 1005:
@@ -178,7 +180,8 @@
             
             break;
         case 1004:
-            
+            collectionListTableViewController = [[PZCollectionListTableViewController alloc]init];
+            self.sidePanelController.centerPanel = collectionListTableViewController;
             break;
         case 1005:
             mapController = [[PZMapController alloc]init];

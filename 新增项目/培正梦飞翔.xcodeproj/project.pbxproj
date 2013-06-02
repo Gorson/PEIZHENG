@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2867824D175B3CCC00979E47 /* PZCollectionListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2867824C175B3BAA00979E47 /* PZCollectionListTableViewController.m */; };
 		450BE64F1743EF20009B8D78 /* 广东培正学院.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 450BE64D1743EF20009B8D78 /* 广东培正学院.jpg */; };
 		450BE6501743EF20009B8D78 /* 广东培正学院@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 450BE64E1743EF20009B8D78 /* 广东培正学院@2x.jpg */; };
 		4542D1A817411AB5009BE72C /* NewsMainPictureData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4542D1A717411AB5009BE72C /* NewsMainPictureData.m */; };
@@ -280,6 +281,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2867824B175B3BAA00979E47 /* PZCollectionListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PZCollectionListTableViewController.h; sourceTree = "<group>"; };
+		2867824C175B3BAA00979E47 /* PZCollectionListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PZCollectionListTableViewController.m; sourceTree = "<group>"; };
 		450BE64D1743EF20009B8D78 /* 广东培正学院.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "广东培正学院.jpg"; sourceTree = "<group>"; };
 		450BE64E1743EF20009B8D78 /* 广东培正学院@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "广东培正学院@2x.jpg"; sourceTree = "<group>"; };
 		4542D1A617411AB5009BE72C /* NewsMainPictureData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsMainPictureData.h; path = entity/NewsMainPictureData.h; sourceTree = "<group>"; };
@@ -1411,6 +1414,8 @@
 		457DFB071704737400B3E87A /* PZLeftController */ = {
 			isa = PBXGroup;
 			children = (
+				2867824B175B3BAA00979E47 /* PZCollectionListTableViewController.h */,
+				2867824C175B3BAA00979E47 /* PZCollectionListTableViewController.m */,
 				4576877C1759EA94004FB655 /* RootViewController.h */,
 				4576877D1759EA94004FB655 /* RootViewController.m */,
 				457952631752667000BD75FB /* PZMapController.h */,
@@ -1827,6 +1832,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2867824D175B3CCC00979E47 /* PZCollectionListTableViewController.m in Sources */,
 				45744F4C170D716F0043AB75 /* ViewController.m in Sources */,
 				9561AD0F15130EE2005889C6 /* JASidePanelController.m in Sources */,
 				9561AD1915130F10005889C6 /* JAAppDelegate.m in Sources */,

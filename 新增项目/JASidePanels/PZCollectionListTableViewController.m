@@ -4,31 +4,26 @@
 //  Copyright (c) 2013年 Ipiao. All rights reserved.
 //
 
-#import "PZNewsListTableViewController.h"
+#import "PZCollectionListTableViewController.h"
 #import "PZNewsDetailViewController.h"
 #import "PZNewsListTableCell.h"
-#import "PZNewsListRequest.h"
 #import "NewsListData.h"
 #import "PZNewsListData.h"
-#import "QBFunnyFaceRefreshControl.h"
-#import "QBArrowRefreshControl.h"
 
-@interface PZNewsListTableViewController ()<QBRefreshControlDelegate>
+@interface PZCollectionListTableViewController ()
 {
-    PZNewsListRequest * newsListRequest;                    // 新闻列表请求
     PZNewsDetailViewController * _newsDetailViewController;  // 新闻详细视图
 }
-//@property (nonatomic, retain) QBFunnyFaceRefreshControl *myRefreshControl;
-@property (nonatomic, retain) QBArrowRefreshControl *myRefreshControl;
+@property (strong, nonatomic) BDKNotifyHUD *notify;
+@property (strong, nonatomic) NSString *imageName;
+@property (strong, nonatomic) NSString *notificationText;
 
 @end
 
-@implementation PZNewsListTableViewController
+@implementation PZCollectionListTableViewController
 @synthesize newsItemArray = _newsItemArray;
 @synthesize newsTableView = _newsTableView;
-@synthesize indicatorView = _indicatorView;
 @synthesize loadingView = _loadingView;
-@synthesize catid = _catid;
 @synthesize headTitle = _headTitle;
 
 /*
@@ -38,9 +33,8 @@
 {
     [super viewDidLoad];
     
-    _backButton.hidden = NO;
-    _confirmButton.hidden = YES;
     _backButton.hidden = YES;
+    _confirmButton.hidden = YES;
 }
 
 
@@ -56,19 +50,20 @@
     NSArray * dataArray = [PZNewsListData loadDataInDatabase];
     //遍历数组把同catid的结构体对象加入可变数组中
     for (PZNewsListData * newsData in dataArray) {
-        if ([newsData.typeOfNews isEqualToString:_catid]) {
+        if ([newsData.mark isEqualToString:@"YES"]) {
             [_newsItemArray addObject:newsData];
         }
     }
     //如果数组数目小于1 则请求接口获取数据
-    if ([_newsItemArray count] < 1) {
-        if (1 == _startIndex) {
-            newsListRequest = [[PZNewsListRequest alloc]init];
-            newsListRequest.newsListTableViewController = self;
-            [newsListRequest NewsListRequest:_catid];
-            _startIndex = 2;
-            newsListRequest.startIndex = _startIndex;
-        }
+    if ([_newsItemArray count] < 1)
+    {
+        self.notificationText = @"暂未有收藏.";
+        self.imageName = @"PZ_Wrong.png";
+        self.notify.image = [UIImage imageNamed:self.imageName];
+        self.notify.text = self.notificationText;
+        [self displayNotification];
+        [_loadingView stopAnimating];
+        [_loadingView removeFromSuperview];
     }
     else
     {
@@ -118,9 +113,6 @@
  */
 - (void)initWithData
 {
-    _hasLoadDynamics = NO;
-    _startIndex = 1;
-    
     _newsItemArray = [[NSMutableArray alloc]initWithCapacity:150];
 }
 
@@ -130,13 +122,6 @@
  */
 - (void)initWithControl
 {
-    _loadingMoreView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 40.0f)];
-    UIActivityIndicatorView *activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    activityIndicatorView.frame = CGRectMake(IPHONE_WIDTH/2.0f-10.0f, IPHONE_HEIGHT/2.0f-10.0f, 20.0f, 20.0f);
-    activityIndicatorView.tag = 1000;
-    [_loadingMoreView addSubview:activityIndicatorView];
-    [activityIndicatorView release];
-    
     _newsTableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, 44.0f, IPHONE_WIDTH, IPHONE_HEIGHT-64) style:UITableViewStylePlain];
     _newsTableView.backgroundColor = [UIColor whiteColor];
     _newsTableView.backgroundView.alpha = 0;
@@ -145,24 +130,10 @@
     _newsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_newsTableView];
     
-//    QBFunnyFaceRefreshControl *refreshControl = [[QBFunnyFaceRefreshControl alloc] init];
-//    refreshControl.delegate = self;
-//    [_newsTableView addSubview:refreshControl];
-//    self.myRefreshControl = refreshControl;
-//    [refreshControl release];
-    
-    // Refresh Control
-    QBArrowRefreshControl *refreshControl = [[QBArrowRefreshControl alloc] init];
-    refreshControl.delegate = self;
-    [_newsTableView addSubview:refreshControl];
-    self.myRefreshControl = refreshControl;
-    [refreshControl release];
-    
     _loadingView = [[CustomActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [_loadingView setFrame:CGRectOffset(LoadingRect, 0.0f, -22.0f)];
     [_loadingView startAnimating];
     [self.view addSubview:_loadingView];
-//    self.view.userInteractionEnabled = NO;
     
 }
 
@@ -208,9 +179,9 @@
             _headerLabel.text = _headTitle;
         }
         if ([_newsItemArray count]) {
-            NewsListData * newsData = [_newsItemArray objectAtIndex:indexPath.row];
+            PZNewsListData * newsData = [_newsItemArray objectAtIndex:indexPath.row];
             newsListCell.titleLabel.text = newsData.title;
-            if ([_catid isEqualToString:@"249" ] || [_catid isEqualToString:@"51" ]) {
+            if ([newsData.typeOfNews isEqualToString:@"249" ] || [newsData.typeOfNews isEqualToString:@"51" ]) {
                 [newsListCell.image setFrame:CGRectMake(210.0f, 3.0f, 100.0f, 140.0f)];
                 [newsListCell.headImageView setFrame:CGRectMake(210.0f, 3.0f, 100.0f, 140.0f)];
                 [newsListCell.timeLabel setFrame:CGRectMake(55.0f, 12311.0f, 130.0f, 20.0f)];
@@ -252,12 +223,13 @@
  */
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([_catid isEqualToString:@"249"] || [_catid isEqualToString:@"51" ])
+    PZNewsListData * newsData = [_newsItemArray objectAtIndex:indexPath.row];
+    
+    if ([newsData.typeOfNews isEqualToString:@"249"] || [newsData.typeOfNews isEqualToString:@"51" ])
     {
         return 150.0f;
     }
     return 100.0f;
-    
 }
 
 
@@ -345,73 +317,11 @@
 -(void)dealloc
 {
     [_newsTableView release];
-    [_loadingMoreView release];
-    [_indicatorView release];
     [_loadingView release];
-    [newsListRequest release];
     [_newsDetailViewController release];
     [super dealloc];
 }
 
-
-#pragma mark -
-#pragma mark UITableViewDelegate
-
-/*
- * 当cell加载绘画时调用的方法
- */
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if(!_newsTableView.dragging && !_newsTableView.decelerating) {
-        return;
-    }
-    if(indexPath.row == [_newsItemArray count] -1) {
-        if([_newsItemArray count]) {
-            newsListRequest =[PZNewsListRequest alloc];
-//            newsListRequest.hasLoadDynamics = _hasLoadDynamics;
-            newsListRequest.existElements = _newsItemArray;
-            if (([_newsItemArray count]/30) >= _startIndex) {
-                _startIndex = ([_newsItemArray count]/30);
-            }
-            // 开新线程加载
-            [NSThread detachNewThreadSelector:@selector(newThreadForRequest) toTarget:self withObject:nil];
-            
-            _newsTableView.tableFooterView = _loadingMoreView;
-            _indicatorView = (UIActivityIndicatorView *)[_loadingMoreView viewWithTag:1000];
-            [_indicatorView startAnimating];
-        }
-    }
-}
-
-- (void)newThreadForRequest
-{
-    _startIndex += 1;
-    newsListRequest.startIndex = _startIndex;
-    newsListRequest.newsListTableViewController = self;
-    [newsListRequest NewsListRequest:_catid];
-}
-
-/*
- * 按钮样式
- */
-- (UIButton *)buttonWithFrame:(CGRect)frame action:(SEL)action
-{
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = frame;
-    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
-    [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
-    
-    return button;
-}
-
-
-/*
- 返回
- */
-- (void)onBack:(UIButton *)sender {
-    [self dismissModalViewControllerAnimated:YES];
-}
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -420,46 +330,25 @@
     NSLog(@"view move");
 }
 
-#pragma mark - QBRefreshControlDelegate
+#pragma mark -
+#pragma mark BDKNotifyHUD
 
-- (void)refreshControlDidBeginRefreshing:(QBRefreshControl *)refreshControl
-{
-    [NSThread detachNewThreadSelector:@selector(refreshControlAndDelete) toTarget:self withObject:nil];
-    // 当newsTableView接受到reloadData方法时,下拉刷新消失
-//    if ([self.newsTableView respondsToSelector:@selector(reloadData)])
-//    {
-//        [self.myRefreshControl endRefreshing];
-//    }
+- (BDKNotifyHUD *)notify {
+    if (_notify != nil) return _notify;
+    _notify = [BDKNotifyHUD notifyHUDWithImage:[UIImage imageNamed:self.imageName] text:self.notificationText];
+    _notify.center = CGPointMake(IPHONE_WIDTH/2, IPHONE_HEIGHT/2);
+    [self.notify setHidden:YES];
+    return _notify;
 }
 
-- (void)refreshControlAndDelete
-{
-    [self.view setUserInteractionEnabled:NO];
-    // 获取数据库内所有的值
-    NSArray * listDataArray = [PZNewsListData loadDataInDatabase];
-    // 在所有的值内筛选该模块的值 加入可变数组中
-    for (PZNewsListData * newsListData in listDataArray) {
-        if ([newsListData.typeOfNews isEqualToString:_catid]) {
-            // 删除在数据库中的值
-            [PZNewsListData deleteOneFromStorage:newsListData];
-        }
-    }
+
+- (void)displayNotification {
+    if (self.notify.isAnimating) return;
     
-    // 调用请求,重新请求一批数据
-    newsListRequest = [[PZNewsListRequest alloc]init];
-    newsListRequest.newsListTableViewController = self;
-    [newsListRequest NewsListRequest:_catid];
-    _startIndex = 2;
-    newsListRequest.startIndex = _startIndex;
+    [_notify makeKeyAndVisible];
+    [self.notify presentWithDuration:0.6f speed:0.25f inView:nil completion:^{
+        [self.notify removeFromSuperview];
+        [self.notify setHidden:YES];
+    }];
 }
-
-- (void)refreshControlDidEndRefreshing
-{
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 3.0 * NSEC_PER_SEC);
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [self.myRefreshControl endRefreshing];
-    });
-
-}
-
 @end

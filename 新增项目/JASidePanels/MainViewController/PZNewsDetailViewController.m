@@ -177,9 +177,17 @@
  */
 -(void)onConfirm:(UIButton *)sender
 {
-   newsDetailData = [PZNewsDetailData loadADataInDatabaseWithNewsId:_newsid];
+    newsDetailData = [PZNewsDetailData loadADataInDatabaseWithNewsId:_newsid];
     newsDetailData.mark = @"YES";
     [PZNewsDetailData updateDataFromDatabase:newsDetailData];
+    
+    NSArray * listDataArray = [PZNewsListData loadDataInDatabase];
+    for (PZNewsListData * listData in listDataArray) {
+        if (listData.newsidNum == [_newsid floatValue]) {
+            listData.mark = @"YES";
+            [PZNewsListData updateDataFromDatabase:listData];
+        }
+    }
     
 }
 
