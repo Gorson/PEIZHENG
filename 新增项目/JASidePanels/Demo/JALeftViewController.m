@@ -41,11 +41,13 @@
 
 @interface JALeftViewController ()
 {
-    RootViewController * peizhengFamily;
+    UINavigationController * peizhengFamily;
     PZComViewController * comViewController;
     Quare4MenuViewController * menuViewController;
     PZCollectionListTableViewController * collectionListTableViewController;
     PZMapController * mapController;
+    NSMutableArray * _listItemArray;                                         // 资讯新闻数组
+
 }
 
 @property (nonatomic, weak) UILabel *label;
@@ -54,6 +56,7 @@
 @property (nonatomic, weak) UIButton *removeRightPanel;
 @property (nonatomic, weak) UIButton *addRightPanel;
 @property (nonatomic, weak) UIButton *changeCenterPanel;
+@property (nonatomic, retain) UITableView * itemListView;
 
 @end
 
@@ -62,64 +65,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initWithUI];
+    [self initWithData];
+}
+
+- (void)initWithData
+{
+    _listItemArray = [[NSMutableArray alloc]initWithObjects:@"主页",@"培正周边",@"D-Fly视觉",@"PC服务队",@"培正地图",@"收藏夹",@"设置",@"关于", nil];
 }
 
 - (void)initWithUI
 {
-    PZLeftView * leftView = [[PZLeftView alloc]initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, IPHONE_HEIGHT) target:self action:nil];
-    [leftView.itemOneButton addTarget:self action:@selector(itemButtonPress:) forControlEvents:UIControlEventTouchUpInside];
-    [leftView.itemTwoButton addTarget:self action:@selector(itemButtonPress:) forControlEvents:UIControlEventTouchUpInside];
-    [leftView.itemThreeButton addTarget:self action:@selector(itemButtonPress:) forControlEvents:UIControlEventTouchUpInside];
-    [leftView.itemFourButton addTarget:self action:@selector(itemButtonPress:) forControlEvents:UIControlEventTouchUpInside];
-    [leftView.itemFiveButton addTarget:self action:@selector(itemButtonPress:) forControlEvents:UIControlEventTouchUpInside];
-    [leftView.itemSixButton addTarget:self action:@selector(itemButtonPress:) forControlEvents:UIControlEventTouchUpInside];
+    UITableView * tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 44.0f, 320, IPHONE_HEIGHT - 64.0f) style:UITableViewStylePlain];
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    tableView.backgroundColor = [UIColor grayColor];
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.itemListView = tableView;
+    [self.view setBackgroundColor:[UIColor grayColor]];
     
-    [self.view addSubview:leftView];
+    [self.view addSubview:self.itemListView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 //    self.label.center = CGPointMake(floorf(self.sidePanelController.leftVisibleWidth/2.0f), 25.0f);
 }
-
-#pragma mark - Button Items Press
-
-- (void)itemButtonPress:(UIButton *)sender
-{
-    switch (sender.tag) {
-        // 梦飞翔
-        case 1000:
-            [self _changeCenterPanelTapped:sender];
-            break;
-        // 培正社区
-        case 1001:
-            [self _changeCenterPanelTapped:sender];
-            break;
-        // 培正家园
-        case 1002:
-            [self _changeCenterPanelTapped:sender];
-            break;
-        // 培正live
-        case 1003:
-            
-            break;
-        // PC服务队
-        case 1004:
-            [self _changeCenterPanelTapped:sender];
-            break;
-        // 培正地图
-        case 1005:
-            [self _changeCenterPanelTapped:sender];
-            
-            break;
-
-        default:
-            break;
-    }
-    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-
-}
-
 
 #pragma mark - Button Actions
 
@@ -147,8 +117,8 @@
     self.addRightPanel.hidden = YES;
 }
 
-- (void)_changeCenterPanelTapped:(UIButton *)sender {
-    switch (sender.tag) {
+- (void)changeCenterPanelTapped:(NSInteger)index {
+    switch (index) {
         case 1000:
         {
             PZNewsListTableViewController * vc1 = [[PZNewsListTableViewController alloc]init];
@@ -169,11 +139,11 @@
             
             break;
         case 1001:
-            comViewController = [[PZComViewController alloc]init];
-            self.sidePanelController.centerPanel = comViewController;
+//            comViewController = [[PZComViewController alloc]init];
+//            self.sidePanelController.centerPanel = comViewController;
             break;
         case 1002:
-            peizhengFamily = [[RootViewController alloc]init];
+            peizhengFamily = [[UINavigationController alloc] initWithRootViewController:[[RootViewController alloc] init]];
             self.sidePanelController.centerPanel = peizhengFamily;
             break;
         case 1003:
@@ -191,7 +161,69 @@
             break;
     }
     
-    
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+
 }
 
+
+#pragma mark -
+#pragma mark UITableViewDataSource
+
+/*
+ * 表格视图section的个数，有1个section
+ */
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+
+/*
+ * 表格视图每个section的行数
+ */
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (0 == section) {
+        return [_listItemArray count];
+    }
+    return 0;
+}
+
+
+/*
+ * 表格视图每行的内容
+ */
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString * CellIdentifier = @"Cell1";
+    
+    UITableViewCell * listCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (listCell == nil)
+    {
+        listCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        listCell.selectionStyle = UITableViewCellSelectionStyleGray;
+    }
+    listCell.textLabel.text = [_listItemArray objectAtIndex:indexPath.row];
+    listCell.textLabel.font = [UIFont boldSystemFontOfSize:20.0f];
+    listCell.imageView.image = [UIImage imageNamed:@"backToMain.png"];
+    return listCell;
+}
+
+
+/*
+ * 表格视图每行的高度
+ */
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 48.0f;
+}
+
+/*
+ * 选中表格视图后触发事件
+ */
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath: indexPath animated:YES];
+    [self changeCenterPanelTapped:indexPath.row + 1000.0f];
+}
 @end

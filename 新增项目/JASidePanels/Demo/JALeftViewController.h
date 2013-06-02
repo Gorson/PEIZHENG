@@ -31,7 +31,7 @@
 @class JASidePanelController;
 @class PZLeftView;
 
-@interface JALeftViewController : JADebugViewController
+@interface JALeftViewController : JADebugViewController <UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, weak, readonly) UILabel *label;
 @property (nonatomic, weak, readonly) UIButton *hide;

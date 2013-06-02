@@ -185,8 +185,8 @@ enum {
                                              transformRotation:180
                                                      buttonTag:TopLeftViewTag];
     self.topLeftBtn.frame = CGRectOffset(self.topLeftBtn.frame
-                                         ,CGRectGetMaxX(self.topLeftView.frame)- CGRectGetWidth(self.topLeftBtn.frame)
-                                         ,CGRectGetMaxY(self.topLeftView.frame)- CGRectGetHeight(self.topLeftBtn.frame));
+                                         ,CGRectGetMaxX(self.topLeftView.frame)- CGRectGetWidth(self.topLeftBtn.frame) - 30.0f
+                                         ,CGRectGetMaxY(self.topLeftView.frame)- CGRectGetHeight(self.topLeftBtn.frame) - 30.0f);
     
     self.topRightBtn = [self createButtonWithImageNameForNormal:BUTTON_IMAGE_OF_TOPRIGHT
                                        imageNameForHightlighted:BUTTON_IMAGE_OF_TOPRIGHT_H
@@ -194,24 +194,24 @@ enum {
                                                      buttonTag:TopRightViewTag];
     
     self.topRightBtn.frame = CGRectOffset(self.topRightBtn.frame
-                                            ,CGRectGetMinX(self.topRightView.frame)
-                                            ,CGRectGetMaxY(self.topRightView.frame)- CGRectGetHeight(self.topLeftBtn.frame));
+                                            ,CGRectGetMinX(self.topRightView.frame) + 40.0f
+                                            ,CGRectGetMaxY(self.topRightView.frame)- CGRectGetHeight(self.topLeftBtn.frame) - 40.0f);
     
     self.bottomLeftBtn = [self createButtonWithImageNameForNormal:BUTTON_IMAGE_OF_BOTTOMLEFT
                                          imageNameForHightlighted:BUTTON_IMAGE_OF_BOTTOMLEFT_H
                                                 transformRotation:90
                                                         buttonTag:BottomLeftViewTag];
     self.bottomLeftBtn.frame = CGRectOffset(self.bottomLeftBtn.frame
-                                            ,CGRectGetMaxX(self.bottomLeftView.frame) - CGRectGetWidth(self.bottomLeftBtn.frame)
-                                            ,CGRectGetMinY(self.bottomLeftView.frame) );
+                                            ,CGRectGetMaxX(self.bottomLeftView.frame) - CGRectGetWidth(self.bottomLeftBtn.frame) - 100.0f
+                                            ,CGRectGetMinY(self.bottomLeftView.frame) + 100.0f) ;
     
     self.bottomRightBtn = [self createButtonWithImageNameForNormal:BUTTON_IMAGE_OF_BOTTOMRIGHT
                                           imageNameForHightlighted:BUTTON_IMAGE_OF_BOTTOMRIGHT_H
                                                  transformRotation:0
                                                         buttonTag:BottomRightViewTag];
     self.bottomRightBtn.frame = CGRectOffset(self.bottomRightBtn.frame
-                                             ,CGRectGetMinX(self.bottomRightView.frame)
-                                             ,CGRectGetMinY(self.bottomRightView.frame));
+                                             ,CGRectGetMinX(self.bottomRightView.frame) + 50.0f
+                                             ,CGRectGetMinY(self.bottomRightView.frame) + 50.0f);
     
     self.centerImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:BUTTON_IMAGE_OF_CENTER]];
     self.centerImageView.center = self.bottomRightBtn.frame.origin;
