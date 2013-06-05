@@ -7,7 +7,6 @@
 //
 
 #import "PZMainNewsPictureRequest.h"
-#import "NewsMainPictureData.h"
 
 @interface PZMainNewsPictureRequest()
 
@@ -59,8 +58,8 @@
         NSArray * dataContents =[resDict valueForKey:@"newsHead"];
         for (NSDictionary *newsMainPictureDataDict in dataContents)
         {
-            NewsMainPictureData *newsMainPictureDataModule = [[NewsMainPictureData alloc] initWithDictionary:newsMainPictureDataDict];
-            [_elements addObject:newsMainPictureDataModule];
+//            NewsMainPictureData *newsMainPictureDataModule = [[NewsMainPictureData alloc] initWithDictionary:newsMainPictureDataDict];
+//            [_elements addObject:newsMainPictureDataModule];
         }
         [_mainViewController.newsItemArray addObjectsFromArray:_elements];
 

@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "PZNewsDetailViewController.h"
-#import "NewsDetailData.h"
 
 @interface PZDetailRequest : NSObject
 {
