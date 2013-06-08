@@ -8,7 +8,6 @@
 #import "PZNewsDetailViewController.h"
 #import "PZNewsListTableCell.h"
 #import "PZNewsListRequest.h"
-#import "NewsListData.h"
 #import "PZNewsListData.h"
 #import "QBFunnyFaceRefreshControl.h"
 #import "QBArrowRefreshControl.h"
@@ -208,7 +207,7 @@
             _headerLabel.text = _headTitle;
         }
         if ([_newsItemArray count]) {
-            NewsListData * newsData = [_newsItemArray objectAtIndex:indexPath.row];
+            PZNewsListData * newsData = [_newsItemArray objectAtIndex:indexPath.row];
             newsListCell.titleLabel.text = newsData.title;
             if ([_catid isEqualToString:@"249" ] || [_catid isEqualToString:@"51" ]) {
                 [newsListCell.image setFrame:CGRectMake(210.0f, 3.0f, 100.0f, 140.0f)];
@@ -425,11 +424,6 @@
 - (void)refreshControlDidBeginRefreshing:(QBRefreshControl *)refreshControl
 {
     [NSThread detachNewThreadSelector:@selector(refreshControlAndDelete) toTarget:self withObject:nil];
-    // 当newsTableView接受到reloadData方法时,下拉刷新消失
-//    if ([self.newsTableView respondsToSelector:@selector(reloadData)])
-//    {
-//        [self.myRefreshControl endRefreshing];
-//    }
 }
 
 - (void)refreshControlAndDelete

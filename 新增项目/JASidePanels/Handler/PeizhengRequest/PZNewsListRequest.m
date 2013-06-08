@@ -7,7 +7,6 @@
 //
 
 #import "PZNewsListRequest.h"
-#import "NewsListData.h"
 #import "PZNewsListData.h"
 
 @interface PZNewsListRequest ()

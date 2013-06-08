@@ -7,7 +7,6 @@
 #import "PZCollectionListTableViewController.h"
 #import "PZNewsDetailViewController.h"
 #import "PZNewsListTableCell.h"
-#import "NewsListData.h"
 #import "PZNewsListData.h"
 
 @interface PZCollectionListTableViewController ()
