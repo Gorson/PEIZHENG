@@ -16,8 +16,8 @@
 #define RADIANS_TO_DEGREES(radians) ((radians)*(180.0/M_PI))
 #define DEGREES_TO_RADIANS(angle) ((angle)/180.0*M_PI)
 
-#define CENTERPOINT_OFFSET_X (-40.0f)
-#define CENTERPOINT_OFFSET_Y (-80.0f)
+#define CENTERPOINT_OFFSET_X (0.0f)
+#define CENTERPOINT_OFFSET_Y (0.0f)
 
 #define DEFAUTROTATION (-50.0f)
 

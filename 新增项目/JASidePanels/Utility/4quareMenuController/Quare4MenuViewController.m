@@ -154,31 +154,35 @@ enum {
 - (void) loadView
 {
     [super loadView];
-    
+
     CGFloat width = self.view.frame.size.width;
     CGFloat height = self.view.frame.size.height;
     NSInteger size = 4;
     
 //    self.layerView = [[UIView alloc] initWithFrame:CGRectMake(-width*(size/2), -height*(size/2), size * width, size*height)];
-    self.layerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, size * width, size*height)];
+    self.layerView = [[UIView alloc] initWithFrame:CGRectMake(0, -50, size * width, size*height)];
     self.layerView.backgroundColor = [UIColor blackColor];
 //    self.layerView.clipsToBounds = NO;
     
     self.topLeftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, width * size/2 , height * size/2)];
     self.topLeftView.clipsToBounds = YES;
-    self.maskViewTopLeft = [[MaskView alloc]initWithFrame:self.topLeftView.frame];
+    self.maskViewTopLeft = [[MaskView alloc]initWithFrame:CGRectMake(+50, 0, width * size/2 , height * size/2)];           // 红色遮面图   +上下- ，+右左-
+    [self.maskViewTopLeft setBackgroundColor:[UIColor redColor]];
     
     self.topRightView = [[UIView alloc]initWithFrame:CGRectMake(width * size/2, 0, width * size/2, height * size/2)];
     self.topRightView.clipsToBounds = YES;
-    self.maskViewTopRight = [[MaskView alloc]initWithFrame:self.topRightView.frame];
+    self.maskViewTopRight = [[MaskView alloc]initWithFrame:CGRectMake(width * size/2+50, 0, width * size/2, height * size/2)];  // 蓝色遮面图  +上下-，+右左-
+    [self.maskViewTopRight setBackgroundColor:[UIColor blueColor]];
     
     self.bottomLeftView = [[UIView alloc]initWithFrame:CGRectMake(0, height * size/2 , width * size/2, height * size/2 )];
     self.bottomLeftView.clipsToBounds = YES;
-    self.maskViewbottomLeft = [[MaskView alloc]initWithFrame:self.bottomLeftView.frame];
+    self.maskViewbottomLeft = [[MaskView alloc]initWithFrame:CGRectMake(-50, height * size/2 , width * size/2, height * size/2 )];// 黄色遮面图  +上下-，+右左-
+    [self.maskViewbottomLeft setBackgroundColor:[UIColor yellowColor]];
     
     self.bottomRightView = [[UIView alloc]initWithFrame:CGRectMake(width * size/2, height * size/2, width * size/2, height * size/2)];
     self.bottomRightView.clipsToBounds = YES;
-    self.maskViewbottomRight = [[MaskView alloc]initWithFrame:self.bottomRightView.frame];
+    self.maskViewbottomRight = [[MaskView alloc]initWithFrame:CGRectMake(width * size/2 -50, height * size/2, width * size/2, height * size/2)];  // 绿色遮面图  +上下-，+右左-
+    [self.maskViewbottomRight setBackgroundColor:[UIColor greenColor]];
     
     self.topLeftBtn = [self createButtonWithImageNameForNormal:BUTTON_IMAGE_OF_TOPLEFT 
                                       imageNameForHightlighted:BUTTON_IMAGE_OF_TOPLEFT_H
@@ -213,7 +217,7 @@ enum {
                                              ,CGRectGetMinX(self.bottomRightView.frame) + 50.0f
                                              ,CGRectGetMinY(self.bottomRightView.frame) + 50.0f);
     
-    self.centerImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:BUTTON_IMAGE_OF_CENTER]];
+    self.centerImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:nil]];
     self.centerImageView.center = self.bottomRightBtn.frame.origin;
    
     [self.layerView addSubview:self.topLeftView];

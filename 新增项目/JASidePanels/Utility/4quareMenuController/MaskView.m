@@ -37,7 +37,7 @@
     CGContextClipToRects(context, clips, sizeof(clips) / sizeof(clips[0]));
     
     CGContextSetLineCap(context, kCGLineCapRound);
-    CGContextSetLineWidth(context, 3.0);
+    CGContextSetLineWidth(context, 0.0);
     
     CGContextFillRect(context, self.bounds);
     CGContextStrokeRect(context, self.bounds);
