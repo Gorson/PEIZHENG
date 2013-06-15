@@ -232,6 +232,12 @@
 		458A8649176C836C002A531A /* PZ_Topright@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 458A8641176C836C002A531A /* PZ_Topright@2x.png */; };
 		458A864C176CAD97002A531A /* rubbish.png in Resources */ = {isa = PBXBuildFile; fileRef = 458A864A176CAD97002A531A /* rubbish.png */; };
 		458A864D176CAD97002A531A /* rubbish@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 458A864B176CAD97002A531A /* rubbish@2x.png */; };
+		458A8654176CB11C002A531A /* PC-server@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 458A864E176CB119002A531A /* PC-server@2x.png */; };
+		458A8655176CB11C002A531A /* PC-server.png in Resources */ = {isa = PBXBuildFile; fileRef = 458A864F176CB11A002A531A /* PC-server.png */; };
+		458A8656176CB11C002A531A /* D-fly-Introduction@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 458A8650176CB11A002A531A /* D-fly-Introduction@2x.png */; };
+		458A8657176CB11C002A531A /* D-fly-Introduction.png in Resources */ = {isa = PBXBuildFile; fileRef = 458A8651176CB11B002A531A /* D-fly-Introduction.png */; };
+		458A8658176CB11C002A531A /* D-fly@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 458A8652176CB11B002A531A /* D-fly@2x.png */; };
+		458A8659176CB11C002A531A /* D-fly.png in Resources */ = {isa = PBXBuildFile; fileRef = 458A8653176CB11C002A531A /* D-fly.png */; };
 		45F643371707461F0023AA5F /* JARightViewController+sinaMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F643361707461F0023AA5F /* JARightViewController+sinaMethod.m */; };
 		95322A731517AEF40069C8D7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95322A701517AEEB0069C8D7 /* QuartzCore.framework */; };
 		9561ACB2151286EE005889C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9561ACB1151286EE005889C6 /* UIKit.framework */; };
@@ -625,6 +631,12 @@
 		458A8641176C836C002A531A /* PZ_Topright@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PZ_Topright@2x.png"; sourceTree = "<group>"; };
 		458A864A176CAD97002A531A /* rubbish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rubbish.png; path = AppImage/rubbish.png; sourceTree = "<group>"; };
 		458A864B176CAD97002A531A /* rubbish@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rubbish@2x.png"; path = "AppImage/rubbish@2x.png"; sourceTree = "<group>"; };
+		458A864E176CB119002A531A /* PC-server@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PC-server@2x.png"; sourceTree = "<group>"; };
+		458A864F176CB11A002A531A /* PC-server.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PC-server.png"; sourceTree = "<group>"; };
+		458A8650176CB11A002A531A /* D-fly-Introduction@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "D-fly-Introduction@2x.png"; sourceTree = "<group>"; };
+		458A8651176CB11B002A531A /* D-fly-Introduction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "D-fly-Introduction.png"; sourceTree = "<group>"; };
+		458A8652176CB11B002A531A /* D-fly@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "D-fly@2x.png"; sourceTree = "<group>"; };
+		458A8653176CB11C002A531A /* D-fly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "D-fly.png"; sourceTree = "<group>"; };
 		45F643351707461F0023AA5F /* JARightViewController+sinaMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "JARightViewController+sinaMethod.h"; path = "DemoFolder/JARightViewController+sinaMethod.h"; sourceTree = "<group>"; };
 		45F643361707461F0023AA5F /* JARightViewController+sinaMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "JARightViewController+sinaMethod.m"; path = "DemoFolder/JARightViewController+sinaMethod.m"; sourceTree = "<group>"; };
 		95322A701517AEEB0069C8D7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -1212,6 +1224,12 @@
 		457683341706CAE9009BD663 /* AppImage */ = {
 			isa = PBXGroup;
 			children = (
+				458A864E176CB119002A531A /* PC-server@2x.png */,
+				458A864F176CB11A002A531A /* PC-server.png */,
+				458A8650176CB11A002A531A /* D-fly-Introduction@2x.png */,
+				458A8651176CB11B002A531A /* D-fly-Introduction.png */,
+				458A8652176CB11B002A531A /* D-fly@2x.png */,
+				458A8653176CB11C002A531A /* D-fly.png */,
 				458A864A176CAD97002A531A /* rubbish.png */,
 				458A864B176CAD97002A531A /* rubbish@2x.png */,
 				CE8F0C9B17391DFE00BFD3C7 /* PZ_Wrong.png */,
@@ -1868,6 +1886,12 @@
 				458A8649176C836C002A531A /* PZ_Topright@2x.png in Resources */,
 				458A864C176CAD97002A531A /* rubbish.png in Resources */,
 				458A864D176CAD97002A531A /* rubbish@2x.png in Resources */,
+				458A8654176CB11C002A531A /* PC-server@2x.png in Resources */,
+				458A8655176CB11C002A531A /* PC-server.png in Resources */,
+				458A8656176CB11C002A531A /* D-fly-Introduction@2x.png in Resources */,
+				458A8657176CB11C002A531A /* D-fly-Introduction.png in Resources */,
+				458A8658176CB11C002A531A /* D-fly@2x.png in Resources */,
+				458A8659176CB11C002A531A /* D-fly.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
