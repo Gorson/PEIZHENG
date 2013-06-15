@@ -69,32 +69,56 @@ enum {
 
 - (void)rotationToTopLeft
 {
-    [self.maskViewTopLeft removeFromSuperview];
+    [self.maskViewTopLeft maskViewDisappear:YES];
+    [self.maskViewTopRight maskViewDisappear:YES];
+    [self.maskViewbottomLeft maskViewDisappear:YES];
+    [self.maskViewbottomRight maskViewDisappear:YES];
     [self rotation:180 withAnimation:YES completion:^(BOOL finished) {
         [self displayViewController:self.topLeftController];
+//        [self displayViewController:self.topRightController];
+//        [self displayViewController:self.bottomLeftController];
+//        [self displayViewController:self.bottomRightController];
     }];
 }
 
 - (void)rotationToTopRight
 {
-    [self.maskViewTopRight removeFromSuperview];
-    [self rotation:90 withAnimation:YES completion:^(BOOL finished){
+    [self.maskViewTopLeft maskViewDisappear:YES];
+    [self.maskViewTopRight maskViewDisappear:YES];
+    [self.maskViewbottomLeft maskViewDisappear:YES];
+    [self.maskViewbottomRight maskViewDisappear:YES];
+    [self rotation:90 withAnimation:YES completion:^(BOOL finished) {
+//        [self displayViewController:self.topLeftController];
         [self displayViewController:self.topRightController];
+//        [self displayViewController:self.bottomLeftController];
+//        [self displayViewController:self.bottomRightController];
     }];
 }
 
 - (void)rotationToBottomLeft
 {
-    [self.maskViewbottomLeft removeFromSuperview];
-    [self rotation:-90 withAnimation:YES completion:^(BOOL finished){
+    [self.maskViewTopLeft maskViewDisappear:YES];
+    [self.maskViewTopRight maskViewDisappear:YES];
+    [self.maskViewbottomLeft maskViewDisappear:YES];
+    [self.maskViewbottomRight maskViewDisappear:YES];
+    [self rotation:-90 withAnimation:YES completion:^(BOOL finished) {
+//        [self displayViewController:self.topLeftController];
+//        [self displayViewController:self.topRightController];
         [self displayViewController:self.bottomLeftController];
+//        [self displayViewController:self.bottomRightController];
     }];
 }
 
 - (void)rotationToBottomRight
 {
-    [self.maskViewbottomRight removeFromSuperview];
+    [self.maskViewTopLeft maskViewDisappear:YES];
+    [self.maskViewTopRight maskViewDisappear:YES];
+    [self.maskViewbottomLeft maskViewDisappear:YES];
+    [self.maskViewbottomRight maskViewDisappear:YES];
     [self rotation:0 withAnimation:YES completion:^(BOOL finished) {
+//        [self displayViewController:self.topLeftController];
+//        [self displayViewController:self.topRightController];
+//        [self displayViewController:self.bottomLeftController];
         [self displayViewController:self.bottomRightController];
     }];
 }
@@ -109,7 +133,7 @@ enum {
     
     CGFloat r = DEGREES_TO_RADIANS(degrees);
     if ( animation ){
-        [UIView animateWithDuration:0.3f
+        [UIView animateWithDuration:0.5f
                          animations:^{
                              [self rotation:r];
                          }
@@ -167,7 +191,7 @@ enum {
     self.topLeftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, width * size/2 , height * size/2)];
     self.topLeftView.clipsToBounds = YES;
     self.maskViewTopLeft = [[MaskView alloc]initWithFrame:CGRectMake(+50, 0, width * size/2 , height * size/2)];           // 红色遮面图   +上下- ，+右左-
-    [self.maskViewTopLeft setBackgroundColor:[UIColor redColor]];
+    [self.maskViewTopLeft setBackgroundColor:[UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0]];
     
     self.topRightView = [[UIView alloc]initWithFrame:CGRectMake(width * size/2, 0, width * size/2, height * size/2)];
     self.topRightView.clipsToBounds = YES;
@@ -183,38 +207,38 @@ enum {
     self.bottomRightView.clipsToBounds = YES;
     self.maskViewbottomRight = [[MaskView alloc]initWithFrame:CGRectMake(width * size/2 -50, height * size/2, width * size/2, height * size/2)];  // 绿色遮面图  +上下-，+右左-
     [self.maskViewbottomRight setBackgroundColor:[UIColor greenColor]];
-    
+    // 红色按钮位置
     self.topLeftBtn = [self createButtonWithImageNameForNormal:BUTTON_IMAGE_OF_TOPLEFT 
                                       imageNameForHightlighted:BUTTON_IMAGE_OF_TOPLEFT_H
                                              transformRotation:180
                                                      buttonTag:TopLeftViewTag];
     self.topLeftBtn.frame = CGRectOffset(self.topLeftBtn.frame
-                                         ,CGRectGetMaxX(self.topLeftView.frame)- CGRectGetWidth(self.topLeftBtn.frame) - 30.0f
-                                         ,CGRectGetMaxY(self.topLeftView.frame)- CGRectGetHeight(self.topLeftBtn.frame) - 30.0f);
-    
+                                         ,CGRectGetMaxX(self.topLeftView.frame)- CGRectGetWidth(self.topLeftBtn.frame) + 0.0f
+                                         ,CGRectGetMaxY(self.topLeftView.frame)- CGRectGetHeight(self.topLeftBtn.frame) - 50.0f);
+    // 蓝色按钮位置
     self.topRightBtn = [self createButtonWithImageNameForNormal:BUTTON_IMAGE_OF_TOPRIGHT
                                        imageNameForHightlighted:BUTTON_IMAGE_OF_TOPRIGHT_H
                                               transformRotation:-90
                                                      buttonTag:TopRightViewTag];
     
     self.topRightBtn.frame = CGRectOffset(self.topRightBtn.frame
-                                            ,CGRectGetMinX(self.topRightView.frame) + 40.0f
-                                            ,CGRectGetMaxY(self.topRightView.frame)- CGRectGetHeight(self.topLeftBtn.frame) - 40.0f);
-    
+                                            ,CGRectGetMinX(self.topRightView.frame) + 100.0f
+                                            ,CGRectGetMaxY(self.topRightView.frame)- CGRectGetHeight(self.topLeftBtn.frame) - 50.0f);
+    // 黄色按钮位置
     self.bottomLeftBtn = [self createButtonWithImageNameForNormal:BUTTON_IMAGE_OF_BOTTOMLEFT
                                          imageNameForHightlighted:BUTTON_IMAGE_OF_BOTTOMLEFT_H
                                                 transformRotation:90
                                                         buttonTag:BottomLeftViewTag];
     self.bottomLeftBtn.frame = CGRectOffset(self.bottomLeftBtn.frame
                                             ,CGRectGetMaxX(self.bottomLeftView.frame) - CGRectGetWidth(self.bottomLeftBtn.frame) - 100.0f
-                                            ,CGRectGetMinY(self.bottomLeftView.frame) + 100.0f) ;
-    
+                                            ,CGRectGetMinY(self.bottomLeftView.frame) + 50.0f) ;
+    // 绿色按钮位置
     self.bottomRightBtn = [self createButtonWithImageNameForNormal:BUTTON_IMAGE_OF_BOTTOMRIGHT
                                           imageNameForHightlighted:BUTTON_IMAGE_OF_BOTTOMRIGHT_H
                                                  transformRotation:0
                                                         buttonTag:BottomRightViewTag];
     self.bottomRightBtn.frame = CGRectOffset(self.bottomRightBtn.frame
-                                             ,CGRectGetMinX(self.bottomRightView.frame) + 50.0f
+                                             ,CGRectGetMinX(self.bottomRightView.frame) + 0.0f
                                              ,CGRectGetMinY(self.bottomRightView.frame) + 50.0f);
     
     self.centerImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:nil]];
@@ -394,8 +418,25 @@ enum {
 -(void)closeViewController
 {
 //    NSLog(@"close bottom right");
-    [UIView animateWithDuration:0.3f
+    [UIView animateWithDuration:0.5f
                      animations:^{
+//                             if ( self.currentController == self.topLeftController)
+                                 [self addButtomViewAndMaskView:self.maskViewTopLeft];
+//                             else if ( self.currentController == self.topRightController)
+                                 [self addButtomViewAndMaskView:self.maskViewTopRight];
+//                             else if ( self.currentController == self.bottomLeftController)
+                                 [self addButtomViewAndMaskView:self.maskViewbottomLeft];
+//                             else if ( self.currentController == self.bottomRightController )
+                                 [self addButtomViewAndMaskView:self.maskViewbottomRight];
+
+                         
+                         self.maskViewTopLeft.alpha = 1.0f;
+                         self.maskViewTopRight.alpha = 1.0f;
+                         self.maskViewbottomLeft.alpha = 1.0f;
+                         self.maskViewbottomRight.alpha = 1.0f;
+                         
+//                         self.currentController = nil;
+                         
                          CGFloat width = self.view.frame.size.width;
                          CGFloat height = self.view.frame.size.height;
                          
@@ -426,15 +467,19 @@ enum {
 //                         self.currentController = nil;
 //                         [self rotationToDefault];
                          [self rotation:DEFAUTROTATION withAnimation:YES completion:^(BOOL finished){
-                             if ( self.currentController == self.topLeftController)
-                                 [self addButtomViewAndMaskView:self.maskViewTopLeft];
-                             else if ( self.currentController == self.topRightController)
-                                 [self addButtomViewAndMaskView:self.maskViewTopRight];
-                             else if ( self.currentController == self.bottomLeftController)
-                                 [self addButtomViewAndMaskView:self.maskViewbottomLeft];
-                             else if ( self.currentController == self.bottomRightController )
-                                 [self addButtomViewAndMaskView:self.maskViewbottomRight];
-                             
+////                             if ( self.currentController == self.topLeftController)
+//                                 [self addButtomViewAndMaskView:self.maskViewTopLeft];
+////                             else if ( self.currentController == self.topRightController)
+//                                 [self addButtomViewAndMaskView:self.maskViewTopRight];
+////                             else if ( self.currentController == self.bottomLeftController)
+//                                 [self addButtomViewAndMaskView:self.maskViewbottomLeft];
+////                             else if ( self.currentController == self.bottomRightController )
+//                                 [self addButtomViewAndMaskView:self.maskViewbottomRight];
+//                             self.maskViewTopLeft.alpha = 1.0f;
+//                             self.maskViewTopRight.alpha = 1.0f;
+//                             self.maskViewbottomLeft.alpha = 1.0f;
+//                             self.maskViewbottomRight.alpha = 1.0f;
+//
                              self.currentController = nil;
                              
                          }];

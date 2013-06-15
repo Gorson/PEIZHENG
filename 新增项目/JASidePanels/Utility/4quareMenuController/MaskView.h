@@ -10,4 +10,5 @@
 
 @interface MaskView : UIView
 
+- (void)maskViewDisappear:(BOOL)animation;
 @end

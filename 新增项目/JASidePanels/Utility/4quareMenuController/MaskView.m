@@ -37,11 +37,34 @@
     CGContextClipToRects(context, clips, sizeof(clips) / sizeof(clips[0]));
     
     CGContextSetLineCap(context, kCGLineCapRound);
-    CGContextSetLineWidth(context, 0.0);
+    CGContextSetLineWidth(context, 3.0);
     
     CGContextFillRect(context, self.bounds);
     CGContextStrokeRect(context, self.bounds);
     UIGraphicsEndImageContext();
 }
 
+
+- (void)maskViewDisappear:(BOOL)animation
+{
+    if (animation){
+        [UIView animateWithDuration:0.5f
+                         animations:^{
+                             self.alpha = 0;
+                         }
+                         completion:^(BOOL finished){
+                            [self removeSelf];
+                         }
+
+         ];
+    } else {
+
+    }
+}
+
+- (BOOL)removeSelf
+{
+    [self removeFromSuperview];
+    return YES;
+}
 @end
