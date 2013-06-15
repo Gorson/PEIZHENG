@@ -131,7 +131,7 @@
 {
     _loadingMoreView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 40.0f)];
     UIActivityIndicatorView *activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    activityIndicatorView.frame = CGRectMake(IPHONE_WIDTH/2.0f-10.0f, IPHONE_HEIGHT/2.0f-10.0f, 20.0f, 20.0f);
+    activityIndicatorView.frame = CGRectMake(IPHONE_WIDTH/2.0f-10.0f, 0, 20.0f, 20.0f);
     activityIndicatorView.tag = 1000;
     [_loadingMoreView addSubview:activityIndicatorView];
     [activityIndicatorView release];

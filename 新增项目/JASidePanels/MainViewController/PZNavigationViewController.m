@@ -42,8 +42,6 @@
     [_confirmButton setFrame:CGRectMake(IPHONE_WIDTH-70.0f, 0.0f, 70.0f, 44.0f)];
 //    _confirmButton.titleLabel.font=[UIFont boldSystemFontOfSize:14.0f];
     [_confirmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_confirmButton setBackgroundImage:[UIImage imageNamed:@"PZKeepPage.png"]
-                              forState:UIControlStateNormal];
     [_confirmButton addTarget:self
                        action:@selector(onConfirm:)
              forControlEvents:UIControlEventTouchUpInside];
@@ -83,13 +81,6 @@
     
 }
 
-
-/*
- 确认 被子类重载
- */
--(void)onConfirm:(UIButton *)sender{
-    
-}
 
 /*
  返回

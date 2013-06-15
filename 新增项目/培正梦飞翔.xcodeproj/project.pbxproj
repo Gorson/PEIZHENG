@@ -142,6 +142,9 @@
 		45747F471731687C00D5D005 /* PZImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 45747F431731687C00D5D005 /* PZImageDownloader.m */; };
 		45747F4A173168FA00D5D005 /* HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 45747F49173168F900D5D005 /* HttpRequest.m */; };
 		45747F4D1731693500D5D005 /* PZSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 45747F4C1731693500D5D005 /* PZSingleton.m */; };
+		4575B51B176C3ECC005F3FFA /* PZ_True.png in Resources */ = {isa = PBXBuildFile; fileRef = 4575B519176C3EC8005F3FFA /* PZ_True.png */; };
+		4575B51C176C3ECC005F3FFA /* PZ_True@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4575B51A176C3EC9005F3FFA /* PZ_True@2x.png */; };
+		4575B520176C72F5005F3FFA /* GuideInterfaceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4575B51F176C72F5005F3FFA /* GuideInterfaceVC.m */; };
 		4576833B1706CB45009BD663 /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 457683391706CB45009BD663 /* AppIcon.png */; };
 		4576833C1706CB45009BD663 /* AppIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4576833A1706CB45009BD663 /* AppIcon@2x.png */; };
 		4576834C1706DADD009BD663 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 457683471706DADD009BD663 /* Default-568h@2x.png */; };
@@ -487,6 +490,10 @@
 		45747F49173168F900D5D005 /* HttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HttpRequest.m; path = ../HttpRequest.m; sourceTree = "<group>"; };
 		45747F4B1731693500D5D005 /* PZSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PZSingleton.h; sourceTree = "<group>"; };
 		45747F4C1731693500D5D005 /* PZSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZSingleton.m; sourceTree = "<group>"; };
+		4575B519176C3EC8005F3FFA /* PZ_True.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PZ_True.png; sourceTree = "<group>"; };
+		4575B51A176C3EC9005F3FFA /* PZ_True@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PZ_True@2x.png"; sourceTree = "<group>"; };
+		4575B51E176C72F5005F3FFA /* GuideInterfaceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideInterfaceVC.h; sourceTree = "<group>"; };
+		4575B51F176C72F5005F3FFA /* GuideInterfaceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideInterfaceVC.m; sourceTree = "<group>"; };
 		457683391706CB45009BD663 /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppIcon.png; path = AppImage/AppIcon.png; sourceTree = "<group>"; };
 		4576833A1706CB45009BD663 /* AppIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon@2x.png"; path = "AppImage/AppIcon@2x.png"; sourceTree = "<group>"; };
 		457683471706DADD009BD663 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "AppImage/Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -697,9 +704,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45724A07172A8599005628A3 /* libresolv.9.dylib in Frameworks */,
 				CE90249717421B8000D3D40D /* CoreData.framework in Frameworks */,
 				457D795B173AB25B0018D81F /* libxml2.2.dylib in Frameworks */,
-				45724A07172A8599005628A3 /* libresolv.9.dylib in Frameworks */,
 				45724A06172A8591005628A3 /* libz.1.2.5.dylib in Frameworks */,
 				457249EF17298DF7005628A3 /* MapKit.framework in Frameworks */,
 				457249ED17298D2F005628A3 /* ImageIO.framework in Frameworks */,
@@ -757,6 +764,7 @@
 		4571566D1707119C00393580 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				4575B51D176C72C7005F3FFA /* GuideInterFaceVC */,
 				4576876F1759EA41004FB655 /* REMenu */,
 				457458201750B5070098019F /* QBRefreshControl */,
 				4581036D174BA8F7006300ED /* 4quareMenuController */,
@@ -1188,6 +1196,15 @@
 			name = entity;
 			sourceTree = "<group>";
 		};
+		4575B51D176C72C7005F3FFA /* GuideInterFaceVC */ = {
+			isa = PBXGroup;
+			children = (
+				4575B51E176C72F5005F3FFA /* GuideInterfaceVC.h */,
+				4575B51F176C72F5005F3FFA /* GuideInterfaceVC.m */,
+			);
+			name = GuideInterFaceVC;
+			sourceTree = "<group>";
+		};
 		457683341706CAE9009BD663 /* AppImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -1209,6 +1226,8 @@
 				4576835C1706E673009BD663 /* mainViewModel@2x.png */,
 				457683551706DFD2009BD663 /* bottomDockModel.png */,
 				457683561706DFD2009BD663 /* bottomDockModel@2x.png */,
+				4575B519176C3EC8005F3FFA /* PZ_True.png */,
+				4575B51A176C3EC9005F3FFA /* PZ_True@2x.png */,
 				457683511706DDC6009BD663 /* leftModel.png */,
 				457683521706DDC6009BD663 /* leftModel@2x.png */,
 				457683471706DADD009BD663 /* Default-568h@2x.png */,
@@ -1831,6 +1850,7 @@
 				4529BF06175B880D00D0DCB5 /* Icon_Profile.png in Resources */,
 				4529BF07175B880D00D0DCB5 /* Icon_Profile@2x.png in Resources */,
 				4529BF09175B882300D0DCB5 /* Screenshot.png in Resources */,
+<<<<<<< HEAD
 				457BF99A176C5E4F00F23478 /* PZ_Buttomleft.png in Resources */,
 				457BF99B176C5E4F00F23478 /* PZ_Buttomleft@2x.png in Resources */,
 				457BF99C176C5E4F00F23478 /* PZ_Buttomright.png in Resources */,
@@ -1839,6 +1859,10 @@
 				457BF99F176C5E4F00F23478 /* PZ_Topleft@2x.png in Resources */,
 				457BF9A0176C5E4F00F23478 /* PZ_Topright.png in Resources */,
 				457BF9A1176C5E4F00F23478 /* PZ_Topright@2x.png in Resources */,
+=======
+				4575B51B176C3ECC005F3FFA /* PZ_True.png in Resources */,
+				4575B51C176C3ECC005F3FFA /* PZ_True@2x.png in Resources */,
+>>>>>>> 208cf47746ad0c66f372dafe08f01f283b72f311
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1958,6 +1982,7 @@
 				4576877A1759EA63004FB655 /* REMenuItem.m in Sources */,
 				4576877B1759EA63004FB655 /* REMenuItemView.m in Sources */,
 				4576877E1759EA94004FB655 /* RootViewController.m in Sources */,
+				4575B520176C72F5005F3FFA /* GuideInterfaceVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
