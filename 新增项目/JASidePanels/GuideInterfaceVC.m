@@ -58,8 +58,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSArray *imageArray=[[[NSArray alloc]initWithObjects:@"defaultPicture.jpg",@"defaultPicture.jpg",@"defaultPicture.jpg",nil]autorelease];
-    NSArray *imageArray5=[[[NSArray alloc]initWithObjects:@"defaultPicture.jpg",nil]autorelease];
+    NSArray *imageArray=[[[NSArray alloc]initWithObjects:@"D-fly.png",@"D-fly-Introduction.png",@"PC-server.png",nil]autorelease];
+    NSArray *imageArray5=[[[NSArray alloc]initWithObjects:@"D-fly.png",@"D-fly-Introduction.png",@"PC-server.png",nil]autorelease];
                      
 	pageScroll=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, 320, IPHONE_HEIGHT)];
     pageControl=[[UIPageControl alloc]initWithFrame:CGRectMake(141, IPHONE_HEIGHT-60, 38, 36)];

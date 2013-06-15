@@ -191,23 +191,23 @@ enum {
     self.topLeftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, width * size/2 , height * size/2)];
     self.topLeftView.clipsToBounds = YES;
     self.maskViewTopLeft = [[MaskView alloc]initWithFrame:CGRectMake(+50, 0, width * size/2 , height * size/2)];           // 绿色遮面图   +上下- ，+右左-
-    [self.maskViewTopLeft setBackgroundColor:[UIColor colorWithRed:180.0f/255.0f green:226.0f/255.0f blue:153.0f/255.0f alpha:1.0f]];
+    [self.maskViewTopLeft setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"PZ_Topleft.png"]]];
     
     self.topRightView = [[UIView alloc]initWithFrame:CGRectMake(width * size/2, 0, width * size/2, height * size/2)];
     self.topRightView.clipsToBounds = YES;
     self.maskViewTopRight = [[MaskView alloc]initWithFrame:CGRectMake(width * size/2+50, 0, width * size/2, height * size/2)];  // 蓝色遮面图  +上下-，+右左-
-    [self.maskViewTopRight setBackgroundColor:[UIColor colorWithRed:149.0f/255.0f green:226.0f/255.0f blue:208.0f/255.0f alpha:1.0f]];
+    [self.maskViewTopRight setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"PZ_Topright.png"]]];
 ;
     
     self.bottomLeftView = [[UIView alloc]initWithFrame:CGRectMake(0, height * size/2 , width * size/2, height * size/2 )];
     self.bottomLeftView.clipsToBounds = YES;
     self.maskViewbottomLeft = [[MaskView alloc]initWithFrame:CGRectMake(-50, height * size/2 , width * size/2, height * size/2 )];// 红色遮面图  +上下-，+右左-
-    [self.maskViewbottomLeft setBackgroundColor:[UIColor colorWithRed:225.0f/255.0f green:178.0f/255.0f blue:150.0f/255.0f alpha:1.0f]];
+    [self.maskViewbottomLeft setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"PZ_Buttomleft.png"]]];
     
     self.bottomRightView = [[UIView alloc]initWithFrame:CGRectMake(width * size/2, height * size/2, width * size/2, height * size/2)];
     self.bottomRightView.clipsToBounds = YES;
     self.maskViewbottomRight = [[MaskView alloc]initWithFrame:CGRectMake(width * size/2 -50, height * size/2, width * size/2, height * size/2)];  // 黄色遮面图  +上下-，+右左-
-    [self.maskViewbottomRight setBackgroundColor:[UIColor colorWithRed:226.0f/255.0f green:223.0f/255.0f blue:152.0f/255.0f alpha:1.0f]];
+    [self.maskViewbottomRight setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"PZ_Buttomright.png"]]];
     // 红色按钮位置
     self.topLeftBtn = [self createButtonWithImageNameForNormal:BUTTON_IMAGE_OF_TOPLEFT 
                                       imageNameForHightlighted:BUTTON_IMAGE_OF_TOPLEFT_H

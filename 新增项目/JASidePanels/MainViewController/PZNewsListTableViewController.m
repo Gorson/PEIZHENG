@@ -39,7 +39,6 @@
     
     _backButton.hidden = NO;
     _confirmButton.hidden = YES;
-    _backButton.hidden = YES;
 }
 
 

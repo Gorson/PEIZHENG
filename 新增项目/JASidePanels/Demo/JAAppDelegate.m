@@ -52,6 +52,7 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
+@synthesize guideinterface;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -88,7 +89,7 @@
     //判断是否第一次启动界面
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]) {
         //第一次启动进入用户引导界面
-        GuideInterfaceVC *guideinterface = [[GuideInterfaceVC alloc] init];
+        guideinterface = [[GuideInterfaceVC alloc] init];
         [self.window addSubview:guideinterface.view];
 
     }

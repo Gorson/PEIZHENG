@@ -30,6 +30,8 @@
 
 @class JASidePanelController;
 @class SinaWeibo;
+@class GuideInterfaceVC;
+
 
 @interface JAAppDelegate : UIResponder <UIApplicationDelegate>
 {
@@ -44,6 +46,7 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (nonatomic, retain) GuideInterfaceVC * guideinterface; // 第一次进入引导界面
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

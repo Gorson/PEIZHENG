@@ -62,7 +62,7 @@
         [detailRequest DetailRequest:_newsid];
     }
     if ([detailData.mark isEqualToString:@"YES"]) {
-        [_confirmButton setBackgroundImage:[UIImage imageNamed:@"PZ_Wrong.png"] forState:UIControlStateNormal];
+        [_confirmButton setBackgroundImage:[UIImage imageNamed:@"rubbish.png"] forState:UIControlStateNormal];
     }
     else
     {
@@ -208,7 +208,7 @@
                 self.notify.image = [UIImage imageNamed:self.imageName];
                 self.notify.text = self.notificationText;
                 [self displayNotification];
-                [_confirmButton setBackgroundImage:[UIImage imageNamed:@"PZ_Wrong.png"] forState:UIControlStateNormal];
+                [_confirmButton setBackgroundImage:[UIImage imageNamed:@"rubbish.png"] forState:UIControlStateNormal];
             }
             else
             {
@@ -231,7 +231,7 @@
 - (BDKNotifyHUD *)notify {
     if (_notify != nil) return _notify;
     _notify = [BDKNotifyHUD notifyHUDWithImage:[UIImage imageNamed:self.imageName] text:self.notificationText];
-    _notify.center = CGPointMake(160, 240);
+    _notify.center = CGPointMake(IPHONE_WIDTH/2, IPHONE_HEIGHT/2);
     [self.notify setHidden:YES];
     return _notify;
 }

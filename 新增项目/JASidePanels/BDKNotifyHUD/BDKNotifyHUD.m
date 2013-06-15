@@ -178,7 +178,7 @@
     _textLabel.frame = frame;
     [label sizeToFit];
     frame = _textLabel.frame;
-    frame.origin.x = floorf((self.backgroundView.frame.size.width - _textLabel.frame.size.width) / 2 - 15);
+    frame.origin.x = floorf((self.backgroundView.frame.size.width - _textLabel.frame.size.width) / 2 - 20);
     _textLabel.frame = frame;
 }
 

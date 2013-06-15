@@ -21,17 +21,17 @@
 
 #define DEFAUTROTATION (-50.0f)
 
-#define BUTTON_IMAGE_OF_CENTER @"centerImage.png"
+#define BUTTON_IMAGE_OF_CENTER @""
 
-#define BUTTON_IMAGE_OF_TOPLEFT     @"topLeft_n.png"
-#define BUTTON_IMAGE_OF_TOPRIGHT    @"topRight_n.png"
-#define BUTTON_IMAGE_OF_BOTTOMLEFT  @"bottomLeft_n.png"
-#define BUTTON_IMAGE_OF_BOTTOMRIGHT @"bottomRight_n.png"
+#define BUTTON_IMAGE_OF_TOPLEFT     @""
+#define BUTTON_IMAGE_OF_TOPRIGHT    @""
+#define BUTTON_IMAGE_OF_BOTTOMLEFT  @""
+#define BUTTON_IMAGE_OF_BOTTOMRIGHT @""
 
-#define BUTTON_IMAGE_OF_TOPLEFT_H     @"topLeft_h.png"
-#define BUTTON_IMAGE_OF_TOPRIGHT_H    @"topRight_h.png"
-#define BUTTON_IMAGE_OF_BOTTOMLEFT_H  @"bottomLeft_h.png"
-#define BUTTON_IMAGE_OF_BOTTOMRIGHT_H @"bottomRight_h.png"
+#define BUTTON_IMAGE_OF_TOPLEFT_H     @""
+#define BUTTON_IMAGE_OF_TOPRIGHT_H    @""
+#define BUTTON_IMAGE_OF_BOTTOMLEFT_H  @""
+#define BUTTON_IMAGE_OF_BOTTOMRIGHT_H @""
 
 @interface Quare4MenuViewController : UIViewController{
 
