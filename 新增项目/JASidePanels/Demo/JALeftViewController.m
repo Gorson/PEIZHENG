@@ -70,7 +70,7 @@
 
 - (void)initWithData
 {
-    _listItemArray = [[NSMutableArray alloc]initWithObjects:@"主页",@"培正周边",@"D-Fly视觉",@"PC服务队",@"培正地图",@"收藏夹",@"设置",@"关于", nil];
+    _listItemArray = [[NSMutableArray alloc]initWithObjects:@"主页",@"培正周边",@"D-Fly视觉",@"培正地图",@"PC服务队",@"收藏夹",@"设置",@"关于", nil];
 }
 
 - (void)initWithUI
@@ -78,10 +78,10 @@
     UITableView * tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 44.0f, 320, IPHONE_HEIGHT - 64.0f) style:UITableViewStylePlain];
     tableView.delegate = self;
     tableView.dataSource = self;
-    tableView.backgroundColor = [UIColor grayColor];
+//    tableView.backgroundColor = [UIColor grayColor];
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.itemListView = tableView;
-    [self.view setBackgroundColor:[UIColor grayColor]];
+//    [self.view setBackgroundColor:[UIColor grayColor]];
     
     [self.view addSubview:self.itemListView];
 }
@@ -147,15 +147,15 @@
             self.sidePanelController.centerPanel = peizhengFamily;
             break;
         case 1003:
-            
-            break;
-        case 1004:
-            collectionListTableViewController = [[PZCollectionListTableViewController alloc]init];
-            self.sidePanelController.centerPanel = collectionListTableViewController;
-            break;
-        case 1005:
             mapController = [[PZMapController alloc]init];
             self.sidePanelController.centerPanel = mapController;
+            break;
+        case 1004:
+            
+            break;
+        case 1005:
+            collectionListTableViewController = [[PZCollectionListTableViewController alloc]init];
+            self.sidePanelController.centerPanel = collectionListTableViewController;
             break;
         default:
             break;

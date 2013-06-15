@@ -15,7 +15,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor whiteColor];
     }
     return self;
 }
@@ -28,7 +28,7 @@
     [super drawRect:rect];
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    CGContextSetRGBFillColor(context,   0.0, 0.0, 0.0, 0.35);
+    CGContextSetRGBFillColor(context,1.0, 1.0, 1.0, 0.0);
 //    CGContextSetRGBFillColor(context, 1, 1, 1, .50);
     CGContextSetRGBStrokeColor(context, 1, 1, 1, .80);
 //    CGContextSetRGBStrokeColor(context, 0.6, 0.6, 0.6, 1.0);
