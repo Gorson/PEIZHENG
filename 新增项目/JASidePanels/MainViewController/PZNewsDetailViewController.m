@@ -61,6 +61,14 @@
         detailRequest.newsDetailViewController = self;
         [detailRequest DetailRequest:_newsid];
     }
+    if ([detailData.mark isEqualToString:@"YES"]) {
+        [_confirmButton setBackgroundImage:[UIImage imageNamed:@"PZ_Wrong.png"] forState:UIControlStateNormal];
+    }
+    else
+    {
+        [_confirmButton setBackgroundImage:[UIImage imageNamed:@"PZKeepPage.png"]
+                                  forState:UIControlStateNormal];
+    }
 }
 
 /*
@@ -172,23 +180,49 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
+
+//代码
+
 /*
  确认 保存书签
  */
 -(void)onConfirm:(UIButton *)sender
 {
     newsDetailData = [PZNewsDetailData loadADataInDatabaseWithNewsId:_newsid];
-    newsDetailData.mark = @"YES";
+    if ([newsDetailData.mark isEqualToString:@"NO"] || [newsDetailData.mark isEqualToString:@""]) {
+        newsDetailData.mark = @"YES";
+    }
+    else
+    {
+        newsDetailData.mark = @"NO";
+    }
     [PZNewsDetailData updateDataFromDatabase:newsDetailData];
-    
+
     NSArray * listDataArray = [PZNewsListData loadDataInDatabase];
     for (PZNewsListData * listData in listDataArray) {
         if (listData.newsidNum == [_newsid floatValue]) {
-            listData.mark = @"YES";
+            if ([listData.mark isEqualToString:@"NO"] || listData.mark == NULL) {
+                listData.mark = @"YES";
+                self.notificationText = @"保存成功";
+                self.imageName = @"PZ_True.png";
+                self.notify.image = [UIImage imageNamed:self.imageName];
+                self.notify.text = self.notificationText;
+                [self displayNotification];
+                [_confirmButton setBackgroundImage:[UIImage imageNamed:@"PZ_Wrong.png"] forState:UIControlStateNormal];
+            }
+            else
+            {
+                listData.mark = @"NO";
+                self.notificationText = @"删除成功";
+                self.imageName = @"PZ_True.png";
+                self.notify.image = [UIImage imageNamed:self.imageName];
+                self.notify.text = self.notificationText;
+                [self displayNotification];
+                [_confirmButton setBackgroundImage:[UIImage imageNamed:@"PZKeepPage.png"] forState:UIControlStateNormal];
+            }
             [PZNewsListData updateDataFromDatabase:listData];
         }
     }
-    
 }
 
 #pragma mark -

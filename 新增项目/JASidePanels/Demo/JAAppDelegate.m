@@ -35,6 +35,7 @@
 
 #import "ViewController.h"
 #import "SinaWeibo.h"
+#import "GuideInterfaceVC.h"
 
 @interface JAAppDelegate()
 {
@@ -77,11 +78,26 @@
     _viewController.centerPanel = [[Quare4MenuViewController alloc]initWithTopLeft:vc1 TopRight:vc2 bottomLeft:vc3 bottomRight:vc4];
 
     _viewController.rightPanel = [[JARightViewController alloc] init];
-//    [self weiboUserInformationCreatWithDelegateObject:_viewController];
-    
     self.window.rootViewController = _viewController;
-    //    [self.window addSubview:q4mc.view];
     [self.window makeKeyAndVisible];
+//    [self weiboUserInformationCreatWithDelegateObject:_viewController];
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"everLaunched"]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"everLaunched"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
+    }
+    //判断是否第一次启动界面
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]) {
+        //第一次启动进入用户引导界面
+        GuideInterfaceVC *guideinterface = [[GuideInterfaceVC alloc] init];
+        [self.window addSubview:guideinterface.view];
+
+    }
+    else
+    {
+        //如果不是第一次则直接进入首页
+    }
+    
+    //    [self.window addSubview:q4mc.view];
     return YES;
 }
 
