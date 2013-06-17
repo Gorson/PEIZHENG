@@ -10,8 +10,8 @@
 		2867824D175B3CCC00979E47 /* PZCollectionListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2867824C175B3BAA00979E47 /* PZCollectionListTableViewController.m */; };
 		45087EC7176EB11300CCEE0D /* PZPCServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45087EC6176EB11300CCEE0D /* PZPCServerViewController.m */; };
 		45087ED3176ED0FA00CCEE0D /* PZPCRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45087ED2176ED0F900CCEE0D /* PZPCRegisterViewController.m */; };
-		45087ED9176F0C4800CCEE0D /* PZPCRegisterDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 45087ED8176F0C4700CCEE0D /* PZPCRegisterDataRequest.m */; };
-		45087EDC176F38E100CCEE0D /* userRegist.m in Sources */ = {isa = PBXBuildFile; fileRef = 45087EDB176F38E100CCEE0D /* userRegist.m */; };
+		45087EDF176F478200CCEE0D /* PZPCRegisterDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 45087EDE176F478200CCEE0D /* PZPCRegisterDataRequest.m */; };
+		45087EE2176F479700CCEE0D /* userRegist.m in Sources */ = {isa = PBXBuildFile; fileRef = 45087EE1176F479700CCEE0D /* userRegist.m */; };
 		450BE64F1743EF20009B8D78 /* 广东培正学院.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 450BE64D1743EF20009B8D78 /* 广东培正学院.jpg */; };
 		450BE6501743EF20009B8D78 /* 广东培正学院@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 450BE64E1743EF20009B8D78 /* 广东培正学院@2x.jpg */; };
 		4529BF00175B880D00D0DCB5 /* Icon_Activity.png in Resources */ = {isa = PBXBuildFile; fileRef = 4529BEF8175B880D00D0DCB5 /* Icon_Activity.png */; };
@@ -314,10 +314,10 @@
 		45087EC6176EB11300CCEE0D /* PZPCServerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZPCServerViewController.m; sourceTree = "<group>"; };
 		45087ED1176ED0F800CCEE0D /* PZPCRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PZPCRegisterViewController.h; sourceTree = "<group>"; };
 		45087ED2176ED0F900CCEE0D /* PZPCRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZPCRegisterViewController.m; sourceTree = "<group>"; };
-		45087ED7176F0C4700CCEE0D /* PZPCRegisterDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PZPCRegisterDataRequest.h; sourceTree = "<group>"; };
-		45087ED8176F0C4700CCEE0D /* PZPCRegisterDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZPCRegisterDataRequest.m; sourceTree = "<group>"; };
-		45087EDA176F38E000CCEE0D /* userRegist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userRegist.h; sourceTree = "<group>"; };
-		45087EDB176F38E100CCEE0D /* userRegist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userRegist.m; sourceTree = "<group>"; };
+		45087EDD176F478200CCEE0D /* PZPCRegisterDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PZPCRegisterDataRequest.h; sourceTree = "<group>"; };
+		45087EDE176F478200CCEE0D /* PZPCRegisterDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZPCRegisterDataRequest.m; sourceTree = "<group>"; };
+		45087EE0176F479700CCEE0D /* userRegist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userRegist.h; sourceTree = "<group>"; };
+		45087EE1176F479700CCEE0D /* userRegist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userRegist.m; sourceTree = "<group>"; };
 		450BE64D1743EF20009B8D78 /* 广东培正学院.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "广东培正学院.jpg"; sourceTree = "<group>"; };
 		450BE64E1743EF20009B8D78 /* 广东培正学院@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "广东培正学院@2x.jpg"; sourceTree = "<group>"; };
 		4529BEF8175B880D00D0DCB5 /* Icon_Activity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_Activity.png; sourceTree = "<group>"; };
@@ -824,6 +824,7 @@
 				CE8F0C9F173925A500BFD3C7 /* MultiLayerSrc */,
 				CE8F0C9317391C6F00BFD3C7 /* BDKNotifyHUD */,
 				45747F191730E4D900D5D005 /* Category */,
+				4578FD9A172ED3F8003FCE36 /* BSJSONAdditions */,
 				457249CC17298C8A005628A3 /* SDWebImage */,
 				45724985172982F8005628A3 /* ASIHTTPRequest */,
 				45778C2E1719D619005A1E3E /* CustomActivityIndicatorView */,
@@ -1180,14 +1181,14 @@
 		45747F0E1730C4AA00D5D005 /* PeizhengRequest */ = {
 			isa = PBXGroup;
 			children = (
+				45087EDD176F478200CCEE0D /* PZPCRegisterDataRequest.h */,
+				45087EDE176F478200CCEE0D /* PZPCRegisterDataRequest.m */,
 				CE968B861737CC080076D502 /* PZNewsListRequest.h */,
 				CE968B871737CC080076D502 /* PZNewsListRequest.m */,
 				CE968B831737CBDC0076D502 /* PZDetailRequest.h */,
 				CE968B841737CBDC0076D502 /* PZDetailRequest.m */,
 				CE968BA01737E6EC0076D502 /* PZMainNewsPictureRequest.h */,
 				CE968BA11737E6ED0076D502 /* PZMainNewsPictureRequest.m */,
-				45087ED7176F0C4700CCEE0D /* PZPCRegisterDataRequest.h */,
-				45087ED8176F0C4700CCEE0D /* PZPCRegisterDataRequest.m */,
 			);
 			path = PeizhengRequest;
 			sourceTree = "<group>";
@@ -1433,13 +1434,12 @@
 				4578FDA4172ED3F8003FCE36 /* NSString+BSJSONAdditions.m */,
 			);
 			name = BSJSONAdditions;
-			path = ../Utility/BSJSONAdditions;
+			path = Utility/BSJSONAdditions;
 			sourceTree = "<group>";
 		};
 		457952FB17413050007190F5 /* AOImageView */ = {
 			isa = PBXGroup;
 			children = (
-				4578FD9A172ED3F8003FCE36 /* BSJSONAdditions */,
 				457952FC17413050007190F5 /* AOImageView.h */,
 				457952FD17413050007190F5 /* AOImageView.m */,
 				457952FE17413050007190F5 /* AOScrollerView.h */,
@@ -1737,19 +1737,16 @@
 		CE9024A117421DF600D3D40D /* coredata */ = {
 			isa = PBXGroup;
 			children = (
+				45087EE0176F479700CCEE0D /* userRegist.h */,
+				45087EE1176F479700CCEE0D /* userRegist.m */,
 				CE90249E17421DE800D3D40D /* PZNewsMainPictureData.h */,
 				CE90249F17421DE900D3D40D /* PZNewsMainPictureData.m */,
 				CE90249B17421DD600D3D40D /* PZNewsListData.h */,
 				CE90249C17421DD600D3D40D /* PZNewsListData.m */,
 				CE90249817421DBE00D3D40D /* PZNewsDetailData.h */,
 				CE90249917421DBE00D3D40D /* PZNewsDetailData.m */,
-<<<<<<< HEAD
-				45087EDA176F38E000CCEE0D /* userRegist.h */,
-				45087EDB176F38E100CCEE0D /* userRegist.m */,
-=======
 				45818EAA176EFC42000EB06B /* PZUserInfo.h */,
 				45818EAB176EFC42000EB06B /* PZUserInfo.m */,
->>>>>>> 01f4b906727af4eca5a760ee1433b45e5f3d7bc3
 			);
 			name = coredata;
 			sourceTree = "<group>";
@@ -2084,10 +2081,6 @@
 				4575B520176C72F5005F3FFA /* GuideInterfaceVC.m in Sources */,
 				45087EC7176EB11300CCEE0D /* PZPCServerViewController.m in Sources */,
 				45087ED3176ED0FA00CCEE0D /* PZPCRegisterViewController.m in Sources */,
-<<<<<<< HEAD
-				45087ED9176F0C4800CCEE0D /* PZPCRegisterDataRequest.m in Sources */,
-				45087EDC176F38E100CCEE0D /* userRegist.m in Sources */,
-=======
 				45818EA8176EF0EE000EB06B /* PZPCUserLoginRequest.m in Sources */,
 				45818EAC176EFC42000EB06B /* PZUserInfo.m in Sources */,
 				45818EB5176F14C2000EB06B /* FTAnimation+UIView.m in Sources */,
@@ -2095,7 +2088,8 @@
 				45818EB7176F14C2000EB06B /* FTUtils+NSObject.m in Sources */,
 				45818EBA176F2CFD000EB06B /* PZUserFunctionController.m in Sources */,
 				45818EBD176F2D3A000EB06B /* PZEngineerFunctionController.m in Sources */,
->>>>>>> 01f4b906727af4eca5a760ee1433b45e5f3d7bc3
+				45087EDF176F478200CCEE0D /* PZPCRegisterDataRequest.m in Sources */,
+				45087EE2176F479700CCEE0D /* userRegist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

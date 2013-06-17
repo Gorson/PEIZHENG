@@ -7,12 +7,8 @@
 //
 
 #import "PZPCServerViewController.h"
-<<<<<<< HEAD
 #import "PZPCRegisterViewController.h"
-=======
 #import "PZPCUserLoginRequest.h"
-
->>>>>>> 01f4b906727af4eca5a760ee1433b45e5f3d7bc3
 
 @interface PZPCServerViewController ()
 {
