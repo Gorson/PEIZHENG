@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PZPCRegisterViewController : UIViewController
+@interface PZPCRegisterViewController : PZNavigationViewController<UITextFieldDelegate>
 
 @end

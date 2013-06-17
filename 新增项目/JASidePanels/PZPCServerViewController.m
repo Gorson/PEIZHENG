@@ -7,6 +7,7 @@
 //
 
 #import "PZPCServerViewController.h"
+#import "PZPCRegisterViewController.h"
 
 @interface PZPCServerViewController ()
 {
@@ -101,8 +102,6 @@
     _enterPwdField.secureTextEntry = YES;
     _enterPwdField.textAlignment = UITextAlignmentCenter;
     _enterPwdField.delegate = self;
-
-    
     
     [self.view addSubview:_enterAccountField];
     [self.view addSubview:_enterPwdField];
@@ -129,7 +128,8 @@
 
 -(void)_register:(UIButton *)sender
 {
-    
+    PZPCRegisterViewController *_pzPCServerController = [[[PZPCRegisterViewController alloc] init] autorelease];
+    [self presentModalViewController:_pzPCServerController animated:YES];
 }
 
 @end
