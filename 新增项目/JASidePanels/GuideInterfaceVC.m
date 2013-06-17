@@ -8,7 +8,7 @@
 
 #import "GuideInterfaceVC.h"
  #import "JAAppDelegate.h"
-@interface GuideInterfaceVC ()
+@interface GuideInterfaceVC ()<UIGestureRecognizerDelegate>
 
 @end
 
@@ -62,17 +62,17 @@
     NSArray *imageArray5=[[[NSArray alloc]initWithObjects:@"D-fly.png",@"D-fly-Introduction.png",@"PC-server.png",nil]autorelease];
                      
 	pageScroll=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, 320, IPHONE_HEIGHT)];
-    pageControl=[[UIPageControl alloc]initWithFrame:CGRectMake(141, IPHONE_HEIGHT-60, 38, 36)];
-    pageControl.numberOfPages = imageArray.count;
-    pageControl.currentPage = 0;
+//    pageControl=[[UIPageControl alloc]initWithFrame:CGRectMake(141, IPHONE_HEIGHT-60, 38, 36)];
+//    pageControl.numberOfPages = imageArray.count;
+//    pageControl.currentPage = 0;
     pageScroll.delegate = self;
     pageScroll.pagingEnabled=YES;
     pageScroll.bounces = NO;
     pageScroll.showsHorizontalScrollIndicator=NO;
     pageScroll.contentSize = CGSizeMake(self.view.frame.size.width * imageArray.count, IPHONE_HEIGHT);
-    [pageControl setBackgroundColor:[UIColor whiteColor]];
+//    [pageControl setBackgroundColor:[UIColor whiteColor]];
     [self.view addSubview:pageScroll];
-    [self.view addSubview:pageControl];
+//    [self.view addSubview:pageControl];
     
    
     
@@ -89,9 +89,15 @@
     gotoMainViewBtn.frame=CGRectMake(320*([imageArray count]-1), 0, 320, IPHONE_HEIGHT);
 //    [gotoMainViewBtn setTitle:@"立即体检" forState:UIControlStateNormal];
     [gotoMainViewBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    //[gotoMainViewBtn setBackgroundImage:[UIImage imageNamed:@"TC_ExperienceBtn.png"] forState:UIControlStateNormal];
-    [gotoMainViewBtn addTarget:self action:@selector(gotoMainView:) forControlEvents:UIControlEventTouchUpInside];
+//    [gotoMainViewBtn setBackgroundImage:[UIImage imageNamed:@"TC_ExperienceBtn.png"] forState:UIControlStateNormal];
+    [gotoMainViewBtn addTarget:self action:@selector(gotoMainView:) forControlEvents:UIControlEventAllTouchEvents];
     [pageScroll addSubview:gotoMainViewBtn];
+    
+    UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipePanFrom:)];
+    [gotoMainViewBtn addGestureRecognizer:swipeRecognizer];//关键语句，给self.view添加一个手势监测；
+    swipeRecognizer.numberOfTouchesRequired = 1;
+    swipeRecognizer.delegate = self;
+    [swipeRecognizer release];
 }
 
 
@@ -99,23 +105,33 @@
 - (void)gotoMainView:(id)sender {
     
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"firstLaunch"];
-    [self.gotoMainViewBtn setHidden:YES];
+    [self.view popOut:.4 delegate:nil];
 
-    [self.view removeFromSuperview];     
+    [self.gotoMainViewBtn setHidden:YES];
+//
+//    [self.view removeFromSuperview];     
 }
 
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    CGFloat pageWidth = self.view.frame.size.width;
-    int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-    pageControl.currentPage = page;
+//    CGFloat pageWidth = self.view.frame.size.width;
+//    int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+//    pageControl.currentPage = page;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - 
+#pragma mark - UIGestureRecognizerDelegate
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    [self gotoMainView:nil];
+    return YES;
 }
 
 @end

@@ -222,6 +222,9 @@
 		457F9742174268AD001CC331 /* iphone背景图@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 457F9740174268AD001CC331 /* iphone背景图@2x.jpg */; };
 		45810372174BA8F7006300ED /* MaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4581036F174BA8F7006300ED /* MaskView.m */; };
 		45810373174BA8F7006300ED /* Quare4MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45810371174BA8F7006300ED /* Quare4MenuViewController.m */; };
+		45818E9A176EB3A8000EB06B /* FTAnimation+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45818E99176EB3A8000EB06B /* FTAnimation+UIView.m */; };
+		45818EA0176EB449000EB06B /* FTAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 45818E9F176EB449000EB06B /* FTAnimationManager.m */; };
+		45818EA4176EB472000EB06B /* FTUtils+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 45818EA3176EB472000EB06B /* FTUtils+NSObject.m */; };
 		458A8642176C836C002A531A /* PZ_Buttomleft.png in Resources */ = {isa = PBXBuildFile; fileRef = 458A863A176C836C002A531A /* PZ_Buttomleft.png */; };
 		458A8643176C836C002A531A /* PZ_Buttomleft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 458A863B176C836C002A531A /* PZ_Buttomleft@2x.png */; };
 		458A8644176C836C002A531A /* PZ_Buttomright.png in Resources */ = {isa = PBXBuildFile; fileRef = 458A863C176C836C002A531A /* PZ_Buttomright.png */; };
@@ -621,6 +624,13 @@
 		4581036F174BA8F7006300ED /* MaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaskView.m; sourceTree = "<group>"; };
 		45810370174BA8F7006300ED /* Quare4MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quare4MenuViewController.h; sourceTree = "<group>"; };
 		45810371174BA8F7006300ED /* Quare4MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quare4MenuViewController.m; sourceTree = "<group>"; };
+		45818E98176EB3A8000EB06B /* FTAnimation+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FTAnimation+UIView.h"; sourceTree = "<group>"; };
+		45818E99176EB3A8000EB06B /* FTAnimation+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTAnimation+UIView.m"; sourceTree = "<group>"; };
+		45818E9E176EB448000EB06B /* FTAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAnimationManager.h; sourceTree = "<group>"; };
+		45818E9F176EB449000EB06B /* FTAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAnimationManager.m; sourceTree = "<group>"; };
+		45818EA1176EB464000EB06B /* FTUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTUtils.h; sourceTree = "<group>"; };
+		45818EA2176EB472000EB06B /* FTUtils+NSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FTUtils+NSObject.h"; sourceTree = "<group>"; };
+		45818EA3176EB472000EB06B /* FTUtils+NSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTUtils+NSObject.m"; sourceTree = "<group>"; };
 		458A863A176C836C002A531A /* PZ_Buttomleft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PZ_Buttomleft.png; sourceTree = "<group>"; };
 		458A863B176C836C002A531A /* PZ_Buttomleft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PZ_Buttomleft@2x.png"; sourceTree = "<group>"; };
 		458A863C176C836C002A531A /* PZ_Buttomright.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PZ_Buttomright.png; sourceTree = "<group>"; };
@@ -1215,6 +1225,13 @@
 		4575B51D176C72C7005F3FFA /* GuideInterFaceVC */ = {
 			isa = PBXGroup;
 			children = (
+				45818EA2176EB472000EB06B /* FTUtils+NSObject.h */,
+				45818EA3176EB472000EB06B /* FTUtils+NSObject.m */,
+				45818EA1176EB464000EB06B /* FTUtils.h */,
+				45818E9E176EB448000EB06B /* FTAnimationManager.h */,
+				45818E9F176EB449000EB06B /* FTAnimationManager.m */,
+				45818E98176EB3A8000EB06B /* FTAnimation+UIView.h */,
+				45818E99176EB3A8000EB06B /* FTAnimation+UIView.m */,
 				4575B51E176C72F5005F3FFA /* GuideInterfaceVC.h */,
 				4575B51F176C72F5005F3FFA /* GuideInterfaceVC.m */,
 			);
@@ -2012,6 +2029,9 @@
 				4576877B1759EA63004FB655 /* REMenuItemView.m in Sources */,
 				4576877E1759EA94004FB655 /* RootViewController.m in Sources */,
 				4575B520176C72F5005F3FFA /* GuideInterfaceVC.m in Sources */,
+				45818E9A176EB3A8000EB06B /* FTAnimation+UIView.m in Sources */,
+				45818EA0176EB449000EB06B /* FTAnimationManager.m in Sources */,
+				45818EA4176EB472000EB06B /* FTUtils+NSObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

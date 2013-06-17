@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "FTAnimation+UIView.h"
+
 @interface GuideInterfaceVC : UIViewController<UIScrollViewDelegate>
 @property (nonatomic,strong)  UIImageView *imageView;
 
