@@ -68,7 +68,7 @@
     {
         if ([[resDict valueForKey:@"hasdata"]isEqualToString:@"1"])
         {
-            _elements = [[NSMutableArray alloc]initWithCapacity:150];
+            _elements = [[NSMutableArray array]retain];
             
             NSArray * dataContents =[resDict valueForKey:@"newsHead"];
 //            [self newAThreadToOperationDatabase:dataContents];

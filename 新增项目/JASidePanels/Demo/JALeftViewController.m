@@ -34,6 +34,7 @@
 #import "PZNewsListTableViewController.h"
 #import "PZCollectionListTableViewController.h"
 #import "PZMapController.h"
+#import "PZPCServerViewController.h"
 
 #import "PZLeftView.h"
 #import "RootViewController.h"
@@ -47,6 +48,7 @@
     PZCollectionListTableViewController * collectionListTableViewController;
     PZMapController * mapController;
     NSMutableArray * _listItemArray;                                         // 资讯新闻数组
+    PZPCServerViewController *pzServerController;
 
 }
 
@@ -151,7 +153,8 @@
             self.sidePanelController.centerPanel = mapController;
             break;
         case 1004:
-            
+            pzServerController = [[PZPCServerViewController alloc] init];
+            self.sidePanelController.centerPanel = pzServerController;
             break;
         case 1005:
             collectionListTableViewController = [[PZCollectionListTableViewController alloc]init];
