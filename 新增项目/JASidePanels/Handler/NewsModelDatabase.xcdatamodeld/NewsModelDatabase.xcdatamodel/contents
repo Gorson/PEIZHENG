@@ -33,9 +33,22 @@
         <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="PZUserInfo" representedClassName="PZUserInfo" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dorm" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pcnumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="realname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sex" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uname" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="PZNewsDetailData" positionX="160" positionY="192" width="128" height="240"/>
         <element name="PZNewsListData" positionX="160" positionY="192" width="128" height="165"/>
         <element name="PZNewsMainPictureData" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="PZUserInfo" positionX="160" positionY="192" width="128" height="195"/>
     </elements>
 </model>

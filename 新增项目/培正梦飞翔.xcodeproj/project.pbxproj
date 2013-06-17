@@ -224,9 +224,13 @@
 		457F9742174268AD001CC331 /* iphone背景图@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 457F9740174268AD001CC331 /* iphone背景图@2x.jpg */; };
 		45810372174BA8F7006300ED /* MaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4581036F174BA8F7006300ED /* MaskView.m */; };
 		45810373174BA8F7006300ED /* Quare4MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45810371174BA8F7006300ED /* Quare4MenuViewController.m */; };
-		45818E9A176EB3A8000EB06B /* FTAnimation+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45818E99176EB3A8000EB06B /* FTAnimation+UIView.m */; };
-		45818EA0176EB449000EB06B /* FTAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 45818E9F176EB449000EB06B /* FTAnimationManager.m */; };
-		45818EA4176EB472000EB06B /* FTUtils+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 45818EA3176EB472000EB06B /* FTUtils+NSObject.m */; };
+		45818EA8176EF0EE000EB06B /* PZPCUserLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 45818EA7176EF0EE000EB06B /* PZPCUserLoginRequest.m */; };
+		45818EAC176EFC42000EB06B /* PZUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 45818EAB176EFC42000EB06B /* PZUserInfo.m */; };
+		45818EB5176F14C2000EB06B /* FTAnimation+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45818EAF176F14C1000EB06B /* FTAnimation+UIView.m */; };
+		45818EB6176F14C2000EB06B /* FTAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 45818EB1176F14C1000EB06B /* FTAnimationManager.m */; };
+		45818EB7176F14C2000EB06B /* FTUtils+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 45818EB4176F14C1000EB06B /* FTUtils+NSObject.m */; };
+		45818EBA176F2CFD000EB06B /* PZUserFunctionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45818EB9176F2CFD000EB06B /* PZUserFunctionController.m */; };
+		45818EBD176F2D3A000EB06B /* PZEngineerFunctionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45818EBC176F2D3A000EB06B /* PZEngineerFunctionController.m */; };
 		458A8642176C836C002A531A /* PZ_Buttomleft.png in Resources */ = {isa = PBXBuildFile; fileRef = 458A863A176C836C002A531A /* PZ_Buttomleft.png */; };
 		458A8643176C836C002A531A /* PZ_Buttomleft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 458A863B176C836C002A531A /* PZ_Buttomleft@2x.png */; };
 		458A8644176C836C002A531A /* PZ_Buttomright.png in Resources */ = {isa = PBXBuildFile; fileRef = 458A863C176C836C002A531A /* PZ_Buttomright.png */; };
@@ -630,13 +634,22 @@
 		4581036F174BA8F7006300ED /* MaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaskView.m; sourceTree = "<group>"; };
 		45810370174BA8F7006300ED /* Quare4MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quare4MenuViewController.h; sourceTree = "<group>"; };
 		45810371174BA8F7006300ED /* Quare4MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quare4MenuViewController.m; sourceTree = "<group>"; };
-		45818E98176EB3A8000EB06B /* FTAnimation+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FTAnimation+UIView.h"; sourceTree = "<group>"; };
-		45818E99176EB3A8000EB06B /* FTAnimation+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTAnimation+UIView.m"; sourceTree = "<group>"; };
-		45818E9E176EB448000EB06B /* FTAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAnimationManager.h; sourceTree = "<group>"; };
-		45818E9F176EB449000EB06B /* FTAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAnimationManager.m; sourceTree = "<group>"; };
-		45818EA1176EB464000EB06B /* FTUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTUtils.h; sourceTree = "<group>"; };
-		45818EA2176EB472000EB06B /* FTUtils+NSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FTUtils+NSObject.h"; sourceTree = "<group>"; };
-		45818EA3176EB472000EB06B /* FTUtils+NSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTUtils+NSObject.m"; sourceTree = "<group>"; };
+		45818EA6176EF0EE000EB06B /* PZPCUserLoginRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PZPCUserLoginRequest.h; sourceTree = "<group>"; };
+		45818EA7176EF0EE000EB06B /* PZPCUserLoginRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZPCUserLoginRequest.m; sourceTree = "<group>"; };
+		45818EAA176EFC42000EB06B /* PZUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PZUserInfo.h; sourceTree = "<group>"; };
+		45818EAB176EFC42000EB06B /* PZUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZUserInfo.m; sourceTree = "<group>"; };
+		45818EAD176F14C1000EB06B /* FTAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAnimation.h; sourceTree = "<group>"; };
+		45818EAE176F14C1000EB06B /* FTAnimation+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FTAnimation+UIView.h"; sourceTree = "<group>"; };
+		45818EAF176F14C1000EB06B /* FTAnimation+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTAnimation+UIView.m"; sourceTree = "<group>"; };
+		45818EB0176F14C1000EB06B /* FTAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAnimationManager.h; sourceTree = "<group>"; };
+		45818EB1176F14C1000EB06B /* FTAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAnimationManager.m; sourceTree = "<group>"; };
+		45818EB2176F14C1000EB06B /* FTUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTUtils.h; sourceTree = "<group>"; };
+		45818EB3176F14C1000EB06B /* FTUtils+NSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FTUtils+NSObject.h"; sourceTree = "<group>"; };
+		45818EB4176F14C1000EB06B /* FTUtils+NSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTUtils+NSObject.m"; sourceTree = "<group>"; };
+		45818EB8176F2CFC000EB06B /* PZUserFunctionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PZUserFunctionController.h; sourceTree = "<group>"; };
+		45818EB9176F2CFD000EB06B /* PZUserFunctionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZUserFunctionController.m; sourceTree = "<group>"; };
+		45818EBB176F2D3A000EB06B /* PZEngineerFunctionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PZEngineerFunctionController.h; sourceTree = "<group>"; };
+		45818EBC176F2D3A000EB06B /* PZEngineerFunctionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZEngineerFunctionController.m; sourceTree = "<group>"; };
 		458A863A176C836C002A531A /* PZ_Buttomleft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PZ_Buttomleft.png; sourceTree = "<group>"; };
 		458A863B176C836C002A531A /* PZ_Buttomleft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PZ_Buttomleft@2x.png"; sourceTree = "<group>"; };
 		458A863C176C836C002A531A /* PZ_Buttomright.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PZ_Buttomright.png; sourceTree = "<group>"; };
@@ -1231,13 +1244,14 @@
 		4575B51D176C72C7005F3FFA /* GuideInterFaceVC */ = {
 			isa = PBXGroup;
 			children = (
-				45818EA2176EB472000EB06B /* FTUtils+NSObject.h */,
-				45818EA3176EB472000EB06B /* FTUtils+NSObject.m */,
-				45818EA1176EB464000EB06B /* FTUtils.h */,
-				45818E9E176EB448000EB06B /* FTAnimationManager.h */,
-				45818E9F176EB449000EB06B /* FTAnimationManager.m */,
-				45818E98176EB3A8000EB06B /* FTAnimation+UIView.h */,
-				45818E99176EB3A8000EB06B /* FTAnimation+UIView.m */,
+				45818EAD176F14C1000EB06B /* FTAnimation.h */,
+				45818EAE176F14C1000EB06B /* FTAnimation+UIView.h */,
+				45818EAF176F14C1000EB06B /* FTAnimation+UIView.m */,
+				45818EB0176F14C1000EB06B /* FTAnimationManager.h */,
+				45818EB1176F14C1000EB06B /* FTAnimationManager.m */,
+				45818EB2176F14C1000EB06B /* FTUtils.h */,
+				45818EB3176F14C1000EB06B /* FTUtils+NSObject.h */,
+				45818EB4176F14C1000EB06B /* FTUtils+NSObject.m */,
 				4575B51E176C72F5005F3FFA /* GuideInterfaceVC.h */,
 				4575B51F176C72F5005F3FFA /* GuideInterfaceVC.m */,
 			);
@@ -1490,6 +1504,7 @@
 		457DFB071704737400B3E87A /* PZLeftController */ = {
 			isa = PBXGroup;
 			children = (
+				45818EA5176EF0BC000EB06B /* request */,
 				2867824B175B3BAA00979E47 /* PZCollectionListTableViewController.h */,
 				2867824C175B3BAA00979E47 /* PZCollectionListTableViewController.m */,
 				4576877C1759EA94004FB655 /* RootViewController.h */,
@@ -1508,6 +1523,10 @@
 				45087EC6176EB11300CCEE0D /* PZPCServerViewController.m */,
 				45087ED1176ED0F800CCEE0D /* PZPCRegisterViewController.h */,
 				45087ED2176ED0F900CCEE0D /* PZPCRegisterViewController.m */,
+				45818EB8176F2CFC000EB06B /* PZUserFunctionController.h */,
+				45818EB9176F2CFD000EB06B /* PZUserFunctionController.m */,
+				45818EBB176F2D3A000EB06B /* PZEngineerFunctionController.h */,
+				45818EBC176F2D3A000EB06B /* PZEngineerFunctionController.m */,
 			);
 			name = PZLeftController;
 			sourceTree = "<group>";
@@ -1574,6 +1593,15 @@
 				458A8641176C836C002A531A /* PZ_Topright@2x.png */,
 			);
 			name = quare4Menu;
+			sourceTree = "<group>";
+		};
+		45818EA5176EF0BC000EB06B /* request */ = {
+			isa = PBXGroup;
+			children = (
+				45818EA6176EF0EE000EB06B /* PZPCUserLoginRequest.h */,
+				45818EA7176EF0EE000EB06B /* PZPCUserLoginRequest.m */,
+			);
+			name = request;
 			sourceTree = "<group>";
 		};
 		9561ACA2151286EE005889C6 = {
@@ -1707,6 +1735,8 @@
 				CE90249C17421DD600D3D40D /* PZNewsListData.m */,
 				CE90249817421DBE00D3D40D /* PZNewsDetailData.h */,
 				CE90249917421DBE00D3D40D /* PZNewsDetailData.m */,
+				45818EAA176EFC42000EB06B /* PZUserInfo.h */,
+				45818EAB176EFC42000EB06B /* PZUserInfo.m */,
 			);
 			name = coredata;
 			sourceTree = "<group>";
@@ -2039,14 +2069,15 @@
 				4576877B1759EA63004FB655 /* REMenuItemView.m in Sources */,
 				4576877E1759EA94004FB655 /* RootViewController.m in Sources */,
 				4575B520176C72F5005F3FFA /* GuideInterfaceVC.m in Sources */,
-<<<<<<< HEAD
-				45818E9A176EB3A8000EB06B /* FTAnimation+UIView.m in Sources */,
-				45818EA0176EB449000EB06B /* FTAnimationManager.m in Sources */,
-				45818EA4176EB472000EB06B /* FTUtils+NSObject.m in Sources */,
-=======
 				45087EC7176EB11300CCEE0D /* PZPCServerViewController.m in Sources */,
 				45087ED3176ED0FA00CCEE0D /* PZPCRegisterViewController.m in Sources */,
->>>>>>> 6a240cd238972f20f62c7943578604227af0a7f9
+				45818EA8176EF0EE000EB06B /* PZPCUserLoginRequest.m in Sources */,
+				45818EAC176EFC42000EB06B /* PZUserInfo.m in Sources */,
+				45818EB5176F14C2000EB06B /* FTAnimation+UIView.m in Sources */,
+				45818EB6176F14C2000EB06B /* FTAnimationManager.m in Sources */,
+				45818EB7176F14C2000EB06B /* FTUtils+NSObject.m in Sources */,
+				45818EBA176F2CFD000EB06B /* PZUserFunctionController.m in Sources */,
+				45818EBD176F2D3A000EB06B /* PZEngineerFunctionController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
