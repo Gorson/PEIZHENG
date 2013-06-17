@@ -39,6 +39,9 @@
 #import "PZLeftView.h"
 #import "RootViewController.h"
 #import "PZComViewController.h"
+#import "PZUserInfo.h"
+#import "PZUserFunctionController.h"
+#import "PZEngineerFunctionController.h"
 
 @interface JALeftViewController ()
 {
@@ -51,7 +54,8 @@
     PZPCServerViewController *pzServerController;
 
 }
-
+@property (nonatomic, retain)PZEngineerFunctionController *engineerFunctionController;
+@property (nonatomic, retain)PZUserFunctionController *userFunctionController;
 @property (nonatomic, weak) UILabel *label;
 @property (nonatomic, weak) UIButton *hide;
 @property (nonatomic, weak) UIButton *show;
@@ -63,7 +67,7 @@
 @end
 
 @implementation JALeftViewController
-
+\
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initWithUI];
@@ -153,10 +157,40 @@
             self.sidePanelController.centerPanel = mapController;
             break;
         case 1004:
-            pzServerController = [[PZPCServerViewController alloc] init];
-            self.sidePanelController.centerPanel = pzServerController;
+            if ([[PZUserInfo loadDataInDatabase] count]) {
+                NSArray * UserInfoArray = [PZUserInfo loadDataInDatabase];
+                PZUserInfo *userInfo = [UserInfoArray objectAtIndex:0];
+                if ([userInfo.identity isEqualToString:@"0"]) {
+                    PZUserFunctionController *user = [[PZUserFunctionController alloc]init];
+                    self.userFunctionController = user;
+                    self.sidePanelController.centerPanel = _userFunctionController;
+                }
+                else if ([userInfo.identity isEqualToString:@"1"])
+                {
+                    PZEngineerFunctionController *engineer = [[PZEngineerFunctionController alloc]init];
+                    self.engineerFunctionController = engineer;
+                    self.sidePanelController.centerPanel = _engineerFunctionController;
+                }
+                else
+                {
+                    DLog(@"其他人员..");
+                }
+            }
+            else
+            {
+                pzServerController = [[PZPCServerViewController alloc] init];
+                self.sidePanelController.centerPanel = pzServerController;
+            }
             break;
         case 1005:
+            collectionListTableViewController = [[PZCollectionListTableViewController alloc]init];
+            self.sidePanelController.centerPanel = collectionListTableViewController;
+            break;
+        case 1006:
+            collectionListTableViewController = [[PZCollectionListTableViewController alloc]init];
+            self.sidePanelController.centerPanel = collectionListTableViewController;
+            break;
+        case 1007:
             collectionListTableViewController = [[PZCollectionListTableViewController alloc]init];
             self.sidePanelController.centerPanel = collectionListTableViewController;
             break;

@@ -89,9 +89,7 @@
     //判断是否第一次启动界面
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]) {
         //第一次启动进入用户引导界面
-        guideinterface = [[GuideInterfaceVC alloc] init];
-        [self.window addSubview:guideinterface.view];
-
+        [NSThread detachNewThreadSelector:@selector(newTheardForGuideinterface) toTarget:self withObject:nil];
     }
     else
     {
@@ -100,6 +98,12 @@
     
     //    [self.window addSubview:q4mc.view];
     return YES;
+}
+
+- (void)newTheardForGuideinterface
+{
+    guideinterface = [[GuideInterfaceVC alloc] init];
+    [self.window addSubview:guideinterface.view];
 }
 
 /*

@@ -7,7 +7,12 @@
 //
 
 #import "PZPCServerViewController.h"
+<<<<<<< HEAD
 #import "PZPCRegisterViewController.h"
+=======
+#import "PZPCUserLoginRequest.h"
+
+>>>>>>> 01f4b906727af4eca5a760ee1433b45e5f3d7bc3
 
 @interface PZPCServerViewController ()
 {
@@ -19,7 +24,6 @@
     UITextField *_enterAccountField;
     UITextField *_enterPwdField;
     UIImageView *_backgoundImage;
-    
 }
 
 @end
@@ -76,15 +80,9 @@
     [_login setTitle:@"登陆" forState:UIControlStateNormal];
     _login.titleLabel.font=[UIFont boldSystemFontOfSize:13.0f];
     [_login setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_login addTarget:self action:@selector(pcUserLogin:) forControlEvents:UIControlEventTouchUpInside];
     [_login setBackgroundImage:[UIImage imageNamed:@"PZBackButton.png"]
                       forState:UIControlStateNormal];
-    [_login addTarget:self
-               action:@selector(_login:)
-     forControlEvents:UIControlEventTouchUpInside];
-    
-    _backgoundImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"weibo.png"]];
-    _backgoundImage.frame = CGRectMake(0.0f, 0.0f, 320.0f, IPHONE_HEIGHT);
-    [self.view addSubview:_backgoundImage];
     
     _enterAccountField = [[[UITextField alloc] init]autorelease];
     _enterAccountField.frame = CGRectMake(20, 60, 280, 40);
@@ -130,6 +128,15 @@
 {
     PZPCRegisterViewController *_pzPCServerController = [[[PZPCRegisterViewController alloc] init] autorelease];
     [self presentModalViewController:_pzPCServerController animated:YES];
+}
+
+- (void)pcUserLogin:(UIButton *)sender
+{
+    PZPCUserLoginRequest * loginRequest = [[PZPCUserLoginRequest alloc]init];
+    loginRequest.username = _enterAccountField.text;
+    loginRequest.password = _enterPwdField.text;
+    loginRequest.pcServerViewController = self;
+    [loginRequest PCUserLoginRequest];
 }
 
 @end
