@@ -23,12 +23,29 @@
  SOFTWARE.
  */
 
+#define theApp [PZAppDelegate sharedAppDelegate]    // 宏，单例对象
+#define theApplication [UIApplication sharedApplication]
 
 #import <UIKit/UIKit.h>
 
-@interface PZComViewController : UIViewController
+@class GuideInterfaceVC;
+
+
+@interface PZAppDelegate : UIResponder <UIApplicationDelegate>
 {
-    
+    NSManagedObjectContext *__managedObjectContext;
+    NSManagedObjectModel *__managedObjectModel;
+    NSPersistentStoreCoordinator *__persistentStoreCoordinator;
 }
-@property (nonatomic, retain) UIButton * backBtn;
+@property (strong, nonatomic) UIWindow *window;
+
+@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
+@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (nonatomic, retain) GuideInterfaceVC * guideinterface; // 第一次进入引导界面
+
+- (void)saveContext;
+- (NSURL *)applicationDocumentsDirectory;
+
++ (PZAppDelegate *)sharedAppDelegate;
 @end

@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PZImageDownloader.h"
 #import "UIImageView+WebCache.h"
 
 /*

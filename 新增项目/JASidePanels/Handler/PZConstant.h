@@ -22,7 +22,7 @@
 #define BKColor       [UIColor colorWithRed:62.0f / 255.0f green:58.0f / 255.0f blue:57.0f / 255.0f alpha:1.0f]    // 字体颜色
 #define REDColor       [UIColor colorWithRed:231.0f / 255.0f green:51.0f / 255.0f blue:110.0f / 255.0f alpha:1.0f]    // 价格颜色
 #define SeparateColor [UIColor colorWithPatternImage:[UIImage imageNamed:@"separateline.png"]]    // 分隔线颜色
-#define SetApp JAAppDelegate *app = (JAAppDelegate *)[[UIApplication sharedApplication] delegate];
+#define SetApp PZAppDelegate *app = (PZAppDelegate *)[[UIApplication sharedApplication] delegate];
 
 //判断设备是否IPHONE5
 #define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)

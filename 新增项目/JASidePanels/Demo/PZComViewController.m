@@ -26,10 +26,6 @@
 
 #import "PZComViewController.h"
 
-#import "JASidePanelController.h"
-#import "UIViewController+JASidePanel.h"
-#import "JARightViewController.h"
-#import "PZMainViewController.h"
 #import "ASIDownloadCache.h"
 
 #import "IMTWebView.h"
@@ -139,7 +135,6 @@
 - (void)backButtonPress
 {
 //    UIStoryboard *stryBoard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
-    [self.sidePanelController showLeftPanelAnimated:YES];
 }
 
 #pragma mark

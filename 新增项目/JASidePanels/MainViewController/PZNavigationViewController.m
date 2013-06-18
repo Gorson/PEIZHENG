@@ -23,7 +23,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     _headerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, IPHONE_WIDTH, 44.0f)];
-    _headerImageView.image = [UIImage imageNamed:@"PZNavigationBar.png"];
+    [_headerImageView setBackgroundColor:[UIColor colorWithRed:50.0/255.0 green:50.0/255.0 blue:50.0/255.0 alpha:1.0]];
     _headerImageView.userInteractionEnabled = YES;
     [self.view addSubview:_headerImageView];
     
@@ -78,6 +78,9 @@
         [self.navigationController popViewControllerAnimated:YES];
         [self dismissModalViewControllerAnimated:YES];
     }
+    
+}
+-(void)onConfirm:(UIButton *)sender{
     
 }
 

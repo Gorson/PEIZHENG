@@ -17,7 +17,6 @@
 
 @implementation PZMainNewsPictureRequest
 @synthesize elements = _elements;
-@synthesize mainViewController = _mainViewController;
 
 - (void)MainNewsPictureRequest
 {
@@ -61,7 +60,6 @@
 //            NewsMainPictureData *newsMainPictureDataModule = [[NewsMainPictureData alloc] initWithDictionary:newsMainPictureDataDict];
 //            [_elements addObject:newsMainPictureDataModule];
         }
-        [_mainViewController.newsItemArray addObjectsFromArray:_elements];
 
         [_elements removeAllObjects];
         [_elements release];

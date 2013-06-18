@@ -12,7 +12,6 @@
 #import "PZDetailRequest.h"
 #import "PZNewsListData.h"
 #import "UIImageView+WebCache.h"
-#import "JASidePanelController.h"
 
 @interface PZNewsDetailViewController ()<UIWebViewDelegate>
 {

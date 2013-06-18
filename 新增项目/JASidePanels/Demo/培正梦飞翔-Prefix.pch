@@ -14,9 +14,9 @@
 	#import <Foundation/Foundation.h>
 
 #import "PZConstant.h"
-#import "JAAppDelegate.h"
-#import "CustomActivityIndicatorView.h"
+#import "PZAppDelegate.h"
 #import "ASIHTTPRequest.h"
+#import "CustomActivityIndicatorView.h"
 #import "JSONKit.h"
 #import "BSJSONEncoder.h"
 #import "NSString+Additions.h"

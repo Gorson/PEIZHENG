@@ -34,7 +34,7 @@
         [self addSubview:headImageView];
         [imageView release];
         
-        AsynHeadImageView * headImage= [[AsynHeadImageView alloc] initWithFrame:CGRectMake(190.0f, 10.0f, 120.0f, 80.0f)];
+        UIImageView * headImage= [[UIImageView alloc] initWithFrame:CGRectMake(190.0f, 10.0f, 120.0f, 80.0f)];
         self.image = headImage;
         //获取一个随机整数范围在：[0,100)包括0，不包括100
         int xb = arc4random() % 21;

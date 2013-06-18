@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AsynHeadImageView.h"
+#import "UIImageView+WebCache.h"
 
 @interface PZNewsListTableCell : UITableViewCell
 
@@ -18,7 +18,7 @@
 @property (nonatomic, retain) UILabel *timeLabel;         //时间
 @property (nonatomic, retain) UIImageView *separateLineImageView;
 @property (nonatomic, retain) UIButton * inviteBtn;       //按钮
-@property (nonatomic,retain) AsynHeadImageView * image;   //异步图片请求
+@property (nonatomic,retain) UIImageView * image;   //异步图片请求
 
 - (void)adjusPZellFrame;
 
