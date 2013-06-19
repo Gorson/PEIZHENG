@@ -10,4 +10,9 @@
 
 @interface PZUserFunctionController : PZNavigationViewController
 
+@property (nonatomic, retain) UILabel *_userNameAndPassword;
+@property (nonatomic, retain) UILabel *_userRealnameAndSex;       
+@property (nonatomic, retain) UILabel *_userAreaAndRoom;
+@property (nonatomic, retain) UILabel *_userPhoneAndEmal;
+
 @end
