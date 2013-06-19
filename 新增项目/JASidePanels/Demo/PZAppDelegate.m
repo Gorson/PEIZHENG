@@ -28,7 +28,7 @@
 
 #import "PZNewsListTableViewController.h"
 #import "MMDrawerController.h"
-#import "MMExampleCenterTableViewController.h"
+#import "PZMainViewController.h"
 #import "MMExampleLeftSideDrawerViewController.h"
 #import "MMExampleRightSideDrawerViewController.h"
 #import "MMDrawerVisualState.h"
@@ -53,16 +53,14 @@
 {
     UIViewController * leftSideDrawerViewController = [[MMExampleLeftSideDrawerViewController alloc] init];
     
-    UIViewController * centerViewController = [[MMExampleCenterTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
-    
-    UIViewController * rightSideDrawerViewController = [[MMExampleRightSideDrawerViewController alloc] init];
-    
-    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:centerViewController];
+    UIViewController * centerViewController = [[PZMainViewController alloc] init];
+    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:centerViewController];
+//    UIViewController * rightSideDrawerViewController = [[MMExampleRightSideDrawerViewController alloc] init];
     
     MMDrawerController * drawerController = [[MMDrawerController alloc]
-                                             initWithCenterViewController:navigationController
+                                             initWithCenterViewController:nav
                                              leftDrawerViewController:leftSideDrawerViewController
-                                             rightDrawerViewController:rightSideDrawerViewController];
+                                             rightDrawerViewController:nil];
     [drawerController setMaximumRightDrawerWidth:200.0];
     [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];

@@ -26,6 +26,8 @@
 #import "MMLogoView.h"
 
 #import "PZPCServerViewController.h"
+#import "PZCollectionListTableViewController.h"
+#import "PZMainViewController.h"
 #import "PZMapController.h"
 
 @interface MMExampleSideDrawerViewController ()
@@ -325,7 +327,15 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.row) {
         case 0:
+        {
+            PZMainViewController *mainViewController = [[PZMainViewController alloc]init];
+            UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:mainViewController];
             
+            [self.mm_drawerController
+             setCenterViewController:nav
+             withCloseAnimation:YES
+             completion:nil];
+        }
             break;
         case 1:
             
@@ -352,7 +362,13 @@
         }
             break;
         case 5:
-            
+        {
+            PZCollectionListTableViewController *collectionListViewController = [[PZCollectionListTableViewController alloc]init];
+            [self.mm_drawerController
+             setCenterViewController:collectionListViewController
+             withCloseAnimation:YES
+             completion:nil];
+        }
             break;
         case 6:
             

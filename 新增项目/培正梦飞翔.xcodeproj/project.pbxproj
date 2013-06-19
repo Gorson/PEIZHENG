@@ -132,6 +132,10 @@
 		4578FDA7172ED3F8003FCE36 /* NSDictionary+BSJSONAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4578FDA0172ED3F8003FCE36 /* NSDictionary+BSJSONAdditions.m */; };
 		4578FDA8172ED3F8003FCE36 /* NSScanner+BSJSONAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4578FDA2172ED3F8003FCE36 /* NSScanner+BSJSONAdditions.m */; };
 		4578FDA9172ED3F8003FCE36 /* NSString+BSJSONAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4578FDA4172ED3F8003FCE36 /* NSString+BSJSONAdditions.m */; };
+		45792AE117713CBB008ABED6 /* PZMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45792AE017713CBB008ABED6 /* PZMainViewController.m */; };
+		45792AE417713FDC008ABED6 /* PZMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45792AE317713FDC008ABED6 /* PZMainView.m */; };
+		45792AE9177168D4008ABED6 /* baiduMainview.png in Resources */ = {isa = PBXBuildFile; fileRef = 45792AE7177168D4008ABED6 /* baiduMainview.png */; };
+		45792AEA177168D4008ABED6 /* baiduMainview@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45792AE8177168D4008ABED6 /* baiduMainview@2x.png */; };
 		4579526A1752672700BD75FB /* mapOfPeiZheng.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 457952691752672700BD75FB /* mapOfPeiZheng.jpg */; };
 		4579526C1752673800BD75FB /* mapOfPeiZheng@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4579526B1752673800BD75FB /* mapOfPeiZheng@2x.jpg */; };
 		4579531217413050007190F5 /* AOImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 457952FD17413050007190F5 /* AOImageView.m */; };
@@ -180,11 +184,12 @@
 		457AF60E177037D400F300BD /* MMSideDrawerSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 457AF600177037D300F300BD /* MMSideDrawerSectionHeaderView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		457AF60F177037D400F300BD /* MMSideDrawerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 457AF602177037D400F300BD /* MMSideDrawerTableViewCell.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		457AF610177037D400F300BD /* MMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 457AF604177037D400F300BD /* MMTableViewCell.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		457AF611177037D400F300BD /* PZPubilcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457AF606177037D400F300BD /* PZPubilcViewController.m */; };
 		457AF6151770805E00F300BD /* PZNewsItemsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 457AF6141770805E00F300BD /* PZNewsItemsCell.m */; };
 		457AF61817709AF700F300BD /* PZMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457AF61717709AF300F300BD /* PZMapController.m */; };
 		457AF61A17709B3100F300BD /* MRZoomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 457AF61917709B2E00F300BD /* MRZoomScrollView.m */; };
 		457D795B173AB25B0018D81F /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 457D795A173AB25B0018D81F /* libxml2.2.dylib */; };
+		457DC71F1771A9470080FADE /* ComboBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 457DC71E1771A9470080FADE /* ComboBoxView.m */; };
+		457DC7221771D4180080FADE /* PZNewsMainList.m in Sources */ = {isa = PBXBuildFile; fileRef = 457DC7211771D4170080FADE /* PZNewsMainList.m */; };
 		45810372174BA8F7006300ED /* MaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4581036F174BA8F7006300ED /* MaskView.m */; };
 		45810373174BA8F7006300ED /* Quare4MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45810371174BA8F7006300ED /* Quare4MenuViewController.m */; };
 		45818EAC176EFC42000EB06B /* PZUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 45818EAB176EFC42000EB06B /* PZUserInfo.m */; };
@@ -215,7 +220,7 @@
 		CE968B9B1737E1020076D502 /* PZBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE968B991737E1020076D502 /* PZBackButton@2x.png */; };
 		CE968B9E1737E27E0076D502 /* PZKeepPage.png in Resources */ = {isa = PBXBuildFile; fileRef = CE968B9C1737E27E0076D502 /* PZKeepPage.png */; };
 		CE968B9F1737E27E0076D502 /* PZKeepPage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE968B9D1737E27E0076D502 /* PZKeepPage@2x.png */; };
-		CE968BA21737E6ED0076D502 /* PZMainNewsPictureRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CE968BA11737E6ED0076D502 /* PZMainNewsPictureRequest.m */; };
+		CE968BA21737E6ED0076D502 /* PZMainRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CE968BA11737E6ED0076D502 /* PZMainRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -403,6 +408,12 @@
 		4578FDA2172ED3F8003FCE36 /* NSScanner+BSJSONAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSScanner+BSJSONAdditions.m"; sourceTree = "<group>"; };
 		4578FDA3172ED3F8003FCE36 /* NSString+BSJSONAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BSJSONAdditions.h"; sourceTree = "<group>"; };
 		4578FDA4172ED3F8003FCE36 /* NSString+BSJSONAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BSJSONAdditions.m"; sourceTree = "<group>"; };
+		45792ADF17713CBB008ABED6 /* PZMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PZMainViewController.h; path = MainViewController/PZMainViewController.h; sourceTree = "<group>"; };
+		45792AE017713CBB008ABED6 /* PZMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PZMainViewController.m; path = MainViewController/PZMainViewController.m; sourceTree = "<group>"; };
+		45792AE217713FDC008ABED6 /* PZMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PZMainView.h; sourceTree = "<group>"; };
+		45792AE317713FDC008ABED6 /* PZMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZMainView.m; sourceTree = "<group>"; };
+		45792AE7177168D4008ABED6 /* baiduMainview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = baiduMainview.png; path = AppImage/baiduMainview.png; sourceTree = "<group>"; };
+		45792AE8177168D4008ABED6 /* baiduMainview@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "baiduMainview@2x.png"; path = "AppImage/baiduMainview@2x.png"; sourceTree = "<group>"; };
 		457952691752672700BD75FB /* mapOfPeiZheng.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mapOfPeiZheng.jpg; sourceTree = "<group>"; };
 		4579526B1752673800BD75FB /* mapOfPeiZheng@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mapOfPeiZheng@2x.jpg"; sourceTree = "<group>"; };
 		457952FC17413050007190F5 /* AOImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOImageView.h; sourceTree = "<group>"; };
@@ -504,8 +515,6 @@
 		457AF602177037D400F300BD /* MMSideDrawerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMSideDrawerTableViewCell.m; path = Demo/MMSideDrawerTableViewCell.m; sourceTree = "<group>"; };
 		457AF603177037D400F300BD /* MMTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMTableViewCell.h; path = Demo/MMTableViewCell.h; sourceTree = "<group>"; };
 		457AF604177037D400F300BD /* MMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMTableViewCell.m; path = Demo/MMTableViewCell.m; sourceTree = "<group>"; };
-		457AF605177037D400F300BD /* PZPubilcViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PZPubilcViewController.h; path = Demo/PZPubilcViewController.h; sourceTree = "<group>"; };
-		457AF606177037D400F300BD /* PZPubilcViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PZPubilcViewController.m; path = Demo/PZPubilcViewController.m; sourceTree = "<group>"; };
 		457AF6131770805D00F300BD /* PZNewsItemsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PZNewsItemsCell.h; sourceTree = "<group>"; };
 		457AF6141770805E00F300BD /* PZNewsItemsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZNewsItemsCell.m; sourceTree = "<group>"; };
 		457AF61617709AF100F300BD /* PZMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PZMapController.h; path = PZMap/PZMapController.h; sourceTree = "<group>"; };
@@ -513,6 +522,10 @@
 		457AF61917709B2E00F300BD /* MRZoomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRZoomScrollView.m; sourceTree = "<group>"; };
 		457AF61B17709B3F00F300BD /* MRZoomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRZoomScrollView.h; path = AppImage/MRZoomScrollView.h; sourceTree = "<group>"; };
 		457D795A173AB25B0018D81F /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		457DC71D1771A9470080FADE /* ComboBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComboBoxView.h; sourceTree = "<group>"; };
+		457DC71E1771A9470080FADE /* ComboBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComboBoxView.m; sourceTree = "<group>"; };
+		457DC7201771D4170080FADE /* PZNewsMainList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PZNewsMainList.h; sourceTree = "<group>"; };
+		457DC7211771D4170080FADE /* PZNewsMainList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZNewsMainList.m; sourceTree = "<group>"; };
 		4581036E174BA8F7006300ED /* MaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaskView.h; sourceTree = "<group>"; };
 		4581036F174BA8F7006300ED /* MaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaskView.m; sourceTree = "<group>"; };
 		45810370174BA8F7006300ED /* Quare4MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quare4MenuViewController.h; sourceTree = "<group>"; };
@@ -557,8 +570,8 @@
 		CE968B991737E1020076D502 /* PZBackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PZBackButton@2x.png"; path = "AppImage/PZBackButton@2x.png"; sourceTree = "<group>"; };
 		CE968B9C1737E27E0076D502 /* PZKeepPage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PZKeepPage.png; path = AppImage/PZKeepPage.png; sourceTree = "<group>"; };
 		CE968B9D1737E27E0076D502 /* PZKeepPage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PZKeepPage@2x.png"; path = "AppImage/PZKeepPage@2x.png"; sourceTree = "<group>"; };
-		CE968BA01737E6EC0076D502 /* PZMainNewsPictureRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PZMainNewsPictureRequest.h; sourceTree = "<group>"; };
-		CE968BA11737E6ED0076D502 /* PZMainNewsPictureRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZMainNewsPictureRequest.m; sourceTree = "<group>"; };
+		CE968BA01737E6EC0076D502 /* PZMainRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PZMainRequest.h; sourceTree = "<group>"; };
+		CE968BA11737E6ED0076D502 /* PZMainRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZMainRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -626,6 +639,7 @@
 		4571566D1707119C00393580 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				457DC71C1771A9390080FADE /* ComboBox */,
 				457AF5E41770372600F300BD /* MMDrawerController */,
 				4575B51D176C72C7005F3FFA /* GuideInterFaceVC */,
 				4576876F1759EA41004FB655 /* REMenu */,
@@ -803,8 +817,8 @@
 				CE968B871737CC080076D502 /* PZNewsListRequest.m */,
 				CE968B831737CBDC0076D502 /* PZDetailRequest.h */,
 				CE968B841737CBDC0076D502 /* PZDetailRequest.m */,
-				CE968BA01737E6EC0076D502 /* PZMainNewsPictureRequest.h */,
-				CE968BA11737E6ED0076D502 /* PZMainNewsPictureRequest.m */,
+				CE968BA01737E6EC0076D502 /* PZMainRequest.h */,
+				CE968BA11737E6ED0076D502 /* PZMainRequest.m */,
 			);
 			path = PeizhengRequest;
 			sourceTree = "<group>";
@@ -874,6 +888,8 @@
 		457683341706CAE9009BD663 /* AppImage */ = {
 			isa = PBXGroup;
 			children = (
+				45792AE7177168D4008ABED6 /* baiduMainview.png */,
+				45792AE8177168D4008ABED6 /* baiduMainview@2x.png */,
 				458A864A176CAD97002A531A /* rubbish.png */,
 				458A864B176CAD97002A531A /* rubbish@2x.png */,
 				CE8F0C9B17391DFE00BFD3C7 /* PZ_Wrong.png */,
@@ -992,6 +1008,58 @@
 			path = Utility/BSJSONAdditions;
 			sourceTree = "<group>";
 		};
+		45792AEB17718DEB008ABED6 /* 培正地图 */ = {
+			isa = PBXGroup;
+			children = (
+				457AF61B17709B3F00F300BD /* MRZoomScrollView.h */,
+				457AF61917709B2E00F300BD /* MRZoomScrollView.m */,
+				457AF61617709AF100F300BD /* PZMapController.h */,
+				457AF61717709AF300F300BD /* PZMapController.m */,
+			);
+			name = "培正地图";
+			sourceTree = "<group>";
+		};
+		45792AEC17718E62008ABED6 /* PZSideController */ = {
+			isa = PBXGroup;
+			children = (
+				457AF5FB177037D300F300BD /* MMExampleSideDrawerViewController.h */,
+				457AF5FC177037D300F300BD /* MMExampleSideDrawerViewController.m */,
+				457AF5F7177037D200F300BD /* MMExampleLeftSideDrawerViewController.h */,
+				457AF5F8177037D200F300BD /* MMExampleLeftSideDrawerViewController.m */,
+				457AF5F9177037D300F300BD /* MMExampleRightSideDrawerViewController.h */,
+				457AF5FA177037D300F300BD /* MMExampleRightSideDrawerViewController.m */,
+			);
+			name = PZSideController;
+			sourceTree = "<group>";
+		};
+		45792AED177190B0008ABED6 /* 收藏夹 */ = {
+			isa = PBXGroup;
+			children = (
+				457AF5911770146800F300BD /* PZCollectionListTableViewController.h */,
+				457AF5921770146800F300BD /* PZCollectionListTableViewController.m */,
+			);
+			name = "收藏夹";
+			sourceTree = "<group>";
+		};
+		45792AEE177190FE008ABED6 /* 主页 */ = {
+			isa = PBXGroup;
+			children = (
+				457AF5F3177037D200F300BD /* MMExampleCenterTableViewController.h */,
+				457AF5F4177037D200F300BD /* MMExampleCenterTableViewController.m */,
+				457AF5F5177037D200F300BD /* MMExampleDrawerVisualStateManager.h */,
+				457AF5F6177037D200F300BD /* MMExampleDrawerVisualStateManager.m */,
+				45747F34173164E700D5D005 /* PZNavigationViewController.h */,
+				45747F35173164E700D5D005 /* PZNavigationViewController.m */,
+				45747F2E1731628800D5D005 /* PZNewsListTableViewController.h */,
+				45747F2F1731628800D5D005 /* PZNewsListTableViewController.m */,
+				457445F3173624EC00444BD5 /* PZNewsDetailViewController.h */,
+				CE968B921737D2F60076D502 /* PZNewsDetailViewController.m */,
+				45792ADF17713CBB008ABED6 /* PZMainViewController.h */,
+				45792AE017713CBB008ABED6 /* PZMainViewController.m */,
+			);
+			name = "主页";
+			sourceTree = "<group>";
+		};
 		457952FB17413050007190F5 /* AOImageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1055,8 +1123,12 @@
 		457AF612177037DC00F300BD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				457AF5FF177037D300F300BD /* MMSideDrawerSectionHeaderView.h */,
+				457AF600177037D300F300BD /* MMSideDrawerSectionHeaderView.m */,
 				457AF5FD177037D300F300BD /* MMLogoView.h */,
 				457AF5FE177037D300F300BD /* MMLogoView.m */,
+				45792AE217713FDC008ABED6 /* PZMainView.h */,
+				45792AE317713FDC008ABED6 /* PZMainView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1072,6 +1144,15 @@
 				457AF5BB1770176300F300BD /* XPathQuery.m */,
 			);
 			name = Hpple;
+			sourceTree = "<group>";
+		};
+		457DC71C1771A9390080FADE /* ComboBox */ = {
+			isa = PBXGroup;
+			children = (
+				457DC71D1771A9470080FADE /* ComboBoxView.h */,
+				457DC71E1771A9470080FADE /* ComboBoxView.m */,
+			);
+			name = ComboBox;
 			sourceTree = "<group>";
 		};
 		457DFB061704735600B3E87A /* PZClass */ = {
@@ -1094,8 +1175,6 @@
 				457AF5A91770155100F300BD /* PZPCServerViewController.m */,
 				457AF5AC1770155100F300BD /* PZUserFunctionController.h */,
 				457AF5AD1770155100F300BD /* PZUserFunctionController.m */,
-				457AF5911770146800F300BD /* PZCollectionListTableViewController.h */,
-				457AF5921770146800F300BD /* PZCollectionListTableViewController.m */,
 				45818EA5176EF0BC000EB06B /* request */,
 				457AA7C5170B3A8300D952DD /* LeftView */,
 				45747F291731624200D5D005 /* PZNewStudentController.h */,
@@ -1108,32 +1187,12 @@
 		457DFB0A170482F200B3E87A /* PZCenterViewController */ = {
 			isa = PBXGroup;
 			children = (
+				45792AEE177190FE008ABED6 /* 主页 */,
+				45792AED177190B0008ABED6 /* 收藏夹 */,
+				45792AEB17718DEB008ABED6 /* 培正地图 */,
+				45792AEC17718E62008ABED6 /* PZSideController */,
 				45747F371731674E00D5D005 /* cell */,
 				457AF612177037DC00F300BD /* View */,
-				457AF5F3177037D200F300BD /* MMExampleCenterTableViewController.h */,
-				457AF5F4177037D200F300BD /* MMExampleCenterTableViewController.m */,
-				457AF5F5177037D200F300BD /* MMExampleDrawerVisualStateManager.h */,
-				457AF5F6177037D200F300BD /* MMExampleDrawerVisualStateManager.m */,
-				457AF5F7177037D200F300BD /* MMExampleLeftSideDrawerViewController.h */,
-				457AF5F8177037D200F300BD /* MMExampleLeftSideDrawerViewController.m */,
-				457AF5F9177037D300F300BD /* MMExampleRightSideDrawerViewController.h */,
-				457AF5FA177037D300F300BD /* MMExampleRightSideDrawerViewController.m */,
-				457AF5FB177037D300F300BD /* MMExampleSideDrawerViewController.h */,
-				457AF5FC177037D300F300BD /* MMExampleSideDrawerViewController.m */,
-				457AF5FF177037D300F300BD /* MMSideDrawerSectionHeaderView.h */,
-				457AF600177037D300F300BD /* MMSideDrawerSectionHeaderView.m */,
-				457AF605177037D400F300BD /* PZPubilcViewController.h */,
-				457AF606177037D400F300BD /* PZPubilcViewController.m */,
-				457AF61B17709B3F00F300BD /* MRZoomScrollView.h */,
-				457AF61917709B2E00F300BD /* MRZoomScrollView.m */,
-				457AF61617709AF100F300BD /* PZMapController.h */,
-				457AF61717709AF300F300BD /* PZMapController.m */,
-				45747F34173164E700D5D005 /* PZNavigationViewController.h */,
-				45747F35173164E700D5D005 /* PZNavigationViewController.m */,
-				45747F2E1731628800D5D005 /* PZNewsListTableViewController.h */,
-				45747F2F1731628800D5D005 /* PZNewsListTableViewController.m */,
-				457445F3173624EC00444BD5 /* PZNewsDetailViewController.h */,
-				CE968B921737D2F60076D502 /* PZNewsDetailViewController.m */,
 			);
 			name = PZCenterViewController;
 			sourceTree = "<group>";
@@ -1274,6 +1333,8 @@
 				CE90249F17421DE900D3D40D /* PZNewsMainPictureData.m */,
 				CE90249B17421DD600D3D40D /* PZNewsListData.h */,
 				CE90249C17421DD600D3D40D /* PZNewsListData.m */,
+				457DC7201771D4170080FADE /* PZNewsMainList.h */,
+				457DC7211771D4170080FADE /* PZNewsMainList.m */,
 				CE90249817421DBE00D3D40D /* PZNewsDetailData.h */,
 				CE90249917421DBE00D3D40D /* PZNewsDetailData.m */,
 				45818EAA176EFC42000EB06B /* PZUserInfo.h */,
@@ -1409,6 +1470,8 @@
 				4579526C1752673800BD75FB /* mapOfPeiZheng@2x.jpg in Resources */,
 				458A864C176CAD97002A531A /* rubbish.png in Resources */,
 				458A864D176CAD97002A531A /* rubbish@2x.png in Resources */,
+				45792AE9177168D4008ABED6 /* baiduMainview.png in Resources */,
+				45792AEA177168D4008ABED6 /* baiduMainview@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1466,7 +1529,7 @@
 				CE968B851737CBDC0076D502 /* PZDetailRequest.m in Sources */,
 				CE968B881737CC080076D502 /* PZNewsListRequest.m in Sources */,
 				CE968B931737D2F60076D502 /* PZNewsDetailViewController.m in Sources */,
-				CE968BA21737E6ED0076D502 /* PZMainNewsPictureRequest.m in Sources */,
+				CE968BA21737E6ED0076D502 /* PZMainRequest.m in Sources */,
 				CE8F0C9617391C6F00BFD3C7 /* BDKNotifyHUD.m in Sources */,
 				CE8F0CA4173925A600BFD3C7 /* MLNavigationController.m in Sources */,
 				CE8F0CA5173925A600BFD3C7 /* MLScrollView.m in Sources */,
@@ -1528,10 +1591,13 @@
 				457AF60E177037D400F300BD /* MMSideDrawerSectionHeaderView.m in Sources */,
 				457AF60F177037D400F300BD /* MMSideDrawerTableViewCell.m in Sources */,
 				457AF610177037D400F300BD /* MMTableViewCell.m in Sources */,
-				457AF611177037D400F300BD /* PZPubilcViewController.m in Sources */,
 				457AF6151770805E00F300BD /* PZNewsItemsCell.m in Sources */,
 				457AF61817709AF700F300BD /* PZMapController.m in Sources */,
 				457AF61A17709B3100F300BD /* MRZoomScrollView.m in Sources */,
+				45792AE117713CBB008ABED6 /* PZMainViewController.m in Sources */,
+				45792AE417713FDC008ABED6 /* PZMainView.m in Sources */,
+				457DC71F1771A9470080FADE /* ComboBoxView.m in Sources */,
+				457DC7221771D4180080FADE /* PZNewsMainList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

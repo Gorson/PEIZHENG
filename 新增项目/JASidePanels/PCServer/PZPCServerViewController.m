@@ -94,6 +94,7 @@
     _enterPwdField.frame = CGRectMake(20, 120, 280, 40);
     _enterPwdField.borderStyle = UITextBorderStyleRoundedRect;
     _enterPwdField.placeholder = @"请输入密码";
+    _enterPwdField.keyboardType = UIKeyboardTypeNamePhonePad;
     _enterPwdField.secureTextEntry = YES;
     _enterPwdField.textAlignment = UITextAlignmentCenter;
     _enterPwdField.delegate = self;

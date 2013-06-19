@@ -6,21 +6,25 @@
 //
 //
 
-#import "PZMainNewsPictureRequest.h"
+#import "PZMainRequest.h"
+#import "PZNewsMainList.h"
 
-@interface PZMainNewsPictureRequest()
-
+@interface PZMainRequest()
+{
+    NSInteger _startIndex;                                         // 页面数量
+}
 @property (strong, nonatomic) BDKNotifyHUD *notify;
 @property (strong, nonatomic) NSString *imageName;
 @property (strong, nonatomic) NSString *notificationText;
 @end
 
-@implementation PZMainNewsPictureRequest
+@implementation PZMainRequest
 @synthesize elements = _elements;
+@synthesize mainViewController = _mainViewController;
 
-- (void)MainNewsPictureRequest
+- (void)MainNewsRequest
 {
-    [self startRequest:@"252"];
+    [self startRequest:PeiZhengToday];
 }
 /*
  初始化方法
@@ -29,7 +33,7 @@
 {
     if (self = [super init])
     {
-        
+        _elements = [[NSMutableArray array]retain];
     }
     return self;
 }
@@ -38,7 +42,18 @@
 // 开始请求
 -(void)startRequest:(NSString *)catid
 {
-    NSString *strURL = [[NSString alloc]initWithFormat:@"http://www.peizheng.cn/mobile/index.php?interfaceid=0102&page=1&limit=5&catid=%@&cname=dfly&cpwd=123456",catid];
+    int i = 0;
+    if ([_mainViewController.comboBoxDatasource count]%12 > 0) {
+        i = 2; // 最后一页不够整除12时
+    }
+    else
+    {
+        i = 1;
+    }
+    _startIndex = [_mainViewController.comboBoxDatasource count]/12 + i;
+    NSString * p = [[NSString alloc]initWithFormat:@"%d",_startIndex];
+    
+    NSString *strURL = [[NSString alloc]initWithFormat:@"http://www.peizheng.cn/mobile/index.php?interfaceid=0102&page=%@&limit=12&catid=%@&cname=dfly&cpwd=123456",p,catid];
     NSURL *url = [NSURL URLWithString:strURL];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request setDelegate:self];
@@ -51,16 +66,18 @@
     NSData *data  = [request responseData];
     NSDictionary *resDict = [NSJSONSerialization
                              JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-    DLog(@"resDict : %@",resDict);
     if ([[resDict valueForKey:@"hasdata"]isEqualToString:@"1"])
     {
         NSArray * dataContents =[resDict valueForKey:@"newsHead"];
-        for (NSDictionary *newsMainPictureDataDict in dataContents)
+        for (NSDictionary *newsDataDict in dataContents)
         {
-//            NewsMainPictureData *newsMainPictureDataModule = [[NewsMainPictureData alloc] initWithDictionary:newsMainPictureDataDict];
-//            [_elements addObject:newsMainPictureDataModule];
+            PZNewsMainList * newsListData = [[PZNewsMainList alloc]init];
+            newsListData.newsId = [newsDataDict valueForKey:@"newsid"];
+            newsListData.title = [newsDataDict valueForKey:@"title"];
+            [_elements addObject:newsListData];
         }
-
+        [_mainViewController.comboBoxDatasource addObjectsFromArray:_elements];
+        [_mainViewController comboBoxAppear];
         [_elements removeAllObjects];
         [_elements release];
         

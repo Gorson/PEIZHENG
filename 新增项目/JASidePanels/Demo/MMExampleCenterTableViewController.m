@@ -26,7 +26,7 @@
 #import "MMLogoView.h"
 #import "MMCenterTableViewCell.h"
 #import "MMExampleLeftSideDrawerViewController.h"
-#import "MMExampleRightSideDrawerViewController.h"
+//#import "MMExampleRightSideDrawerViewController.h"
 #import "PZNewsListTableViewController.h"
 
 #import <QuartzCore/QuartzCore.h>
@@ -332,9 +332,9 @@ typedef NS_ENUM(NSInteger, MMCenterViewControllerSection){
                     
                 }
                 else if(drawerSide == MMDrawerSideRight){
-                    UIViewController * vc = [[MMExampleRightSideDrawerViewController alloc] init];
-                    [self.mm_drawerController setRightDrawerViewController:vc];
-                    [self setupRightMenuButton];
+//                    UIViewController * vc = [[MMExampleRightSideDrawerViewController alloc] init];
+//                    [self.mm_drawerController setRightDrawerViewController:vc];
+//                    [self setupRightMenuButton];
                 }
                 [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
                 [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];

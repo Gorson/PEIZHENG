@@ -17,7 +17,7 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-// （朱欣）这里写的是右拉操作左面视图占总视图的多少
+// （朱欣）这里写的是右拉操作右面视图占总视图的多少
 
 #import "MMExampleRightSideDrawerViewController.h"
 

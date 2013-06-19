@@ -328,7 +328,7 @@
             _newsDetailViewController = [[PZNewsDetailViewController alloc]init];
             PZNewsListData * newsData = [_newsItemArray objectAtIndex:indexPath.row];
             _newsDetailViewController.newsid = [NSString stringWithFormat:@"%f",newsData.newsidNum];
-            [theApp.window.rootViewController presentModalViewController:_newsDetailViewController animated:YES];
+            [self.navigationController pushViewController:_newsDetailViewController animated:YES];
         }    }
     else {
         
@@ -408,7 +408,7 @@
  返回
  */
 - (void)onBack:(UIButton *)sender {
-    [self dismissModalViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event

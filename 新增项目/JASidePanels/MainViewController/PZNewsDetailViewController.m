@@ -176,7 +176,7 @@
  返回
  */
 - (void)onBack:(UIButton *)sender {
-    [self dismissModalViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

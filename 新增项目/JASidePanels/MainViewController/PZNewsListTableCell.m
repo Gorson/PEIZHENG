@@ -34,23 +34,23 @@
         [self addSubview:headImageView];
         [imageView release];
         
-        UIImageView * headImage= [[UIImageView alloc] initWithFrame:CGRectMake(190.0f, 10.0f, 120.0f, 80.0f)];
-        self.image = headImage;
-        //获取一个随机整数范围在：[0,100)包括0，不包括100
-        int xb = arc4random() % 21;
-        
-        if (self.image == NULL) {
-            self.image.image = [UIImage imageNamed:[NSString stringWithFormat:@"tb%d.jpg",xb]];
-        }
-        headImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"tb%d.jpg",xb]];
-        
-        [headImage setBackgroundColor:[UIColor clearColor]];
-        headImage.alpha = 0.0f;
-        [self addSubview:headImage];
-        [UIView animateWithDuration:0.5 animations:^{
-            headImage.alpha = 1.0f;
-        }];
-        [headImage release];
+//        UIImageView * headImage= [[UIImageView alloc] initWithFrame:CGRectMake(190.0f, 10.0f, 120.0f, 80.0f)];
+//        self.image = headImage;
+//        //获取一个随机整数范围在：[0,100)包括0，不包括100
+//        int xb = arc4random() % 21;
+//        
+//        if (self.image == NULL) {
+//            self.image.image = [UIImage imageNamed:[NSString stringWithFormat:@"tb%d.jpg",xb]];
+//        }
+//        headImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"tb%d.jpg",xb]];
+//        
+//        [headImage setBackgroundColor:[UIColor clearColor]];
+//        headImage.alpha = 0.0f;
+//        [self addSubview:headImage];
+//        [UIView animateWithDuration:0.5 animations:^{
+//            headImage.alpha = 1.0f;
+//        }];
+//        [headImage release];
         
         UIButton *userButton = [self buttonWithFrame:CGRectMake(245, 10, 65, 32)];
         self.inviteBtn = userButton;
