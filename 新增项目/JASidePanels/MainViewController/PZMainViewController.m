@@ -18,11 +18,14 @@
     ComboBoxView *_comboBox;
     PZMainRequest *_mainRequest;
     PZMainView *mainView;
+    UIButton * topOfView;
 }
 @end
 
 @implementation PZMainViewController
 @synthesize comboBoxDatasource = _comboBoxDatasource;
+@synthesize catId;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -61,12 +64,20 @@
     }
     [self.view addSubview:mainView];
     
+    topOfView = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, IPHONE_WIDTH, IPHONE_HEIGHT - 20.0f)];
+    [topOfView setBackgroundColor:[UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5]];
+    [topOfView addTarget:self action:@selector(removeTopNews) forControlEvents:UIControlEventAllEvents];
+    UIButton * newsButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [newsButton setFrame:CGRectMake(0.0f, IPHONE_HEIGHT/3, 320.0f, IPHONE_HEIGHT/3)];
+    [newsButton setBackgroundColor:[UIColor colorWithRed:1 green:0.5 blue:0.5 alpha:0.5]];
+    [newsButton addTarget:self action:@selector(removeTopNews) forControlEvents:UIControlEventTouchUpInside];
+    [topOfView addSubview:newsButton];
 }
 
 - (void)initWithData
 {
     _comboBoxDatasource = [[NSMutableArray array] retain];
-    [self sendRequest];
+    [self sendRequest:PeiZhengToday];
 }
 
 - (void)comboBoxAppear
@@ -90,43 +101,61 @@
 //	[_comboBoxDatasource release];
 }
 
-- (void)sendRequest
+- (void)sendRequest:(NSString *)catid
 {
     _mainRequest = [[PZMainRequest alloc]init];
     _mainRequest.mainViewController = self;
-    [_mainRequest MainNewsRequest];
+    [_mainRequest MainNewsRequest:catid];
 }
 
 - (void)userOperation:(UIButton *)sender
 {
-    PZNewsListTableViewController *newsListTableViewController = [[PZNewsListTableViewController alloc]init];
-    
+//    PZNewsListTableViewController *newsListTableViewController = [[PZNewsListTableViewController alloc]init];
+    [_comboBoxDatasource removeAllObjects];
     switch (sender.tag) {
         case 1000:
-            newsListTableViewController.catid = PeiZhengToday;
-            newsListTableViewController.headTitle = @"培正今日";
+//            newsListTableViewController.catid = PeiZhengToday;
+//            newsListTableViewController.headTitle = @"培正今日";
+            catId = PeiZhengToday;
+            [self sendRequest:PeiZhengToday];
             break;
         case 1001:
-            newsListTableViewController.catid = CampusAgent;
-            newsListTableViewController.headTitle = @"校园探报";
+//            newsListTableViewController.catid = CampusAgent;
+//            newsListTableViewController.headTitle = @"校园探报";
+            catId = CampusAgent;
+            [self sendRequest:CampusAgent];
             break;
         case 1002:
-            newsListTableViewController.catid = StudentOrganizations;
-            newsListTableViewController.headTitle = @"学生组织";
+//            newsListTableViewController.catid = StudentOrganizations;
+//            newsListTableViewController.headTitle = @"学生组织";
+            catId = StudentOrganizations;
+            [self sendRequest:StudentOrganizations];
             break;
         case 1003:
-            newsListTableViewController.catid = CommunitysStyle;
-            newsListTableViewController.headTitle = @"社团风采";
+//            newsListTableViewController.catid = CommunitysStyle;
+//            newsListTableViewController.headTitle = @"社团风采";
+            catId = CommunitysStyle;
+            [self sendRequest:CommunitysStyle];
             break;
             
         default:
             break;
     }
-    [self.navigationController pushViewController:newsListTableViewController animated:YES];
+//    [self.navigationController pushViewController:newsListTableViewController animated:YES];
 }
 
 - (void)peizhengToday:(UIButton *)sender
 {
     
+}
+
+- (void)newsTopOfView
+{
+    [self.view addSubview:topOfView];
+}
+
+- (void)removeTopNews
+{
+    [topOfView removeFromSuperview];
 }
 @end

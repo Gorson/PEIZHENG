@@ -150,7 +150,6 @@
 		457AF5901770132B00F300BD /* PZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 457AF58F1770132B00F300BD /* PZAppDelegate.m */; };
 		457AF5931770146800F300BD /* PZCollectionListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457AF5921770146800F300BD /* PZCollectionListTableViewController.m */; };
 		457AF5A31770153600F300BD /* PZNewsDetailOfDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 457AF5A21770153600F300BD /* PZNewsDetailOfDetailCell.m */; };
-		457AF5AE1770155100F300BD /* PZEngineerFunctionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457AF5A51770155100F300BD /* PZEngineerFunctionController.m */; };
 		457AF5AF1770155100F300BD /* PZPCRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457AF5A71770155100F300BD /* PZPCRegisterViewController.m */; };
 		457AF5B01770155100F300BD /* PZPCServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457AF5A91770155100F300BD /* PZPCServerViewController.m */; };
 		457AF5B11770155100F300BD /* PZPCUserLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 457AF5AB1770155100F300BD /* PZPCUserLoginRequest.m */; };
@@ -445,14 +444,12 @@
 		457AF5921770146800F300BD /* PZCollectionListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PZCollectionListTableViewController.m; path = LeftViewController/PZCollectionListTableViewController.m; sourceTree = "<group>"; };
 		457AF5A11770153600F300BD /* PZNewsDetailOfDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PZNewsDetailOfDetailCell.h; path = MainViewController/PZNewsDetailOfDetailCell.h; sourceTree = "<group>"; };
 		457AF5A21770153600F300BD /* PZNewsDetailOfDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PZNewsDetailOfDetailCell.m; path = MainViewController/PZNewsDetailOfDetailCell.m; sourceTree = "<group>"; };
-		457AF5A41770155100F300BD /* PZEngineerFunctionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PZEngineerFunctionController.h; path = PCServer/PZEngineerFunctionController.h; sourceTree = "<group>"; };
-		457AF5A51770155100F300BD /* PZEngineerFunctionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PZEngineerFunctionController.m; path = PCServer/PZEngineerFunctionController.m; sourceTree = "<group>"; };
 		457AF5A61770155100F300BD /* PZPCRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PZPCRegisterViewController.h; path = PCServer/PZPCRegisterViewController.h; sourceTree = "<group>"; };
 		457AF5A71770155100F300BD /* PZPCRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PZPCRegisterViewController.m; path = PCServer/PZPCRegisterViewController.m; sourceTree = "<group>"; };
 		457AF5A81770155100F300BD /* PZPCServerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PZPCServerViewController.h; path = PCServer/PZPCServerViewController.h; sourceTree = "<group>"; };
 		457AF5A91770155100F300BD /* PZPCServerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PZPCServerViewController.m; path = PCServer/PZPCServerViewController.m; sourceTree = "<group>"; };
-		457AF5AA1770155100F300BD /* PZPCUserLoginRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PZPCUserLoginRequest.h; path = PCServer/PZPCUserLoginRequest.h; sourceTree = "<group>"; };
-		457AF5AB1770155100F300BD /* PZPCUserLoginRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PZPCUserLoginRequest.m; path = PCServer/PZPCUserLoginRequest.m; sourceTree = "<group>"; };
+		457AF5AA1770155100F300BD /* PZPCUserLoginRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PZPCUserLoginRequest.h; path = ../../PCServer/PZPCUserLoginRequest.h; sourceTree = "<group>"; };
+		457AF5AB1770155100F300BD /* PZPCUserLoginRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PZPCUserLoginRequest.m; path = ../../PCServer/PZPCUserLoginRequest.m; sourceTree = "<group>"; };
 		457AF5AC1770155100F300BD /* PZUserFunctionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PZUserFunctionController.h; path = PCServer/PZUserFunctionController.h; sourceTree = "<group>"; };
 		457AF5AD1770155100F300BD /* PZUserFunctionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PZUserFunctionController.m; path = PCServer/PZUserFunctionController.m; sourceTree = "<group>"; };
 		457AF5B31770174E00F300BD /* CustomActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomActivityIndicatorView.h; path = Utility/CustomActivityIndicatorView/CustomActivityIndicatorView.h; sourceTree = "<group>"; };
@@ -811,6 +808,8 @@
 		45747F0E1730C4AA00D5D005 /* PeizhengRequest */ = {
 			isa = PBXGroup;
 			children = (
+				457AF5AA1770155100F300BD /* PZPCUserLoginRequest.h */,
+				457AF5AB1770155100F300BD /* PZPCUserLoginRequest.m */,
 				45087EDD176F478200CCEE0D /* PZPCRegisterDataRequest.h */,
 				45087EDE176F478200CCEE0D /* PZPCRegisterDataRequest.m */,
 				CE968B861737CC080076D502 /* PZNewsListRequest.h */,
@@ -1167,15 +1166,12 @@
 		457DFB071704737400B3E87A /* PZLeftController */ = {
 			isa = PBXGroup;
 			children = (
-				457AF5A41770155100F300BD /* PZEngineerFunctionController.h */,
-				457AF5A51770155100F300BD /* PZEngineerFunctionController.m */,
 				457AF5A61770155100F300BD /* PZPCRegisterViewController.h */,
 				457AF5A71770155100F300BD /* PZPCRegisterViewController.m */,
 				457AF5A81770155100F300BD /* PZPCServerViewController.h */,
 				457AF5A91770155100F300BD /* PZPCServerViewController.m */,
 				457AF5AC1770155100F300BD /* PZUserFunctionController.h */,
 				457AF5AD1770155100F300BD /* PZUserFunctionController.m */,
-				45818EA5176EF0BC000EB06B /* request */,
 				457AA7C5170B3A8300D952DD /* LeftView */,
 				45747F291731624200D5D005 /* PZNewStudentController.h */,
 				45747F2A1731624200D5D005 /* PZNewStudentController.m */,
@@ -1207,15 +1203,6 @@
 			);
 			name = 4quareMenuController;
 			path = Utility/4quareMenuController;
-			sourceTree = "<group>";
-		};
-		45818EA5176EF0BC000EB06B /* request */ = {
-			isa = PBXGroup;
-			children = (
-				457AF5AA1770155100F300BD /* PZPCUserLoginRequest.h */,
-				457AF5AB1770155100F300BD /* PZPCUserLoginRequest.m */,
-			);
-			name = request;
 			sourceTree = "<group>";
 		};
 		9561ACA2151286EE005889C6 = {
@@ -1557,7 +1544,6 @@
 				457AF5901770132B00F300BD /* PZAppDelegate.m in Sources */,
 				457AF5931770146800F300BD /* PZCollectionListTableViewController.m in Sources */,
 				457AF5A31770153600F300BD /* PZNewsDetailOfDetailCell.m in Sources */,
-				457AF5AE1770155100F300BD /* PZEngineerFunctionController.m in Sources */,
 				457AF5AF1770155100F300BD /* PZPCRegisterViewController.m in Sources */,
 				457AF5B01770155100F300BD /* PZPCServerViewController.m in Sources */,
 				457AF5B11770155100F300BD /* PZPCUserLoginRequest.m in Sources */,

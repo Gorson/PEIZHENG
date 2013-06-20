@@ -22,9 +22,9 @@
 @synthesize elements = _elements;
 @synthesize mainViewController = _mainViewController;
 
-- (void)MainNewsRequest
+- (void)MainNewsRequest:(NSString *)catId
 {
-    [self startRequest:PeiZhengToday];
+    [self startRequest:catId];
 }
 /*
  初始化方法
@@ -78,6 +78,9 @@
         }
         [_mainViewController.comboBoxDatasource addObjectsFromArray:_elements];
         [_mainViewController comboBoxAppear];
+        if (_startIndex == 1) {
+            [_mainViewController newsTopOfView];
+        }
         [_elements removeAllObjects];
         [_elements release];
         

@@ -18,5 +18,5 @@
 @property (nonatomic, copy) NSMutableArray *elements;
 @property (nonatomic, retain) PZMainViewController *mainViewController;
 
-- (void)MainNewsRequest;
+- (void)MainNewsRequest:(NSString *)catId;
 @end

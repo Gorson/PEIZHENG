@@ -16,28 +16,20 @@
 {
     NSArray *_dataArray;
     PZUserInfo *_userInfo;
-    NSString *_index1;
-    NSString *_index2;
-    NSString *_index3;
-    NSString *_index4;
-    UIButton *_myForm;
-    UIButton *_willForm;
-
+    UIButton * loginButton;
 }
+@property (nonatomic ,retain) UIButton *myDataDetaButton;
+@property (nonatomic ,retain) UIButton *myForm;
+@property (nonatomic ,retain) UIButton *sendForm;
+@property (nonatomic, retain) UILabel *_userNameAndPassword;
+@property (nonatomic, retain) UILabel *_userRealnameAndSex;
+@property (nonatomic, retain) UILabel *_userAreaAndRoom;
+@property (nonatomic, retain) UILabel *_userPhoneAndEmal;
 @end
 
 @implementation PZUserFunctionController
 @synthesize _userNameAndPassword,_userRealnameAndSex,_userAreaAndRoom,_userPhoneAndEmal;
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
+@synthesize myDataDetaButton,myForm,sendForm;
 -(void)dealloc
 {
     [_userNameAndPassword release];
@@ -51,76 +43,130 @@
 {
     [super viewDidLoad];
     [self initWithControl];
-    _userInfo = [[PZUserInfo loadDataInDatabase] objectAtIndex:0];
-    _index1 = [[NSString alloc] initWithFormat:@" %@    %@",_userInfo.uid,_userInfo.uname];
-    _userNameAndPassword.text = _index1;
-    _index2 = [[NSString alloc] initWithFormat:@" %@    %@",_userInfo.realname,_userInfo.sex];
-    _userRealnameAndSex.text = _index2;
-    _index3 = [[NSString alloc] initWithFormat:@" %@    %@",_userInfo.area,_userInfo.dorm];
-    _userAreaAndRoom.text = _index3;
-    _index4 = [[NSString alloc] initWithFormat:@" %@    %@",_userInfo.phone,_userInfo.email];
-    _userPhoneAndEmal.text = _index4;
+    [self initWithData];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
     
 }
 
 //初始化UI
 - (void)initWithControl
 {
-    [_headerLabel setText:@"我是用户"];
-    [_backButton setHidden:YES];
-    [_confirmButton setHidden:NO];
-    [_confirmButton setTitle:@"注销" forState:UIControlStateNormal];
-    [_confirmButton.titleLabel setFont:[UIFont systemFontOfSize:15.0f]];
-    [_confirmButton setTintColor:[UIColor whiteColor]];
-    
-    NSInteger i = 0;
-    for (i=0; i<4; i++) {
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, 320, 30)];
+    if ([[PZUserInfo loadDataInDatabase]count])
+    {
+        [_confirmButton setHidden:NO];
+        [_confirmButton setTitle:@"注销" forState:UIControlStateNormal];
+        [loginButton removeFromSuperview];
+        
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 40.0f, 320.0f, 30.0f)];
         label.backgroundColor = [UIColor clearColor];
-        label.font = [UIFont boldSystemFontOfSize:18.0f];
-        label.textAlignment = UITextAlignmentCenter;
+        label.font = [UIFont boldSystemFontOfSize:16.0f];
+        label.textAlignment = UITextAlignmentLeft;
         label.lineBreakMode = UILineBreakModeMiddleTruncation;
         label.textColor = [UIColor blackColor];
         self._userNameAndPassword = label;
-
+        [self.view addSubview:_userNameAndPassword];
+        [label release];
+        
+        label = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 70.0f, 320.0f, 30.0f)];
+        label.backgroundColor = [UIColor clearColor];
+        label.font = [UIFont boldSystemFontOfSize:16.0f];
+        label.textAlignment = UITextAlignmentLeft;
+        label.lineBreakMode = UILineBreakModeMiddleTruncation;
+        label.textColor = [UIColor blackColor];
+        self._userRealnameAndSex = label;
+        [self.view addSubview:_userRealnameAndSex];
+        [label release];
+        
+        label = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 100.0f, 320.0f, 30.0f)];
+        label.backgroundColor = [UIColor clearColor];
+        label.font = [UIFont boldSystemFontOfSize:16.0f];
+        label.textAlignment = UITextAlignmentLeft;
+        label.lineBreakMode = UILineBreakModeMiddleTruncation;
+        label.textColor = [UIColor blackColor];
+        self._userAreaAndRoom = label;
+        [self.view addSubview:_userAreaAndRoom];
+        [label release];
+        
+        label = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 130.0f, 320.0f, 30.0f)];
+        label.backgroundColor = [UIColor clearColor];
+        label.font = [UIFont boldSystemFontOfSize:16.0f];
+        label.textAlignment = UITextAlignmentLeft;
+        label.lineBreakMode = UILineBreakModeMiddleTruncation;
+        label.textColor = [UIColor blackColor];
+        self._userPhoneAndEmal = label;
+        [self.view addSubview:_userPhoneAndEmal];
+        [label release];
+        
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button setFrame:CGRectMake(10.0f, 170.0f, 300.0f, 40.0f)];
+        [button setBackgroundColor:[UIColor blueColor]];
+        self.myDataDetaButton = button;
+        [self.view addSubview:myDataDetaButton];
+        [button release];
+        
+        button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button setFrame:CGRectMake(10.0f, 220.0f, 300.0f, 40.0f)];
+        [button setBackgroundColor:[UIColor greenColor]];
+        self.myForm = button;
+        [self.view addSubview:myForm];
+        [button release];
+        
+        button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button setFrame:CGRectMake(10.0f, 270.0f, 300.0f, 40.0f)];
+        [button setBackgroundColor:[UIColor redColor]];
+        self.sendForm = button;
+        [self.view addSubview:sendForm];
+        [button release];
     }
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, 320, 30)];
-    label.backgroundColor = [UIColor clearColor];
-    label.font = [UIFont boldSystemFontOfSize:18.0f];
-    label.textAlignment = UITextAlignmentCenter;
-    label.lineBreakMode = UILineBreakModeMiddleTruncation;
-    label.textColor = [UIColor blackColor];
-    self._userNameAndPassword = label;
-    
-    UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(0, 70, 320, 30)];
-    label2.backgroundColor = [UIColor clearColor];
-    label2.font = [UIFont boldSystemFontOfSize:18.0f];
-    label2.textAlignment = UITextAlignmentCenter;
-    label2.lineBreakMode = UILineBreakModeMiddleTruncation;
-    label2.textColor = [UIColor blackColor];
-    self._userRealnameAndSex = label2;
-    
-    UILabel *label3 = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, 320, 30)];
-    label3.backgroundColor = [UIColor clearColor];
-    label3.font = [UIFont boldSystemFontOfSize:18.0f];
-    label3.textAlignment = UITextAlignmentCenter;
-    label3.lineBreakMode = UILineBreakModeMiddleTruncation;
-    label3.textColor = [UIColor blackColor];
-    self._userAreaAndRoom = label3;
-    
-    UILabel *label4 = [[UILabel alloc] initWithFrame:CGRectMake(0, 130, 320, 30)];
-    label4.backgroundColor = [UIColor clearColor];
-    label4.font = [UIFont boldSystemFontOfSize:18.0f];
-    label4.textAlignment = UITextAlignmentCenter;
-    label4.lineBreakMode = UILineBreakModeMiddleTruncation;
-    label4.textColor = [UIColor blackColor];
-    self._userPhoneAndEmal = label4;
+    else
+    {
+        [_headerLabel setText:@"赶快登陆吧"];
+        [_confirmButton setHidden:YES];
+        [_userNameAndPassword removeFromSuperview];
+        [_userRealnameAndSex removeFromSuperview];
+        [_userAreaAndRoom removeFromSuperview];
+        [_userPhoneAndEmal removeFromSuperview];
 
-    [self.view addSubview:_userNameAndPassword];
-    [self.view addSubview:_userRealnameAndSex];
-    [self.view addSubview:_userAreaAndRoom];
-    [self.view addSubview:_userPhoneAndEmal];
+        loginButton = [[UIButton alloc]initWithFrame:CGRectMake(60, 250, 200, 50)];
+        loginButton.showsTouchWhenHighlighted = YES;
+        loginButton.backgroundColor = BKColor;
+        [loginButton setTitle:@"登陆" forState:UIControlStateNormal];
+        [loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [loginButton addTarget:self action:@selector(loginViewAppear:) forControlEvents:UIControlEventTouchUpInside];
+        loginButton.tag = 1001;
+        [self.view addSubview:loginButton];
+        [loginButton release];
+    }
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+    [self.navigationController.navigationBar setHidden:YES];
+    [_backButton setHidden:YES];
+}
 
+- (void)initWithData
+{
+    if ([[PZUserInfo loadDataInDatabase] count] > 0) {
+        _userInfo = [[PZUserInfo loadDataInDatabase] objectAtIndex:0];
+        if ([_userInfo.identity isEqualToString:@"0"]) {
+            [_headerLabel setText:@"我是用户"];
+        }
+        else
+        {
+            [_headerLabel setText:@"我是管理员"];
+        }
+        NSString *index = [NSString stringWithFormat:@"用户号码:%8@    用户姓名:%8@",_userInfo.uid,_userInfo.uname];
+        _userNameAndPassword.text = index;
+        index = [NSString stringWithFormat:@"真实姓名:%8@    用户性别:%8@",_userInfo.realname,_userInfo.sex];
+        _userRealnameAndSex.text = index;
+        index = [NSString stringWithFormat:@"所住区域:%8@    所住宿舍:%8@",_userInfo.area,_userInfo.dorm];
+        _userAreaAndRoom.text = index;
+        index = [NSString stringWithFormat:@"手机号码:%4@    用户邮箱:%4@",_userInfo.phone,_userInfo.email];
+        _userPhoneAndEmal.text = index;
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -132,15 +178,48 @@
 
 - (void)onConfirm:(UIButton *)sender
 {
-    [self dismissViewControllerAnimated:YES completion:^{
-        [PZUserInfo deleteOneFromStorage:[[PZUserInfo loadDataInDatabase]objectAtIndex:0]];
+    [self deleteObjectInDatabaseAndcompletion:^{
+        PZPCServerViewController * pcServerViewController = [[PZPCServerViewController alloc]init];
+        UINavigationController *ServerViewNav = [[UINavigationController alloc] initWithRootViewController:pcServerViewController];
+        pcServerViewController.userFunctionController = self;
+        [self initWithControl];
+        [self initWithData];
+        [self presentModalViewController:ServerViewNav animated:YES];
     }];
 }
 
-/*
- 添加手势
- */
--(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer{
-    DLog(@"什么都不做");
+
+- (void) deleteObjectInDatabaseAndcompletion:(void (^)(void))completion {
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        if ([[PZUserInfo loadDataInDatabase]objectAtIndex:0]) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [PZUserInfo deleteOneFromStorage:[[PZUserInfo loadDataInDatabase]objectAtIndex:0]];
+            });
+            dispatch_async(dispatch_get_main_queue(), completion);
+        }
+        else {
+            DLog(@"删除不成功");
+        }
+    });
+}
+
+
+-(void)leftDrawerButtonPress:(id)sender{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+}
+
+- (void)loginViewAppear:(UIButton *)sender
+{
+    PZPCServerViewController * pcServerViewController = [[PZPCServerViewController alloc]init];
+    UINavigationController *ServerViewNav = [[UINavigationController alloc] initWithRootViewController:pcServerViewController];
+    pcServerViewController.userFunctionController = self;
+    [self presentModalViewController:ServerViewNav animated:YES];
+}
+
+-(void)refleshData
+{
+    [self initWithControl];
+    [self initWithData];
 }
 @end

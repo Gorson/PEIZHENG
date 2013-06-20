@@ -11,4 +11,7 @@
 @implementation PZNewsMainList
 @synthesize newsId;
 @synthesize title;
+@synthesize time;
+@synthesize introduce;
+@synthesize imgurl;
 @end

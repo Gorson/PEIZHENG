@@ -18,6 +18,7 @@
     UIButton *_Enter;
     UIImageView *_backgoundImage;
     userRegist * user;
+    NSArray * itemArray;
 }
 @end
 
@@ -35,8 +36,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self initWithUI];
     [self initWithData];
+    [self initWithUI];
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,6 +59,7 @@
         _textField.borderStyle = UITextBorderStyleRoundedRect;
 //        _textField.placeholder = @"";
         _textField.textAlignment = UITextAlignmentCenter;
+        _textField.placeholder = [itemArray objectAtIndex:i-1];
         _textField.delegate = self;
         [self.view addSubview:_textField];
 
@@ -86,13 +88,14 @@
      forControlEvents:UIControlEventTouchUpInside];
         
     [self.view addSubview:_backgoundImage];
-    [self.view addSubview:_goBack];
-    [self.view addSubview:_Enter];
+//    [self.view addSubview:_goBack];
+//    [self.view addSubview:_Enter];
 }
 
 - (void)initWithData
 {
     user = [[userRegist alloc]init];
+    itemArray = [[NSArray alloc]initWithObjects:@"用户名",@"密码",@"真实名",@"性别",@"区域",@"宿舍号",@"联系电话",@"联系邮箱", nil];
 }
 
 -(void)_Enter:(UIButton *)sender

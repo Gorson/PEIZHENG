@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class PZUserFunctionController;
 
 @interface PZPCServerViewController : PZNavigationViewController<UITextFieldDelegate>
-
+{
+    PZUserFunctionController * _userFunctionController;
+}
+@property (nonatomic, retain)PZUserFunctionController * userFunctionController;
 @end

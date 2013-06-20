@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UIImageView+WebCache.h"
+#import "UIViewController+MMDrawerController.h"
 
 /*
  为了简化部分控件的初始化，将某些控件剥离出来，写了一个共用的好友类

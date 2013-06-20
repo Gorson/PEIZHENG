@@ -8,9 +8,7 @@
 
 #import "PZPCUserLoginRequest.h"
 #import "PZUserInfo.h"
-
-#import "PZUserFunctionController.h"
-#import "PZEngineerFunctionController.h"
+#import "PZPCServerViewController.h"
 #import "PZUserFunctionController.h"
 
 @interface PZPCUserLoginRequest()
@@ -20,8 +18,6 @@
 @property (strong, nonatomic) BDKNotifyHUD *notify;
 @property (strong, nonatomic) NSString *imageName;
 @property (strong, nonatomic) NSString *notificationText;
-@property (nonatomic, retain)PZUserFunctionController *userFunctionController;
-@property (nonatomic, retain)PZEngineerFunctionController *engineerFunctionController;
 @end
 
 
@@ -84,22 +80,8 @@
             self.notify.image = [UIImage imageNamed:self.imageName];
             self.notify.text = self.notificationText;
             [self displayNotification];
-            NSString * identityString = [userInfoDataDict valueForKey:@"identity"];
-            if ([identityString isEqualToString:@"0"]) {
-                PZUserFunctionController *user = [[PZUserFunctionController alloc]init];
-                self.userFunctionController = user;
-                [_pcServerViewController presentModalViewController:_userFunctionController animated:YES];
-            }
-            else if ([identityString isEqualToString:@"1"])
-            {
-                PZEngineerFunctionController *engineer = [[PZEngineerFunctionController alloc]init];
-                self.engineerFunctionController = engineer;
-                [_pcServerViewController presentModalViewController:_engineerFunctionController animated:YES];
-            }
-            else
-            {
-                DLog(@"其他人员..");
-            }
+            [_pcServerViewController.userFunctionController refleshData];
+            [_pcServerViewController dismissModalViewControllerAnimated:YES];
         }
         else
         {
@@ -112,7 +94,7 @@
     }
     else
     {
-        self.notificationText = @"请输入用户名密码";
+        self.notificationText = @"账户名密码错误";
         self.imageName = @"PZ_Wrong.png";
         self.notify.image = [UIImage imageNamed:self.imageName];
         self.notify.text = self.notificationText;

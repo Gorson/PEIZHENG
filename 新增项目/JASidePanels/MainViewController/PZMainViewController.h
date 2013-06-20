@@ -13,6 +13,8 @@
     NSMutableArray *_comboBoxDatasource;
 }
 @property (nonatomic,retain)NSMutableArray *comboBoxDatasource;
+@property (nonatomic,copy)NSString *catId;
 - (void)comboBoxAppear;
-- (void)sendRequest;
+- (void)sendRequest:(NSString *)catid;
+- (void)newsTopOfView;
 @end

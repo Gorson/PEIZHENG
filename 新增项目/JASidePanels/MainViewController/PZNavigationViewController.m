@@ -57,29 +57,29 @@
     _headerLabel.lineBreakMode = UILineBreakModeMiddleTruncation;
     [_headerImageView addSubview:_headerLabel];
     
-    UISwipeGestureRecognizer *recognizer;
-    recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
-    [recognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
-    [[self view] addGestureRecognizer:recognizer];
-    [recognizer release];
+//    UISwipeGestureRecognizer *recognizer;
+//    recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
+//    [recognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
+//    [[self view] addGestureRecognizer:recognizer];
+//    [recognizer release];
 }
 
-#pragma mark -
-#pragma mark UISwipeGestureRecognizer
-/*
- 添加手势时间
- */
--(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer{
-    
-    if(recognizer.direction==UISwipeGestureRecognizerDirectionRight) {
-        
-        DLog(@"swipe right");
-        //执行程序
-        [self.navigationController popViewControllerAnimated:YES];
-        [self dismissModalViewControllerAnimated:YES];
-    }
-    
-}
+//#pragma mark -
+//#pragma mark UISwipeGestureRecognizer
+///*
+// 添加手势时间
+// */
+//-(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer{
+//    
+//    if(recognizer.direction==UISwipeGestureRecognizerDirectionRight) {
+//        
+//        DLog(@"swipe right");
+//        //执行程序
+//        [self.navigationController popViewControllerAnimated:YES];
+//        [self dismissModalViewControllerAnimated:YES];
+//    }
+//    
+//}
 -(void)onConfirm:(UIButton *)sender{
     
 }

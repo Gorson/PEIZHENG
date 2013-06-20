@@ -9,6 +9,7 @@
 #import "PZPCServerViewController.h"
 #import "PZPCRegisterViewController.h"
 #import "PZPCUserLoginRequest.h"
+#import "PZUserFunctionController.h"
 
 @interface PZPCServerViewController ()
 {
@@ -21,10 +22,13 @@
     UITextField *_enterPwdField;
     UIImageView *_backgoundImage;
 }
-
+@property (strong, nonatomic) BDKNotifyHUD *notify;
+@property (strong, nonatomic) NSString *imageName;
+@property (strong, nonatomic) NSString *notificationText;
 @end
 
 @implementation PZPCServerViewController
+@synthesize userFunctionController = _userFunctionController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -49,7 +53,8 @@
 - (void)initWithUI
 {
     [_backButton setHidden:YES];
-    
+    [_headerLabel setText:@"登陆"];
+    [self.navigationController.navigationBar setHidden:YES];
     _register = [[UIButton alloc] init];
     [_register setFrame:CGRectMake(IPHONE_WIDTH/2.0f-45.0f, IPHONE_HEIGHT/2.0f, 90.0f, 44.0f)];
     [_register setTitle:@"注册" forState:UIControlStateNormal];
@@ -69,7 +74,7 @@
     [_retrPwd setBackgroundImage:[UIImage imageNamed:@"PZBackButton.png"]
                         forState:UIControlStateNormal];
     [_retrPwd addTarget:self
-                 action:@selector(_retrPwd:)
+                 action:@selector(findMyPwd:)
        forControlEvents:UIControlEventTouchUpInside];
     
     _login = [[UIButton alloc] init];
@@ -105,7 +110,11 @@
     [self.view addSubview:_login];
     [self.view addSubview:_retrPwd];
     
-    
+    UISwipeGestureRecognizer *recognizer;
+    recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
+    [[self view] addGestureRecognizer:recognizer];
+    [recognizer release];
 }
 
 - (void)didReceiveMemoryWarning
@@ -122,19 +131,117 @@
     return YES;
 }
 
+- (void)findMyPwd:(UIButton *)sender
+{
+    
+}
+
 -(void)_register:(UIButton *)sender
 {
     PZPCRegisterViewController *_pzPCServerController = [[[PZPCRegisterViewController alloc] init] autorelease];
-    [self presentModalViewController:_pzPCServerController animated:YES];
+    [self.navigationController pushViewController:_pzPCServerController animated:YES];
 }
 
 - (void)pcUserLogin:(UIButton *)sender
 {
-    PZPCUserLoginRequest * loginRequest = [[PZPCUserLoginRequest alloc]init];
-    loginRequest.username = _enterAccountField.text;
-    loginRequest.password = _enterPwdField.text;
-    loginRequest.pcServerViewController = self;
-    [loginRequest PCUserLoginRequest];
+    BOOL isRegistered = [self checkInputValidity];
+    if (isRegistered) {
+        PZPCUserLoginRequest * loginRequest = [[PZPCUserLoginRequest alloc]init];
+        loginRequest.username = _enterAccountField.text;
+        loginRequest.password = _enterPwdField.text;
+        loginRequest.pcServerViewController = self;
+        [loginRequest PCUserLoginRequest];
+    }
 }
 
+
+#pragma mark -
+#pragma mark UISwipeGestureRecognizer
+/*
+ 添加手势时间
+ */
+-(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer{
+
+    if(recognizer.direction==UISwipeGestureRecognizerDirectionRight) {
+
+        [_userFunctionController leftDrawerButtonPress:recognizer];
+        [self dismissModalViewControllerAnimated:YES];
+    }
+
+}
+
+#pragma mark -
+#pragma mark BDKNotifyHUD
+
+- (BDKNotifyHUD *)notify {
+    if (_notify != nil) return _notify;
+    _notify = [BDKNotifyHUD notifyHUDWithImage:[UIImage imageNamed:self.imageName] text:self.notificationText];
+    _notify.center = CGPointMake(IPHONE_WIDTH/2, IPHONE_HEIGHT/2);
+    [self.notify setHidden:YES];
+    return _notify;
+}
+
+
+- (void)displayNotification {
+    if (self.notify.isAnimating) return;
+    
+    [_notify makeKeyAndVisible];
+    [self.notify presentWithDuration:0.6f speed:0.25f inView:nil completion:^{
+        [self.notify removeFromSuperview];
+        [self.notify setHidden:YES];
+    }];
+}
+
+/*
+ * 检查输入合法性
+ */
+- (BOOL)checkInputValidity
+{
+    NSString *account = [_enterAccountField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSString *password = [_enterPwdField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    // emailAdress
+    if([account isEqualToString:@""]) {
+        self.notificationText = @"请输入账号";
+        self.imageName = @"PZ_Wrong.png";
+        self.notify.image = [UIImage imageNamed:self.imageName];
+        self.notify.text = self.notificationText;
+        [self displayNotification];
+        
+        return NO;
+    }
+    
+    if(![account isEqualToString:@""]) {
+        if((3> account.length) || (account.length >10))
+        {
+            self.notificationText = @"输入正确的账号";
+            self.imageName = @"PZ_Wrong.png";
+            self.notify.image = [UIImage imageNamed:self.imageName];
+            self.notify.text = self.notificationText;
+            [self displayNotification];
+            
+            return NO;
+        }
+        if([password isEqualToString:@""]) {
+            
+            self.notificationText = @"输入密码";
+            self.imageName = @"PZ_Wrong.png";
+            self.notify.image = [UIImage imageNamed:self.imageName];
+            self.notify.text = self.notificationText;
+            [self displayNotification];
+            
+            return NO;
+        }
+        if((3> password.length) || (password.length >10)) {
+            
+            self.notificationText = @"密码长度错误";
+            self.imageName = @"PZ_Wrong.png";
+            self.notify.image = [UIImage imageNamed:self.imageName];
+            self.notify.text = self.notificationText;
+            [self displayNotification];
+            
+            return NO;
+        }
+    }
+    return YES;
+}
 @end

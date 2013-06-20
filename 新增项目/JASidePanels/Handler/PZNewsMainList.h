@@ -11,5 +11,9 @@
 @interface PZNewsMainList : NSObject
 @property (nonatomic, copy) NSString * newsId;
 @property (nonatomic, copy) NSString * title;
+@property (nonatomic, copy) NSString * time;
+@property (nonatomic, copy) NSString * introduce;
+@property (nonatomic, copy) NSString * imgurl;
+
 
 @end

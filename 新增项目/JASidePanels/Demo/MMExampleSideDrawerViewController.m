@@ -28,7 +28,9 @@
 #import "PZPCServerViewController.h"
 #import "PZCollectionListTableViewController.h"
 #import "PZMainViewController.h"
+#import "PZUserFunctionController.h"
 #import "PZMapController.h"
+#import "PZUserInfo.h"
 
 @interface MMExampleSideDrawerViewController ()
 {
@@ -354,11 +356,29 @@
             break;
         case 4:
         {
-            PZPCServerViewController *pcServerViewController = [[PZPCServerViewController alloc]init];
+            UINavigationController * nav;
+            if ([[PZUserInfo loadDataInDatabase] count] > 0)
+            {
+                PZUserFunctionController * userFunctionController = [[PZUserFunctionController alloc]init];
+                nav = [[UINavigationController alloc] initWithRootViewController:userFunctionController];
                 [self.mm_drawerController
-                 setCenterViewController:pcServerViewController
+                 setCenterViewController:nav
                  withCloseAnimation:YES
                  completion:nil];
+            }
+            else
+            {
+                PZUserFunctionController * userFunctionController = [[PZUserFunctionController alloc]init];
+                nav = [[UINavigationController alloc] initWithRootViewController:userFunctionController];
+                PZPCServerViewController *pcServerViewController = [[PZPCServerViewController alloc]init];
+                UINavigationController *ServerViewNav = [[UINavigationController alloc] initWithRootViewController:pcServerViewController];
+                pcServerViewController.userFunctionController = userFunctionController;
+                [self.mm_drawerController
+                 setCenterViewController:nav
+                 withCloseAnimation:YES
+                 completion:nil];
+                [userFunctionController presentModalViewController:ServerViewNav animated:YES];
+            }
         }
             break;
         case 5:

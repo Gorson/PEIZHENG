@@ -141,7 +141,7 @@
     if(indexPath.row == [_comboBoxDatasource count] - 3.0f) {
         if([_comboBoxDatasource count])
         {
-            [mainViewController sendRequest];
+            [mainViewController sendRequest:mainViewController.catId];
         }
     }
 }
