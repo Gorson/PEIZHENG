@@ -38,9 +38,9 @@ static SDBImageCache *instance;
 
         // Init the operation queue
         cacheInQueue = [[NSOperationQueue alloc] init];
-        cacheInQueue.maxConcurrentOperationCount = 1;
+        cacheInQueue.maxConcurrentOperationCount = 99;
         cacheOutQueue = [[NSOperationQueue alloc] init];
-        cacheOutQueue.maxConcurrentOperationCount = 1;
+        cacheOutQueue.maxConcurrentOperationCount = 99;
 
 #if TARGET_OS_IPHONE
         // Subscribe to app events

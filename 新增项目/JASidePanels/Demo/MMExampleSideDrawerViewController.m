@@ -29,6 +29,7 @@
 #import "PZCollectionListTableViewController.h"
 #import "PZMainViewController.h"
 #import "PZUserFunctionController.h"
+#import "PZSetDetailController.h"
 #import "PZMapController.h"
 #import "PZUserInfo.h"
 
@@ -384,14 +385,26 @@
         case 5:
         {
             PZCollectionListTableViewController *collectionListViewController = [[PZCollectionListTableViewController alloc]init];
+            UINavigationController *CollectionViewNav = [[UINavigationController alloc] initWithRootViewController:collectionListViewController];
+            [CollectionViewNav.navigationBar setHidden:YES];
+
             [self.mm_drawerController
-             setCenterViewController:collectionListViewController
+             setCenterViewController:CollectionViewNav
              withCloseAnimation:YES
              completion:nil];
         }
             break;
         case 6:
+        {
+            PZSetDetailController *setDetailController = [[PZSetDetailController alloc]init];
+            UINavigationController *SettingViewNav = [[UINavigationController alloc] initWithRootViewController:setDetailController];
+            [SettingViewNav.navigationBar setHidden:YES];
             
+            [self.mm_drawerController
+             setCenterViewController:SettingViewNav
+             withCloseAnimation:YES
+             completion:nil];
+        }
             break;
         case 7:
             

@@ -68,7 +68,7 @@
     [topOfView setBackgroundColor:[UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5]];
     [topOfView addTarget:self action:@selector(removeTopNews) forControlEvents:UIControlEventAllEvents];
     UIButton * newsButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [newsButton setFrame:CGRectMake(0.0f, IPHONE_HEIGHT/3, 320.0f, IPHONE_HEIGHT/3)];
+    [newsButton setFrame:CGRectMake(0.0f, IPHONE_HEIGHT/3 - 20.0f, 320.0f, IPHONE_HEIGHT/3)];
     [newsButton setBackgroundColor:[UIColor colorWithRed:1 green:0.5 blue:0.5 alpha:0.5]];
     [newsButton addTarget:self action:@selector(removeTopNews) forControlEvents:UIControlEventTouchUpInside];
     [topOfView addSubview:newsButton];

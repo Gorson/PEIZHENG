@@ -21,7 +21,7 @@
 {
 	self = [super init];
 	[self setShouldCancelAllRequestsOnFailure:YES];
-	[self setMaxConcurrentOperationCount:4];
+	[self setMaxConcurrentOperationCount:99];
 	[self setSuspended:YES];
 	
 	return self;

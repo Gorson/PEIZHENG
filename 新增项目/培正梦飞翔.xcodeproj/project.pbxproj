@@ -136,6 +136,8 @@
 		45792AE417713FDC008ABED6 /* PZMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45792AE317713FDC008ABED6 /* PZMainView.m */; };
 		45792AE9177168D4008ABED6 /* baiduMainview.png in Resources */ = {isa = PBXBuildFile; fileRef = 45792AE7177168D4008ABED6 /* baiduMainview.png */; };
 		45792AEA177168D4008ABED6 /* baiduMainview@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45792AE8177168D4008ABED6 /* baiduMainview@2x.png */; };
+		457934B41773F1AA009F45C9 /* PZSetDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457934B31773F1AA009F45C9 /* PZSetDetailController.m */; };
+		457934B71773F87A009F45C9 /* PZAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457934B61773F87A009F45C9 /* PZAboutController.m */; };
 		4579526A1752672700BD75FB /* mapOfPeiZheng.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 457952691752672700BD75FB /* mapOfPeiZheng.jpg */; };
 		4579526C1752673800BD75FB /* mapOfPeiZheng@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4579526B1752673800BD75FB /* mapOfPeiZheng@2x.jpg */; };
 		4579531217413050007190F5 /* AOImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 457952FD17413050007190F5 /* AOImageView.m */; };
@@ -413,6 +415,10 @@
 		45792AE317713FDC008ABED6 /* PZMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZMainView.m; sourceTree = "<group>"; };
 		45792AE7177168D4008ABED6 /* baiduMainview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = baiduMainview.png; path = AppImage/baiduMainview.png; sourceTree = "<group>"; };
 		45792AE8177168D4008ABED6 /* baiduMainview@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "baiduMainview@2x.png"; path = "AppImage/baiduMainview@2x.png"; sourceTree = "<group>"; };
+		457934B21773F1AA009F45C9 /* PZSetDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PZSetDetailController.h; path = Setting/PZSetDetailController.h; sourceTree = "<group>"; };
+		457934B31773F1AA009F45C9 /* PZSetDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PZSetDetailController.m; path = Setting/PZSetDetailController.m; sourceTree = "<group>"; };
+		457934B51773F87A009F45C9 /* PZAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PZAboutController.h; path = Setting/About/PZAboutController.h; sourceTree = "<group>"; };
+		457934B61773F87A009F45C9 /* PZAboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PZAboutController.m; path = Setting/About/PZAboutController.m; sourceTree = "<group>"; };
 		457952691752672700BD75FB /* mapOfPeiZheng.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mapOfPeiZheng.jpg; sourceTree = "<group>"; };
 		4579526B1752673800BD75FB /* mapOfPeiZheng@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mapOfPeiZheng@2x.jpg"; sourceTree = "<group>"; };
 		457952FC17413050007190F5 /* AOImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOImageView.h; sourceTree = "<group>"; };
@@ -1021,6 +1027,15 @@
 		45792AEC17718E62008ABED6 /* PZSideController */ = {
 			isa = PBXGroup;
 			children = (
+				457AF5A61770155100F300BD /* PZPCRegisterViewController.h */,
+				457AF5A71770155100F300BD /* PZPCRegisterViewController.m */,
+				457AF5A81770155100F300BD /* PZPCServerViewController.h */,
+				457AF5A91770155100F300BD /* PZPCServerViewController.m */,
+				457AF5AC1770155100F300BD /* PZUserFunctionController.h */,
+				457AF5AD1770155100F300BD /* PZUserFunctionController.m */,
+				45747F291731624200D5D005 /* PZNewStudentController.h */,
+				45747F2A1731624200D5D005 /* PZNewStudentController.m */,
+				45747F2B1731624200D5D005 /* PZNewStudentController.xib */,
 				457AF5FB177037D300F300BD /* MMExampleSideDrawerViewController.h */,
 				457AF5FC177037D300F300BD /* MMExampleSideDrawerViewController.m */,
 				457AF5F7177037D200F300BD /* MMExampleLeftSideDrawerViewController.h */,
@@ -1057,6 +1072,25 @@
 				45792AE017713CBB008ABED6 /* PZMainViewController.m */,
 			);
 			name = "主页";
+			sourceTree = "<group>";
+		};
+		457934AD1773F0B5009F45C9 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				457934B21773F1AA009F45C9 /* PZSetDetailController.h */,
+				457934B31773F1AA009F45C9 /* PZSetDetailController.m */,
+				457934AE1773F112009F45C9 /* About */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
+		457934AE1773F112009F45C9 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				457934B51773F87A009F45C9 /* PZAboutController.h */,
+				457934B61773F87A009F45C9 /* PZAboutController.m */,
+			);
+			name = About;
 			sourceTree = "<group>";
 		};
 		457952FB17413050007190F5 /* AOImageView */ = {
@@ -1157,8 +1191,9 @@
 		457DFB061704735600B3E87A /* PZClass */ = {
 			isa = PBXGroup;
 			children = (
-				457DFB0A170482F200B3E87A /* PZCenterViewController */,
 				457DFB071704737400B3E87A /* PZLeftController */,
+				457DFB0A170482F200B3E87A /* PZCenterViewController */,
+				457934AD1773F0B5009F45C9 /* Setting */,
 			);
 			name = PZClass;
 			sourceTree = "<group>";
@@ -1166,16 +1201,8 @@
 		457DFB071704737400B3E87A /* PZLeftController */ = {
 			isa = PBXGroup;
 			children = (
-				457AF5A61770155100F300BD /* PZPCRegisterViewController.h */,
-				457AF5A71770155100F300BD /* PZPCRegisterViewController.m */,
-				457AF5A81770155100F300BD /* PZPCServerViewController.h */,
-				457AF5A91770155100F300BD /* PZPCServerViewController.m */,
-				457AF5AC1770155100F300BD /* PZUserFunctionController.h */,
-				457AF5AD1770155100F300BD /* PZUserFunctionController.m */,
+				45792AEC17718E62008ABED6 /* PZSideController */,
 				457AA7C5170B3A8300D952DD /* LeftView */,
-				45747F291731624200D5D005 /* PZNewStudentController.h */,
-				45747F2A1731624200D5D005 /* PZNewStudentController.m */,
-				45747F2B1731624200D5D005 /* PZNewStudentController.xib */,
 			);
 			name = PZLeftController;
 			sourceTree = "<group>";
@@ -1186,7 +1213,6 @@
 				45792AEE177190FE008ABED6 /* 主页 */,
 				45792AED177190B0008ABED6 /* 收藏夹 */,
 				45792AEB17718DEB008ABED6 /* 培正地图 */,
-				45792AEC17718E62008ABED6 /* PZSideController */,
 				45747F371731674E00D5D005 /* cell */,
 				457AF612177037DC00F300BD /* View */,
 			);
@@ -1584,6 +1610,8 @@
 				45792AE417713FDC008ABED6 /* PZMainView.m in Sources */,
 				457DC71F1771A9470080FADE /* ComboBoxView.m in Sources */,
 				457DC7221771D4180080FADE /* PZNewsMainList.m in Sources */,
+				457934B41773F1AA009F45C9 /* PZSetDetailController.m in Sources */,
+				457934B71773F87A009F45C9 /* PZAboutController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

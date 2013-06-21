@@ -112,7 +112,7 @@
  */
 - (void)initWithData
 {
-    _newsItemArray = [[NSMutableArray alloc]initWithCapacity:150];
+    _newsItemArray = [[NSMutableArray array] retain];
 }
 
 
@@ -121,6 +121,7 @@
  */
 - (void)initWithControl
 {
+    _headTitle = @"收藏夹";
     _newsTableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, 44.0f, IPHONE_WIDTH, IPHONE_HEIGHT-64) style:UITableViewStylePlain];
     _newsTableView.backgroundColor = [UIColor whiteColor];
     _newsTableView.backgroundView.alpha = 0;
@@ -301,7 +302,7 @@
             _newsDetailViewController = [[PZNewsDetailViewController alloc]init];
             PZNewsListData * newsData = [_newsItemArray objectAtIndex:indexPath.row];
             _newsDetailViewController.newsid = [NSString stringWithFormat:@"%f",newsData.newsidNum];
-            [theApp.window.rootViewController presentModalViewController:_newsDetailViewController animated:YES];
+            [self.navigationController pushViewController:_newsDetailViewController animated:YES];
         }    }
     else {
         
