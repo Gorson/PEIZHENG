@@ -142,7 +142,6 @@
         [loginButton release];
     }
     [self.view setBackgroundColor:[UIColor whiteColor]];
-    [self.navigationController.navigationBar setHidden:YES];
     [_backButton setHidden:YES];
 }
 

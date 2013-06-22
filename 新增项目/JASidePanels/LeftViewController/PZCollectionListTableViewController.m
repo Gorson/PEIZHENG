@@ -7,7 +7,7 @@
 #import "PZCollectionListTableViewController.h"
 #import "PZNewsDetailViewController.h"
 #import "PZNewsListTableCell.h"
-#import "PZNewsListData.h"
+#import "PZNewsDetailData.h"
 
 @interface PZCollectionListTableViewController ()
 {
@@ -46,9 +46,9 @@
     //每一次载入该界面清空数组,避免重复数据
     [_newsItemArray removeAllObjects];
     //获取本地数据库中PZNewsListData表中所有数据
-    NSArray * dataArray = [PZNewsListData loadDataInDatabase];
+    NSArray * dataArray = [PZNewsDetailData loadADataInDatabase];
     //遍历数组把同catid的结构体对象加入可变数组中
-    for (PZNewsListData * newsData in dataArray) {
+    for (PZNewsDetailData * newsData in dataArray) {
         if ([newsData.mark isEqualToString:@"YES"]) {
             [_newsItemArray addObject:newsData];
         }
@@ -56,6 +56,7 @@
     //如果数组数目小于1 则请求接口获取数据
     if ([_newsItemArray count] < 1)
     {
+        [_newsTableView reloadData];
         self.notificationText = @"暂未有收藏.";
         self.imageName = @"PZ_Wrong.png";
         self.notify.image = [UIImage imageNamed:self.imageName];
@@ -179,23 +180,23 @@
             _headerLabel.text = _headTitle;
         }
         if ([_newsItemArray count]) {
-            PZNewsListData * newsData = [_newsItemArray objectAtIndex:indexPath.row];
+            PZNewsDetailData * newsData = [_newsItemArray objectAtIndex:indexPath.row];
             newsListCell.titleLabel.text = newsData.title;
-            if ([newsData.typeOfNews isEqualToString:@"249" ] || [newsData.typeOfNews isEqualToString:@"51" ]) {
-                [newsListCell.image setFrame:CGRectMake(210.0f, 3.0f, 100.0f, 140.0f)];
-                [newsListCell.headImageView setFrame:CGRectMake(210.0f, 3.0f, 100.0f, 140.0f)];
-                [newsListCell.timeLabel setFrame:CGRectMake(55.0f, 12311.0f, 130.0f, 20.0f)];
-                [newsListCell.contentLabel setFrame:CGRectMake(10.0f, 23.0f, 180.0f, 100.0f)];
-            }
+//            if ([newsData.typeOfNews isEqualToString:@"249" ] || [newsData.typeOfNews isEqualToString:@"51" ]) {
+//                [newsListCell.image setFrame:CGRectMake(210.0f, 3.0f, 100.0f, 140.0f)];
+//                [newsListCell.headImageView setFrame:CGRectMake(210.0f, 3.0f, 100.0f, 140.0f)];
+//                [newsListCell.timeLabel setFrame:CGRectMake(55.0f, 12311.0f, 130.0f, 20.0f)];
+//                [newsListCell.contentLabel setFrame:CGRectMake(10.0f, 23.0f, 180.0f, 100.0f)];
+//            }
             if ([newsData.imgurl hasPrefix:@"/var"])
             {
-                newsListCell.image.image = [self newThreadForLoadLocalImage:newsData];
+                newsListCell.image.image = [UIImage imageNamed:@"tb1.jpg"];
 
             }else
             {
                 [newsListCell.image setImageWithURL:[NSURL URLWithString:newsData.imgurl] placeholderImage:[UIImage imageNamed:@""]];
-                newsData.imgurl = [PZNewsListData adressOfImage:newsData.imgurl];
-                [PZNewsListData updateDataFromDatabase:newsData];
+                newsData.imgurl = [PZNewsDetailData adressOfImage:newsData.imgurl];
+                [PZNewsDetailData updateDataFromDatabase:newsData];
             }
             newsListCell.timeLabel.text = newsData.time;
             if ([newsData.introduce isEqualToString:@""])
@@ -213,22 +214,22 @@
     return NULL;
 }
 
-- (UIImage *)newThreadForLoadLocalImage:(PZNewsListData *)newsData
-{
-    return [UIImage imageWithContentsOfFile:newsData.imgurl];
-}
+//- (UIImage *)newThreadForLoadLocalImage:(PZNewsListData *)newsData
+//{
+//    return [UIImage imageWithContentsOfFile:newsData.imgurl];
+//}
 
 /*
  * 表格视图每行的高度
  */
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PZNewsListData * newsData = [_newsItemArray objectAtIndex:indexPath.row];
-    
-    if ([newsData.typeOfNews isEqualToString:@"249"] || [newsData.typeOfNews isEqualToString:@"51" ])
-    {
-        return 150.0f;
-    }
+//    PZNewsListData * newsData = [_newsItemArray objectAtIndex:indexPath.row];
+//    
+//    if ([newsData.typeOfNews isEqualToString:@"249"] || [newsData.typeOfNews isEqualToString:@"51" ])
+//    {
+//        return 150.0f;
+//    }
     return 100.0f;
 }
 
@@ -300,8 +301,8 @@
         
         if ([_newsItemArray count]) {
             _newsDetailViewController = [[PZNewsDetailViewController alloc]init];
-            PZNewsListData * newsData = [_newsItemArray objectAtIndex:indexPath.row];
-            _newsDetailViewController.newsid = [NSString stringWithFormat:@"%f",newsData.newsidNum];
+            PZNewsDetailData * newsData = [_newsItemArray objectAtIndex:indexPath.row];
+            _newsDetailViewController.newsid = [NSString stringWithFormat:@"%@",newsData.numOfNews];
             [self.navigationController pushViewController:_newsDetailViewController animated:YES];
         }    }
     else {

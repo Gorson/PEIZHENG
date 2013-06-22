@@ -29,7 +29,10 @@
 #import "PZCollectionListTableViewController.h"
 #import "PZMainViewController.h"
 #import "PZUserFunctionController.h"
+#import "PZNewsListTableViewController.h"
+#import "PZDflyViewController.h"
 #import "PZSetDetailController.h"
+#import "PZAboutController.h"
 #import "PZMapController.h"
 #import "PZUserInfo.h"
 
@@ -333,7 +336,7 @@
         {
             PZMainViewController *mainViewController = [[PZMainViewController alloc]init];
             UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:mainViewController];
-            
+
             [self.mm_drawerController
              setCenterViewController:nav
              withCloseAnimation:YES
@@ -341,10 +344,31 @@
         }
             break;
         case 1:
-            
+        {
+            PZNewsListTableViewController *newsListTableViewController = [[PZNewsListTableViewController alloc]init];
+            newsListTableViewController.headTitle = @"培正周边";
+            newsListTableViewController.catid = SurroundingPeiZheng;
+            UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:newsListTableViewController];
+            [nav.navigationBar setHidden:YES];
+
+            [self.mm_drawerController
+             setCenterViewController:nav
+             withCloseAnimation:YES
+             completion:nil];
+        }
             break;
         case 2:
+        {
+            PZDflyViewController *dflyViewController = [[PZDflyViewController alloc]init];
+            dflyViewController.catid = DFlyVisual;
+            UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:dflyViewController];
+            [nav.navigationBar setHidden:YES];
             
+            [self.mm_drawerController
+             setCenterViewController:nav
+             withCloseAnimation:YES
+             completion:nil];
+        }
             break;
         case 3:
         {
@@ -362,6 +386,8 @@
             {
                 PZUserFunctionController * userFunctionController = [[PZUserFunctionController alloc]init];
                 nav = [[UINavigationController alloc] initWithRootViewController:userFunctionController];
+                [nav.navigationBar setHidden:YES];
+
                 [self.mm_drawerController
                  setCenterViewController:nav
                  withCloseAnimation:YES
@@ -371,6 +397,8 @@
             {
                 PZUserFunctionController * userFunctionController = [[PZUserFunctionController alloc]init];
                 nav = [[UINavigationController alloc] initWithRootViewController:userFunctionController];
+                [nav.navigationBar setHidden:YES];
+
                 PZPCServerViewController *pcServerViewController = [[PZPCServerViewController alloc]init];
                 UINavigationController *ServerViewNav = [[UINavigationController alloc] initWithRootViewController:pcServerViewController];
                 pcServerViewController.userFunctionController = userFunctionController;
@@ -407,7 +435,16 @@
         }
             break;
         case 7:
+        {
+            PZAboutController *aboutController = [[PZAboutController alloc]init];
+            UINavigationController *AboutViewNav = [[UINavigationController alloc] initWithRootViewController:aboutController];
+            [AboutViewNav.navigationBar setHidden:YES];
             
+            [self.mm_drawerController
+             setCenterViewController:AboutViewNav
+             withCloseAnimation:YES
+             completion:nil];
+        }
             break;
         default:
             break;

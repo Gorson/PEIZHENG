@@ -37,7 +37,7 @@
 {
     [super viewDidLoad];
     
-    _backButton.hidden = NO;
+    _backButton.hidden = YES;
     _confirmButton.hidden = YES;
 }
 

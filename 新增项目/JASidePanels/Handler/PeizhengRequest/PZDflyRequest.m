@@ -1,15 +1,13 @@
 //
-//  PZMainNewsPictureRequest.m
+//  PZDflyRequest.m
 //  培正梦飞翔
 //
-//  Created by 朱 欣 on 13-5-6.
+//  Created by Air on 13-6-22.
 //
 //
 
-#import "PZMainRequest.h"
-#import "PZNewsMainList.h"
-
-@interface PZMainRequest()
+#import "PZDflyRequest.h"
+@interface PZDflyRequest ()
 {
     NSInteger _startIndex;                                         // 页面数量
 }
@@ -18,11 +16,11 @@
 @property (strong, nonatomic) NSString *notificationText;
 @end
 
-@implementation PZMainRequest
+@implementation PZDflyRequest
 @synthesize elements = _elements;
-@synthesize mainViewController = _mainViewController;
+@synthesize dflyViewController = _dflyViewController;
 
-- (void)MainNewsRequest:(NSString *)catId
+- (void)DflyRequeat:(NSString *)catId
 {
     [self startRequest:catId];
 }
@@ -43,14 +41,14 @@
 -(void)startRequest:(NSString *)catid
 {
     int i = 0;
-    if ([_mainViewController.comboBoxDatasource count]%12 > 0) {
+    if ([_dflyViewController.dflyItemArray count]%12 > 0) {
         i = 2; // 最后一页不够整除12时
     }
     else
     {
         i = 1;
     }
-    _startIndex = [_mainViewController.comboBoxDatasource count]/12 + i;
+    _startIndex = [_dflyViewController.dflyItemArray count]/12 + i;
     NSString * p = [[NSString alloc]initWithFormat:@"%d",_startIndex];
     
     NSString *strURL = [[NSString alloc]initWithFormat:@"http://www.peizheng.cn/mobile/index.php?interfaceid=0102&page=%@&limit=12&catid=%@&cname=dfly&cpwd=123456",p,catid];
@@ -71,19 +69,15 @@
         NSArray * dataContents =[resDict valueForKey:@"newsHead"];
         for (NSDictionary *newsDataDict in dataContents)
         {
-            PZNewsMainList * newsListData = [[PZNewsMainList alloc]init];
-            newsListData.newsId = [newsDataDict valueForKey:@"newsid"];
-            newsListData.title = [newsDataDict valueForKey:@"title"];
-            newsListData.introduce = [newsDataDict valueForKey:@"introduce"];
-            newsListData.imgurl = [newsDataDict valueForKey:@"imgurl"];
-            newsListData.time = [newsDataDict valueForKey:@"time"];
-            [_elements addObject:newsListData];
+//            PZNewsMainList * newsListData = [[PZNewsMainList alloc]init];
+//            newsListData.newsId = [newsDataDict valueForKey:@"newsid"];
+//            newsListData.title = [newsDataDict valueForKey:@"title"];
+//            newsListData.introduce = [newsDataDict valueForKey:@"introduce"];
+//            newsListData.imgurl = [newsDataDict valueForKey:@"imgurl"];
+//            newsListData.time = [newsDataDict valueForKey:@"time"];
+//            [_elements addObject:newsListData];
         }
-        [_mainViewController.comboBoxDatasource addObjectsFromArray:_elements];
-        [_mainViewController comboBoxAppear];
-        if (_startIndex == 1) {
-            [_mainViewController newsTopOfView];
-        }
+        [_dflyViewController.dflyItemArray addObjectsFromArray:_elements];
         [_elements removeAllObjects];
         [_elements release];
         

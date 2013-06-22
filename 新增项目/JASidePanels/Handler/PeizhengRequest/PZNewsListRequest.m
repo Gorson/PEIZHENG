@@ -52,7 +52,7 @@
 // 开始请求
 -(void)startRequest:(NSString *)catid
 {
-    NSString *strURL = [[NSString alloc]initWithFormat:@"http://www.peizheng.cn/mobile/index.php?interfaceid=0102&page=%d&limit=20&catid=%@&cname=dfly&cpwd=123456",_startIndex,catid];
+    NSString *strURL = [[NSString alloc]initWithFormat:@"http://www.peizheng.cn/mobile/index.php?interfaceid=0102&page=%d&limit=30&catid=%@&cname=dfly&cpwd=123456",_startIndex,catid];
     NSURL *url = [NSURL URLWithString:strURL];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request setDelegate:self];

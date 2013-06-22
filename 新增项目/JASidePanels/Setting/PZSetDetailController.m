@@ -55,7 +55,7 @@
 #pragma mark Init Data
 - (void)initWithData
 {
-    array = [[NSArray alloc]initWithObjects:@"1",@"2",@"3",@"4", nil];
+    array = [[NSArray alloc]initWithObjects:@"流量控制",@"背景样式",@"动态风格",@"清除缓存", nil];
 }
 
 #pragma mark -
@@ -117,9 +117,10 @@
     if (cell == nil)
     {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
-        cell.backgroundColor = HEXCOLOR(0xFBFBFB);
+        cell.backgroundColor = [UIColor clearColor];
         cell.textLabel.textColor = BKColor;
         cell.textLabel.font = [UIFont systemFontOfSize:16.0f];
+        cell.backgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cellBackground.png"]] autorelease];
 //        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     cell.textLabel.text = [array objectAtIndex:indexPath.row];

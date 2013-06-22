@@ -16,6 +16,7 @@
 @synthesize comboBoxDatasource = _comboBoxDatasource;
 @synthesize mainViewController;
 @synthesize comboBoxTableView = _comboBoxTableView;
+
 - (id)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
 		[self initVariables];

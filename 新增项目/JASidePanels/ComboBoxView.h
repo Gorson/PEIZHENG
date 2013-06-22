@@ -28,5 +28,6 @@
 - (void)show;
 - (void)hidden;
 - (void)drawListFrameWithFrame:(CGRect)frame withContext:(CGContextRef)context;
+- (void)pulldownButtonWasClicked:(id)sender;
 
 @end

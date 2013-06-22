@@ -65,6 +65,7 @@
 		457249EF17298DF7005628A3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 457249EE17298DF7005628A3 /* MapKit.framework */; };
 		45724A06172A8591005628A3 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45724A05172A8591005628A3 /* libz.1.2.5.dylib */; };
 		45724A07172A8599005628A3 /* libresolv.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 457249C0172986D2005628A3 /* libresolv.9.dylib */; };
+		4572D2C61774B1630063393C /* PZMainButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4572D2C51774B1630063393C /* PZMainButton.m */; };
 		45735F451707279500CB36AE /* IMTWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45735F441707279500CB36AE /* IMTWebView.m */; };
 		45735F48170727A500CB36AE /* ChromeProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 45735F47170727A500CB36AE /* ChromeProgressBar.m */; };
 		45735F5817073D7B00CB36AE /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 45735F4B17073D7B00CB36AE /* CHANGELOG.md */; };
@@ -103,6 +104,10 @@
 		457687791759EA63004FB655 /* REMenuContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 457687731759EA63004FB655 /* REMenuContainerView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		4576877A1759EA63004FB655 /* REMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 457687751759EA63004FB655 /* REMenuItem.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		4576877B1759EA63004FB655 /* REMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 457687771759EA63004FB655 /* REMenuItemView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		4577F4521775AA1C008977F9 /* PZDflyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577F4511775AA1C008977F9 /* PZDflyRequest.m */; };
+		4577F4551775BB7E008977F9 /* PZAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577F4541775BB7E008977F9 /* PZAboutController.m */; };
+		4577F4581775BC29008977F9 /* PZUserGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577F4571775BC29008977F9 /* PZUserGuideViewController.m */; };
+		4577F45B1775DA97008977F9 /* PZDflyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577F45A1775DA96008977F9 /* PZDflyViewController.m */; };
 		45783C8817080CB100328EA0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45783C8717080CB100328EA0 /* AudioToolbox.framework */; };
 		45783C8A17080DF800328EA0 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45783C8917080DF800328EA0 /* CoreFoundation.framework */; };
 		45783C941708759500328EA0 /* weibo.png in Resources */ = {isa = PBXBuildFile; fileRef = 45783C921708759500328EA0 /* weibo.png */; };
@@ -137,7 +142,6 @@
 		45792AE9177168D4008ABED6 /* baiduMainview.png in Resources */ = {isa = PBXBuildFile; fileRef = 45792AE7177168D4008ABED6 /* baiduMainview.png */; };
 		45792AEA177168D4008ABED6 /* baiduMainview@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45792AE8177168D4008ABED6 /* baiduMainview@2x.png */; };
 		457934B41773F1AA009F45C9 /* PZSetDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457934B31773F1AA009F45C9 /* PZSetDetailController.m */; };
-		457934B71773F87A009F45C9 /* PZAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457934B61773F87A009F45C9 /* PZAboutController.m */; };
 		4579526A1752672700BD75FB /* mapOfPeiZheng.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 457952691752672700BD75FB /* mapOfPeiZheng.jpg */; };
 		4579526C1752673800BD75FB /* mapOfPeiZheng@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4579526B1752673800BD75FB /* mapOfPeiZheng@2x.jpg */; };
 		4579531217413050007190F5 /* AOImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 457952FD17413050007190F5 /* AOImageView.m */; };
@@ -313,6 +317,8 @@
 		457249EE17298DF7005628A3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		45724A02172A84FF005628A3 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		45724A05172A8591005628A3 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		4572D2C41774B1630063393C /* PZMainButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PZMainButton.h; sourceTree = "<group>"; };
+		4572D2C51774B1630063393C /* PZMainButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZMainButton.m; sourceTree = "<group>"; };
 		45735F431707279500CB36AE /* IMTWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMTWebView.h; path = Utility/IMTWebView/IMTWebView.h; sourceTree = "<group>"; };
 		45735F441707279500CB36AE /* IMTWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMTWebView.m; path = Utility/IMTWebView/IMTWebView.m; sourceTree = "<group>"; };
 		45735F46170727A500CB36AE /* ChromeProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChromeProgressBar.h; path = Utility/ChromeProgressBar/ChromeProgressBar.h; sourceTree = "<group>"; };
@@ -375,6 +381,14 @@
 		457687751759EA63004FB655 /* REMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = REMenuItem.m; path = Utility/REMenu/REMenuItem.m; sourceTree = "<group>"; };
 		457687761759EA63004FB655 /* REMenuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REMenuItemView.h; path = Utility/REMenu/REMenuItemView.h; sourceTree = "<group>"; };
 		457687771759EA63004FB655 /* REMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = REMenuItemView.m; path = Utility/REMenu/REMenuItemView.m; sourceTree = "<group>"; };
+		4577F4501775AA1C008977F9 /* PZDflyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PZDflyRequest.h; sourceTree = "<group>"; };
+		4577F4511775AA1C008977F9 /* PZDflyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZDflyRequest.m; sourceTree = "<group>"; };
+		4577F4531775BB7E008977F9 /* PZAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PZAboutController.h; sourceTree = "<group>"; };
+		4577F4541775BB7E008977F9 /* PZAboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZAboutController.m; sourceTree = "<group>"; };
+		4577F4561775BC29008977F9 /* PZUserGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PZUserGuideViewController.h; sourceTree = "<group>"; };
+		4577F4571775BC29008977F9 /* PZUserGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZUserGuideViewController.m; sourceTree = "<group>"; };
+		4577F4591775DA96008977F9 /* PZDflyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PZDflyViewController.h; path = Demo/PZDflyViewController.h; sourceTree = "<group>"; };
+		4577F45A1775DA96008977F9 /* PZDflyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PZDflyViewController.m; path = Demo/PZDflyViewController.m; sourceTree = "<group>"; };
 		45783C8717080CB100328EA0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		45783C8917080DF800328EA0 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		45783C921708759500328EA0 /* weibo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = weibo.png; path = AppImage/weibo.png; sourceTree = "<group>"; };
@@ -417,8 +431,6 @@
 		45792AE8177168D4008ABED6 /* baiduMainview@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "baiduMainview@2x.png"; path = "AppImage/baiduMainview@2x.png"; sourceTree = "<group>"; };
 		457934B21773F1AA009F45C9 /* PZSetDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PZSetDetailController.h; path = Setting/PZSetDetailController.h; sourceTree = "<group>"; };
 		457934B31773F1AA009F45C9 /* PZSetDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PZSetDetailController.m; path = Setting/PZSetDetailController.m; sourceTree = "<group>"; };
-		457934B51773F87A009F45C9 /* PZAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PZAboutController.h; path = Setting/About/PZAboutController.h; sourceTree = "<group>"; };
-		457934B61773F87A009F45C9 /* PZAboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PZAboutController.m; path = Setting/About/PZAboutController.m; sourceTree = "<group>"; };
 		457952691752672700BD75FB /* mapOfPeiZheng.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mapOfPeiZheng.jpg; sourceTree = "<group>"; };
 		4579526B1752673800BD75FB /* mapOfPeiZheng@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mapOfPeiZheng@2x.jpg"; sourceTree = "<group>"; };
 		457952FC17413050007190F5 /* AOImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOImageView.h; sourceTree = "<group>"; };
@@ -824,6 +836,8 @@
 				CE968B841737CBDC0076D502 /* PZDetailRequest.m */,
 				CE968BA01737E6EC0076D502 /* PZMainRequest.h */,
 				CE968BA11737E6ED0076D502 /* PZMainRequest.m */,
+				4577F4501775AA1C008977F9 /* PZDflyRequest.h */,
+				4577F4511775AA1C008977F9 /* PZDflyRequest.m */,
 			);
 			path = PeizhengRequest;
 			sourceTree = "<group>";
@@ -1070,6 +1084,8 @@
 				CE968B921737D2F60076D502 /* PZNewsDetailViewController.m */,
 				45792ADF17713CBB008ABED6 /* PZMainViewController.h */,
 				45792AE017713CBB008ABED6 /* PZMainViewController.m */,
+				4577F4591775DA96008977F9 /* PZDflyViewController.h */,
+				4577F45A1775DA96008977F9 /* PZDflyViewController.m */,
 			);
 			name = "主页";
 			sourceTree = "<group>";
@@ -1087,8 +1103,10 @@
 		457934AE1773F112009F45C9 /* About */ = {
 			isa = PBXGroup;
 			children = (
-				457934B51773F87A009F45C9 /* PZAboutController.h */,
-				457934B61773F87A009F45C9 /* PZAboutController.m */,
+				4577F4561775BC29008977F9 /* PZUserGuideViewController.h */,
+				4577F4571775BC29008977F9 /* PZUserGuideViewController.m */,
+				4577F4531775BB7E008977F9 /* PZAboutController.h */,
+				4577F4541775BB7E008977F9 /* PZAboutController.m */,
 			);
 			name = About;
 			sourceTree = "<group>";
@@ -1162,6 +1180,8 @@
 				457AF5FE177037D300F300BD /* MMLogoView.m */,
 				45792AE217713FDC008ABED6 /* PZMainView.h */,
 				45792AE317713FDC008ABED6 /* PZMainView.m */,
+				4572D2C41774B1630063393C /* PZMainButton.h */,
+				4572D2C51774B1630063393C /* PZMainButton.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1611,7 +1631,11 @@
 				457DC71F1771A9470080FADE /* ComboBoxView.m in Sources */,
 				457DC7221771D4180080FADE /* PZNewsMainList.m in Sources */,
 				457934B41773F1AA009F45C9 /* PZSetDetailController.m in Sources */,
-				457934B71773F87A009F45C9 /* PZAboutController.m in Sources */,
+				4572D2C61774B1630063393C /* PZMainButton.m in Sources */,
+				4577F4521775AA1C008977F9 /* PZDflyRequest.m in Sources */,
+				4577F4551775BB7E008977F9 /* PZAboutController.m in Sources */,
+				4577F4581775BC29008977F9 /* PZUserGuideViewController.m in Sources */,
+				4577F45B1775DA97008977F9 /* PZDflyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

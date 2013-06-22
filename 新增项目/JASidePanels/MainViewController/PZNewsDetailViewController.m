@@ -188,40 +188,27 @@
 -(void)onConfirm:(UIButton *)sender
 {
     newsDetailData = [PZNewsDetailData loadADataInDatabaseWithNewsId:_newsid];
-    if ([newsDetailData.mark isEqualToString:@"NO"] || [newsDetailData.mark isEqualToString:@""]) {
+    if ([newsDetailData.mark isEqualToString:@"NO"] || [newsDetailData.mark isEqualToString:@""] || newsDetailData.mark == NULL) {
         newsDetailData.mark = @"YES";
+        self.notificationText = @"保存成功";
+        self.imageName = @"PZ_True.png";
+        self.notify.image = [UIImage imageNamed:self.imageName];
+        self.notify.text = self.notificationText;
+        [self displayNotification];
+        [_confirmButton setBackgroundImage:[UIImage imageNamed:@"rubbish.png"] forState:UIControlStateNormal];
     }
     else
     {
         newsDetailData.mark = @"NO";
+        self.notificationText = @"删除成功";
+        self.imageName = @"PZ_True.png";
+        self.notify.image = [UIImage imageNamed:self.imageName];
+        self.notify.text = self.notificationText;
+        [self displayNotification];
+        [_confirmButton setBackgroundImage:[UIImage imageNamed:@"PZKeepPage.png"] forState:UIControlStateNormal];
     }
     [PZNewsDetailData updateDataFromDatabase:newsDetailData];
 
-    NSArray * listDataArray = [PZNewsListData loadDataInDatabase];
-    for (PZNewsListData * listData in listDataArray) {
-        if (listData.newsidNum == [_newsid floatValue]) {
-            if ([listData.mark isEqualToString:@"NO"] || listData.mark == NULL) {
-                listData.mark = @"YES";
-                self.notificationText = @"保存成功";
-                self.imageName = @"PZ_True.png";
-                self.notify.image = [UIImage imageNamed:self.imageName];
-                self.notify.text = self.notificationText;
-                [self displayNotification];
-                [_confirmButton setBackgroundImage:[UIImage imageNamed:@"rubbish.png"] forState:UIControlStateNormal];
-            }
-            else
-            {
-                listData.mark = @"NO";
-                self.notificationText = @"删除成功";
-                self.imageName = @"PZ_True.png";
-                self.notify.image = [UIImage imageNamed:self.imageName];
-                self.notify.text = self.notificationText;
-                [self displayNotification];
-                [_confirmButton setBackgroundImage:[UIImage imageNamed:@"PZKeepPage.png"] forState:UIControlStateNormal];
-            }
-            [PZNewsListData updateDataFromDatabase:listData];
-        }
-    }
 }
 
 #pragma mark -

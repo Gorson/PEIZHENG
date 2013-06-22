@@ -8,10 +8,13 @@
 
 #import "PZMainViewController.h"
 #import "PZNewsListTableViewController.h"
+#import "PZNewsDetailViewController.h"
 #import "PZMainView.h"
 #import "ComboBoxView.h"
 #import "PZMainRequest.h"
 #import "PZNewsMainList.h"
+#import "PZMainButton.h"
+#import "UIImageView+WebCache.h"
 
 @interface PZMainViewController ()
 {
@@ -19,6 +22,7 @@
     PZMainRequest *_mainRequest;
     PZMainView *mainView;
     UIButton * topOfView;
+    PZMainButton * newsButton;
 }
 @end
 
@@ -64,14 +68,9 @@
     }
     [self.view addSubview:mainView];
     
-    topOfView = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, IPHONE_WIDTH, IPHONE_HEIGHT - 20.0f)];
-    [topOfView setBackgroundColor:[UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5]];
+    topOfView = [[PZMainButton alloc]initWithFrame:CGRectMake(0, 0, IPHONE_WIDTH, IPHONE_HEIGHT - 20.0f)];
+    [topOfView setBackgroundColor:[UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:0.9]];
     [topOfView addTarget:self action:@selector(removeTopNews) forControlEvents:UIControlEventAllEvents];
-    UIButton * newsButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [newsButton setFrame:CGRectMake(0.0f, IPHONE_HEIGHT/3 - 20.0f, 320.0f, IPHONE_HEIGHT/3)];
-    [newsButton setBackgroundColor:[UIColor colorWithRed:1 green:0.5 blue:0.5 alpha:0.5]];
-    [newsButton addTarget:self action:@selector(removeTopNews) forControlEvents:UIControlEventTouchUpInside];
-    [topOfView addSubview:newsButton];
 }
 
 - (void)initWithData
@@ -84,6 +83,19 @@
 {
     if (!_comboBox) {
         _comboBox = [[ComboBoxView alloc] initWithFrame:CGRectMake(15.0f, 150.0f, 216.0f, 234.0f)];
+        newsButton = [PZMainButton buttonWithType:UIButtonTypeCustom];
+        UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"cellBackground.png"]];
+        [imageView setFrame:CGRectMake(0.0f, 0.0f, 300.0f, IPHONE_HEIGHT/3)];
+        UIButton *searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [searchButton setFrame:CGRectMake(231.0f, 151.0f, 73.0f, 37.0f)];
+        [searchButton setBackgroundColor:[UIColor whiteColor]];
+        [searchButton setTitleColor:BKColor forState:UIControlStateNormal];
+        [searchButton.titleLabel setFont:[UIFont boldSystemFontOfSize:16.0f]];
+        [searchButton setTitle:@"培正一下" forState:UIControlStateNormal];
+        [searchButton addTarget:self action:@selector(searchThing) forControlEvents:UIControlEventTouchUpInside];
+        [mainView addSubview:searchButton];
+        [newsButton addSubview:imageView];
+        [topOfView addSubview:newsButton];
         [mainView addSubview:_comboBox];
     }
     else
@@ -96,6 +108,40 @@
     PZNewsMainList *newsMainList = [[PZNewsMainList alloc]init];
     newsMainList = [_comboBoxDatasource objectAtIndex:0];
 	[_comboBox setContent:newsMainList.title];
+    
+    [newsButton setFrame:CGRectMake(10.0f, IPHONE_HEIGHT/3 - 20.0f, 300.0f, IPHONE_HEIGHT/3)];
+//    [newsButton setBackgroundColor:[UIColor colorWithRed:1 green:0.5 blue:0.5 alpha:0.5]];
+    [newsButton addTarget:self action:@selector(toTopNews:) forControlEvents:UIControlEventTouchUpInside];
+    newsButton.titleLabel.text = newsMainList.title;
+    newsButton.timeLabel.text = newsMainList.time;
+    newsButton.tag = [newsMainList.newsId integerValue];
+    
+    if (newsMainList.imgurl!= NULL) {
+        if ([newsMainList.imgurl hasPrefix:@"http"])
+        {
+            [newsButton.image setImageWithURL:[NSURL URLWithString:newsMainList.imgurl] placeholderImage:[UIImage imageNamed:@"tb1.jpg"]];
+        }
+        else if([newsMainList.imgurl hasPrefix:@"uploadfile"])
+        {
+            [newsButton.image setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.peizheng.cn/%@",newsMainList.imgurl]] placeholderImage:[UIImage imageNamed:@"tb1.jpg"]];
+        }else
+        {
+            //获取一个随机整数范围在：[0,100)包括0，不包括100
+            int x = arc4random() % 20;
+            
+            [newsButton.image setImageWithURL:[NSURL URLWithString:newsMainList.imgurl] placeholderImage:[UIImage imageNamed:[NSString stringWithFormat:@"tb%d.jpg",x+1]]];
+
+        }
+    }
+    else
+    {
+        //获取一个随机整数范围在：[0,100)包括0，不包括100
+        int x = arc4random() % 20;
+        
+        [newsButton.image setImageWithURL:[NSURL URLWithString:newsMainList.imgurl] placeholderImage:[UIImage imageNamed:[NSString stringWithFormat:@"tb%d.jpg",x+1]]];
+    }
+    
+    newsButton.contentLabel.text = newsMainList.introduce;
     
 //	[_comboBox release];
 //	[_comboBoxDatasource release];
@@ -157,5 +203,18 @@
 - (void)removeTopNews
 {
     [topOfView removeFromSuperview];
+}
+
+- (void)toTopNews:(UIButton *)sender
+{
+    PZNewsDetailViewController * newsDetailView = [[PZNewsDetailViewController alloc]init];
+    newsDetailView.newsid = [NSString stringWithFormat:@"%ld",(long)sender.tag];
+    [self.navigationController pushViewController:newsDetailView animated:YES];
+    [self removeTopNews];
+}
+
+- (void)searchThing
+{
+    [_comboBox pulldownButtonWasClicked:nil];
 }
 @end
