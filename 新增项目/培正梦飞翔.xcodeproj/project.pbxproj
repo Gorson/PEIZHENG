@@ -108,6 +108,19 @@
 		4577F4551775BB7E008977F9 /* PZAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577F4541775BB7E008977F9 /* PZAboutController.m */; };
 		4577F4581775BC29008977F9 /* PZUserGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577F4571775BC29008977F9 /* PZUserGuideViewController.m */; };
 		4577F45B1775DA97008977F9 /* PZDflyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577F45A1775DA96008977F9 /* PZDflyViewController.m */; };
+		4577F45E1776BFD9008977F9 /* PZDflyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577F45D1776BFD9008977F9 /* PZDflyData.m */; };
+		4577F4641776C554008977F9 /* AOWaterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577F4611776C554008977F9 /* AOWaterView.m */; };
+		4577F4651776C554008977F9 /* MessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577F4631776C554008977F9 /* MessView.m */; };
+		4577F46D1776C90B008977F9 /* EGORefreshTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577F4681776C90B008977F9 /* EGORefreshTableFooterView.m */; };
+		4577F46E1776C90B008977F9 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4577F46A1776C90B008977F9 /* EGORefreshTableHeaderView.m */; };
+		4577F4771776CC8F008977F9 /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4577F46F1776CC8F008977F9 /* blackArrow.png */; };
+		4577F4781776CC8F008977F9 /* blackArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4577F4701776CC8F008977F9 /* blackArrow@2x.png */; };
+		4577F4791776CC8F008977F9 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4577F4711776CC8F008977F9 /* blueArrow.png */; };
+		4577F47A1776CC8F008977F9 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4577F4721776CC8F008977F9 /* blueArrow@2x.png */; };
+		4577F47B1776CC8F008977F9 /* grayArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4577F4731776CC8F008977F9 /* grayArrow.png */; };
+		4577F47C1776CC8F008977F9 /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4577F4741776CC8F008977F9 /* grayArrow@2x.png */; };
+		4577F47D1776CC8F008977F9 /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4577F4751776CC8F008977F9 /* whiteArrow.png */; };
+		4577F47E1776CC8F008977F9 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4577F4761776CC8F008977F9 /* whiteArrow@2x.png */; };
 		45783C8817080CB100328EA0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45783C8717080CB100328EA0 /* AudioToolbox.framework */; };
 		45783C8A17080DF800328EA0 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45783C8917080DF800328EA0 /* CoreFoundation.framework */; };
 		45783C941708759500328EA0 /* weibo.png in Resources */ = {isa = PBXBuildFile; fileRef = 45783C921708759500328EA0 /* weibo.png */; };
@@ -389,6 +402,25 @@
 		4577F4571775BC29008977F9 /* PZUserGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZUserGuideViewController.m; sourceTree = "<group>"; };
 		4577F4591775DA96008977F9 /* PZDflyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PZDflyViewController.h; path = Demo/PZDflyViewController.h; sourceTree = "<group>"; };
 		4577F45A1775DA96008977F9 /* PZDflyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PZDflyViewController.m; path = Demo/PZDflyViewController.m; sourceTree = "<group>"; };
+		4577F45C1776BFD9008977F9 /* PZDflyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PZDflyData.h; sourceTree = "<group>"; };
+		4577F45D1776BFD9008977F9 /* PZDflyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZDflyData.m; sourceTree = "<group>"; };
+		4577F4601776C554008977F9 /* AOWaterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOWaterView.h; sourceTree = "<group>"; };
+		4577F4611776C554008977F9 /* AOWaterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOWaterView.m; sourceTree = "<group>"; };
+		4577F4621776C554008977F9 /* MessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessView.h; sourceTree = "<group>"; };
+		4577F4631776C554008977F9 /* MessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessView.m; sourceTree = "<group>"; };
+		4577F4671776C90B008977F9 /* EGORefreshTableFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableFooterView.h; sourceTree = "<group>"; };
+		4577F4681776C90B008977F9 /* EGORefreshTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableFooterView.m; sourceTree = "<group>"; };
+		4577F4691776C90B008977F9 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		4577F46A1776C90B008977F9 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
+		4577F46B1776C90B008977F9 /* EGOViewCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOViewCommon.h; sourceTree = "<group>"; };
+		4577F46F1776CC8F008977F9 /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackArrow.png; sourceTree = "<group>"; };
+		4577F4701776CC8F008977F9 /* blackArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackArrow@2x.png"; sourceTree = "<group>"; };
+		4577F4711776CC8F008977F9 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
+		4577F4721776CC8F008977F9 /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
+		4577F4731776CC8F008977F9 /* grayArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayArrow.png; sourceTree = "<group>"; };
+		4577F4741776CC8F008977F9 /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
+		4577F4751776CC8F008977F9 /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
+		4577F4761776CC8F008977F9 /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
 		45783C8717080CB100328EA0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		45783C8917080DF800328EA0 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		45783C921708759500328EA0 /* weibo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = weibo.png; path = AppImage/weibo.png; sourceTree = "<group>"; };
@@ -654,6 +686,7 @@
 		4571566D1707119C00393580 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				4577F4661776C90B008977F9 /* EGO */,
 				457DC71C1771A9390080FADE /* ComboBox */,
 				457AF5E41770372600F300BD /* MMDrawerController */,
 				4575B51D176C72C7005F3FFA /* GuideInterFaceVC */,
@@ -975,6 +1008,47 @@
 			name = CustomActivityIndicatorView;
 			sourceTree = "<group>";
 		};
+		4577F45F1776C554008977F9 /* AOWaterView */ = {
+			isa = PBXGroup;
+			children = (
+				4577F4601776C554008977F9 /* AOWaterView.h */,
+				4577F4611776C554008977F9 /* AOWaterView.m */,
+				4577F4621776C554008977F9 /* MessView.h */,
+				4577F4631776C554008977F9 /* MessView.m */,
+			);
+			name = AOWaterView;
+			path = Utility/AOWaterView;
+			sourceTree = "<group>";
+		};
+		4577F4661776C90B008977F9 /* EGO */ = {
+			isa = PBXGroup;
+			children = (
+				4577F4671776C90B008977F9 /* EGORefreshTableFooterView.h */,
+				4577F4681776C90B008977F9 /* EGORefreshTableFooterView.m */,
+				4577F4691776C90B008977F9 /* EGORefreshTableHeaderView.h */,
+				4577F46A1776C90B008977F9 /* EGORefreshTableHeaderView.m */,
+				4577F46B1776C90B008977F9 /* EGOViewCommon.h */,
+				4577F46C1776C90B008977F9 /* LoadMoreDataView */,
+			);
+			name = EGO;
+			path = Utility/EGO;
+			sourceTree = "<group>";
+		};
+		4577F46C1776C90B008977F9 /* LoadMoreDataView */ = {
+			isa = PBXGroup;
+			children = (
+				4577F46F1776CC8F008977F9 /* blackArrow.png */,
+				4577F4701776CC8F008977F9 /* blackArrow@2x.png */,
+				4577F4711776CC8F008977F9 /* blueArrow.png */,
+				4577F4721776CC8F008977F9 /* blueArrow@2x.png */,
+				4577F4731776CC8F008977F9 /* grayArrow.png */,
+				4577F4741776CC8F008977F9 /* grayArrow@2x.png */,
+				4577F4751776CC8F008977F9 /* whiteArrow.png */,
+				4577F4761776CC8F008977F9 /* whiteArrow@2x.png */,
+			);
+			path = LoadMoreDataView;
+			sourceTree = "<group>";
+		};
 		45783C8B17080F2C00328EA0 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
@@ -1174,6 +1248,7 @@
 		457AF612177037DC00F300BD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4577F45F1776C554008977F9 /* AOWaterView */,
 				457AF5FF177037D300F300BD /* MMSideDrawerSectionHeaderView.h */,
 				457AF600177037D300F300BD /* MMSideDrawerSectionHeaderView.m */,
 				457AF5FD177037D300F300BD /* MMLogoView.h */,
@@ -1372,6 +1447,8 @@
 				CE90249917421DBE00D3D40D /* PZNewsDetailData.m */,
 				45818EAA176EFC42000EB06B /* PZUserInfo.h */,
 				45818EAB176EFC42000EB06B /* PZUserInfo.m */,
+				4577F45C1776BFD9008977F9 /* PZDflyData.h */,
+				4577F45D1776BFD9008977F9 /* PZDflyData.m */,
 			);
 			name = coredata;
 			sourceTree = "<group>";
@@ -1505,6 +1582,14 @@
 				458A864D176CAD97002A531A /* rubbish@2x.png in Resources */,
 				45792AE9177168D4008ABED6 /* baiduMainview.png in Resources */,
 				45792AEA177168D4008ABED6 /* baiduMainview@2x.png in Resources */,
+				4577F4771776CC8F008977F9 /* blackArrow.png in Resources */,
+				4577F4781776CC8F008977F9 /* blackArrow@2x.png in Resources */,
+				4577F4791776CC8F008977F9 /* blueArrow.png in Resources */,
+				4577F47A1776CC8F008977F9 /* blueArrow@2x.png in Resources */,
+				4577F47B1776CC8F008977F9 /* grayArrow.png in Resources */,
+				4577F47C1776CC8F008977F9 /* grayArrow@2x.png in Resources */,
+				4577F47D1776CC8F008977F9 /* whiteArrow.png in Resources */,
+				4577F47E1776CC8F008977F9 /* whiteArrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1636,6 +1721,11 @@
 				4577F4551775BB7E008977F9 /* PZAboutController.m in Sources */,
 				4577F4581775BC29008977F9 /* PZUserGuideViewController.m in Sources */,
 				4577F45B1775DA97008977F9 /* PZDflyViewController.m in Sources */,
+				4577F45E1776BFD9008977F9 /* PZDflyData.m in Sources */,
+				4577F4641776C554008977F9 /* AOWaterView.m in Sources */,
+				4577F4651776C554008977F9 /* MessView.m in Sources */,
+				4577F46D1776C90B008977F9 /* EGORefreshTableFooterView.m in Sources */,
+				4577F46E1776C90B008977F9 /* EGORefreshTableHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

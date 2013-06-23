@@ -7,6 +7,8 @@
 //
 
 #import "PZDflyRequest.h"
+#import "PZDflyData.h"
+
 @interface PZDflyRequest ()
 {
     NSInteger _startIndex;                                         // 页面数量
@@ -69,15 +71,16 @@
         NSArray * dataContents =[resDict valueForKey:@"newsHead"];
         for (NSDictionary *newsDataDict in dataContents)
         {
-//            PZNewsMainList * newsListData = [[PZNewsMainList alloc]init];
-//            newsListData.newsId = [newsDataDict valueForKey:@"newsid"];
-//            newsListData.title = [newsDataDict valueForKey:@"title"];
-//            newsListData.introduce = [newsDataDict valueForKey:@"introduce"];
-//            newsListData.imgurl = [newsDataDict valueForKey:@"imgurl"];
-//            newsListData.time = [newsDataDict valueForKey:@"time"];
-//            [_elements addObject:newsListData];
+            PZDflyData * dflyData = [[PZDflyData alloc]init];
+            dflyData.newsId = [newsDataDict valueForKey:@"newsid"];
+            dflyData.title = [newsDataDict valueForKey:@"title"];
+            dflyData.introduce = [newsDataDict valueForKey:@"introduce"];
+            dflyData.imgurl = [newsDataDict valueForKey:@"imgurl"];
+            dflyData.time = [newsDataDict valueForKey:@"time"];
+            [_elements addObject:dflyData];
         }
         [_dflyViewController.dflyItemArray addObjectsFromArray:_elements];
+        [_dflyViewController.aoView refreshView:_dflyViewController.dflyItemArray];
         [_elements removeAllObjects];
         [_elements release];
         
