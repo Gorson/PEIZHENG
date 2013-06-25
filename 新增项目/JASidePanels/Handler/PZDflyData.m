@@ -21,7 +21,7 @@
 {
     if (self) {
         width = @"150";
-        height = @"216";
+        height = @"210";
     }
     return self;
 }

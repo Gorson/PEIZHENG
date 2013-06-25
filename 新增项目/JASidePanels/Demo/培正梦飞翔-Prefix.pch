@@ -22,6 +22,7 @@
 #import "NSString+Additions.h"
 #import "PZNavigationViewController.h"
 #import "BDKNotifyHUD.h"
+#import "PZUserInfo.h"
 #import <CoreData/CoreData.h>
 
 #endif

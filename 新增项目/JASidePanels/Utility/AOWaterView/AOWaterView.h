@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MessView.h"
+@class PZDflyViewController;
 
 @interface AOWaterView : UIScrollView<imageDelegate>
 {
@@ -20,13 +21,8 @@
 
     int row ;//行数
     BOOL _reloading;
-
-    
-  
-
-
 }
-
+@property (nonatomic, retain)PZDflyViewController *dflyViewController;
 //初始化view
 -(id)initWithDataArray:(NSMutableArray *)array;
 //刷新view

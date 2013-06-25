@@ -11,10 +11,8 @@
 
 @interface PZDflyRequest : NSObject
 {
-    NSMutableArray *_elements;
     PZDflyViewController *_dflyViewController;
 }
-@property (nonatomic, copy) NSMutableArray *elements;
 @property (nonatomic, retain) PZDflyViewController *dflyViewController;
 
 - (void)DflyRequeat:(NSString *)catId;

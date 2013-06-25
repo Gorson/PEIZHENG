@@ -19,6 +19,7 @@
 @synthesize dflyItemArray = _dflyItemArray;
 @synthesize catid = _catid;
 @synthesize aoView;
+@synthesize refreshFooterView = _refreshFooterView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -50,10 +51,16 @@
     
     self.aoView = [[AOWaterView alloc]initWithDataArray:_dflyItemArray];
     self.aoView.delegate=self;
+    self.aoView.dflyViewController = self;
     [self.view addSubview:self.aoView];
-    [self createHeaderView];
-    //[self setFooterView];
+//    [self createHeaderView];
+//    [self setFooterView];
     [self performSelector:@selector(testFinishedLoadData) withObject:nil afterDelay:0.0f];
+    
+    _loadingView = [[CustomActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [_loadingView setFrame:CGRectOffset(LoadingRect, 0.0f, -22.0f)];
+    [_loadingView startAnimating];
+    [self.view addSubview:_loadingView];
 }
 
 - (void)initWithData
@@ -254,17 +261,25 @@
 //    //        [testData addObject:[dataArray objectAtIndex:i]];
 //    //    }
 //    [self.aoView getNextPage:dataArray];
-//    [self testFinishedLoadData];
     
     PZDflyRequest *dflyRequest = [[PZDflyRequest alloc]init];
     dflyRequest.dflyViewController = self;
     [dflyRequest DflyRequeat:DFlyVisual];
 }
 
--(void)testFinishedLoadData{
-    
+-(void)testFinishedLoadData
+{
     [self finishReloadingData];
     [self setFooterView];
 }
 
+-(void)testEndLoadData
+{
+    [self removeFooterView];
+}
+
+- (void)click:(PZDflyData *)data
+{
+    
+}
 @end

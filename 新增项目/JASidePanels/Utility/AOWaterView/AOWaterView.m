@@ -7,9 +7,11 @@
 //
 
 #import "AOWaterView.h"
+#import "PZNewsDetailViewController.h"
+#import "PZDflyViewController.h"
 #define WIDTH 320/2
 @implementation AOWaterView
-
+@synthesize dflyViewController = _dflyViewController;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -23,7 +25,7 @@
 //初始化视图
 -(id)initWithDataArray:(NSMutableArray *)array{
     
-    self=[super initWithFrame:CGRectMake(0, 44.0f, 320, IPHONE_HEIGHT - 44.0f)];
+    self=[super initWithFrame:CGRectMake(0, 44.0f, 320, IPHONE_HEIGHT - 64.0f)];
     if (self) {
         [self initProperty];//初始化参数
         for (int i=0; i<array.count; i++) {
@@ -69,11 +71,6 @@
         [self addSubview:v1];
         [self addSubview:v2];
 //        [self addSubview:v3];
-        
-        
-      
-    
-
     }
     return self;
 }
@@ -96,8 +93,6 @@
     //初始化最低视图
     lower=1;
     highValue=1;
- 
-
 }
 
 //向视图添加MessView
@@ -108,6 +103,8 @@
         case 1:
             // 创建内容视图
             mView= [[MessView alloc]initWithData:data yPoint:v1.frame.size.height];
+            mView.idelegate =self;
+            mView.dataInfo = data;
             hValue=mView.frame.size.height;
             v1.frame=CGRectMake(v1.frame.origin.x, v1.frame.origin.y, WIDTH, v1.frame.size.height+hValue);
             [v1 addSubview:mView];
@@ -116,6 +113,8 @@
         case 2:
             // 创建内容视图
             mView= [[MessView alloc]initWithData:data yPoint:v2.frame.size.height];
+            mView.idelegate =self;
+            mView.dataInfo = data;
            hValue=mView.frame.size.height;
             v2.frame=CGRectMake(v2.frame.origin.x, v2.frame.origin.y, WIDTH, v2.frame.size.height+hValue);
             [v2 addSubview:mView];
@@ -187,6 +186,7 @@
     }
     //添加scrollView
     [self setContentSize:CGSizeMake(320, highValue)];
+    _dflyViewController.refreshFooterView = nil;
 }
 
 -(void)refreshView:(NSMutableArray *)array{
@@ -253,6 +253,8 @@
 */
 - (void)click:(PZDflyData *)data
 {
-    
+    PZNewsDetailViewController * newsDetailViewController = [[PZNewsDetailViewController alloc]init];
+    newsDetailViewController.newsid = data.newsId;
+    [_dflyViewController.navigationController pushViewController:newsDetailViewController animated:YES];
 }
 @end

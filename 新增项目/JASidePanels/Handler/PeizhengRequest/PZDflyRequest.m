@@ -12,6 +12,7 @@
 @interface PZDflyRequest ()
 {
     NSInteger _startIndex;                                         // 页面数量
+    NSMutableArray *_elements;
 }
 @property (strong, nonatomic) BDKNotifyHUD *notify;
 @property (strong, nonatomic) NSString *imageName;
@@ -19,7 +20,6 @@
 @end
 
 @implementation PZDflyRequest
-@synthesize elements = _elements;
 @synthesize dflyViewController = _dflyViewController;
 
 - (void)DflyRequeat:(NSString *)catId
@@ -80,15 +80,31 @@
             [_elements addObject:dflyData];
         }
         [_dflyViewController.dflyItemArray addObjectsFromArray:_elements];
-        [_dflyViewController.aoView refreshView:_dflyViewController.dflyItemArray];
+        if (_startIndex == 1) {
+            [_dflyViewController.aoView refreshView:_dflyViewController.dflyItemArray];
+        }
+        else
+        {
+            _dflyViewController.refreshFooterView = nil;
+            [_dflyViewController.aoView getNextPage:_elements];
+        }
+        [_dflyViewController testFinishedLoadData];
+
         [_elements removeAllObjects];
         [_elements release];
         
     }
     else
     {
-        
+        [_dflyViewController testEndLoadData];
+        self.notificationText = @"没有更多数据了..";
+        self.imageName = @"PZ_Wrong.png";
+        self.notify.image = [UIImage imageNamed:self.imageName];
+        self.notify.text = self.notificationText;
+        [self displayNotification];
     }
+    [_dflyViewController.loadingView stopAnimating];
+    [_dflyViewController.loadingView removeFromSuperview];
     
 }
 
@@ -103,6 +119,9 @@
     self.notify.image = [UIImage imageNamed:self.imageName];
     self.notify.text = self.notificationText;
     [self displayNotification];
+    
+    [_dflyViewController.loadingView stopAnimating];
+    [_dflyViewController.loadingView removeFromSuperview];
 }
 
 

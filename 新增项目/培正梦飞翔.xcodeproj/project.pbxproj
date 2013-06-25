@@ -145,6 +145,9 @@
 		45783CBC170875AF00328EA0 /* view_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45783CA8170875AF00328EA0 /* view_bg@2x.png */; };
 		45783CBD170875AF00328EA0 /* view_surface.png in Resources */ = {isa = PBXBuildFile; fileRef = 45783CA9170875AF00328EA0 /* view_surface.png */; };
 		45783CBE170875AF00328EA0 /* view_surface@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45783CAA170875AF00328EA0 /* view_surface@2x.png */; };
+		4578D7B3177819380012F07F /* PZAllWebFormRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4578D7B2177819380012F07F /* PZAllWebFormRequest.m */; };
+		4578D7B617781A860012F07F /* PZAllWebFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4578D7B517781A850012F07F /* PZAllWebFormViewController.m */; };
+		4578D7B917786AD40012F07F /* PZAllWebFormData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4578D7B817786AD40012F07F /* PZAllWebFormData.m */; };
 		4578FDA5172ED3F8003FCE36 /* BSJSONEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4578FD9C172ED3F8003FCE36 /* BSJSONEncoder.m */; };
 		4578FDA6172ED3F8003FCE36 /* NSArray+BSJSONAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4578FD9E172ED3F8003FCE36 /* NSArray+BSJSONAdditions.m */; };
 		4578FDA7172ED3F8003FCE36 /* NSDictionary+BSJSONAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4578FDA0172ED3F8003FCE36 /* NSDictionary+BSJSONAdditions.m */; };
@@ -445,6 +448,12 @@
 		45783CA8170875AF00328EA0 /* view_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "view_bg@2x.png"; sourceTree = "<group>"; };
 		45783CA9170875AF00328EA0 /* view_surface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = view_surface.png; sourceTree = "<group>"; };
 		45783CAA170875AF00328EA0 /* view_surface@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "view_surface@2x.png"; sourceTree = "<group>"; };
+		4578D7B1177819380012F07F /* PZAllWebFormRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PZAllWebFormRequest.h; sourceTree = "<group>"; };
+		4578D7B2177819380012F07F /* PZAllWebFormRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZAllWebFormRequest.m; sourceTree = "<group>"; };
+		4578D7B417781A850012F07F /* PZAllWebFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PZAllWebFormViewController.h; sourceTree = "<group>"; };
+		4578D7B517781A850012F07F /* PZAllWebFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZAllWebFormViewController.m; sourceTree = "<group>"; };
+		4578D7B717786AD40012F07F /* PZAllWebFormData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PZAllWebFormData.h; sourceTree = "<group>"; };
+		4578D7B817786AD40012F07F /* PZAllWebFormData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZAllWebFormData.m; sourceTree = "<group>"; };
 		4578FD9B172ED3F8003FCE36 /* BSJSONEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJSONEncoder.h; sourceTree = "<group>"; };
 		4578FD9C172ED3F8003FCE36 /* BSJSONEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJSONEncoder.m; sourceTree = "<group>"; };
 		4578FD9D172ED3F8003FCE36 /* NSArray+BSJSONAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BSJSONAdditions.h"; sourceTree = "<group>"; };
@@ -871,6 +880,8 @@
 				CE968BA11737E6ED0076D502 /* PZMainRequest.m */,
 				4577F4501775AA1C008977F9 /* PZDflyRequest.h */,
 				4577F4511775AA1C008977F9 /* PZDflyRequest.m */,
+				4578D7B1177819380012F07F /* PZAllWebFormRequest.h */,
+				4578D7B2177819380012F07F /* PZAllWebFormRequest.m */,
 			);
 			path = PeizhengRequest;
 			sourceTree = "<group>";
@@ -1130,6 +1141,8 @@
 				457AF5F8177037D200F300BD /* MMExampleLeftSideDrawerViewController.m */,
 				457AF5F9177037D300F300BD /* MMExampleRightSideDrawerViewController.h */,
 				457AF5FA177037D300F300BD /* MMExampleRightSideDrawerViewController.m */,
+				4578D7B417781A850012F07F /* PZAllWebFormViewController.h */,
+				4578D7B517781A850012F07F /* PZAllWebFormViewController.m */,
 			);
 			name = PZSideController;
 			sourceTree = "<group>";
@@ -1449,6 +1462,8 @@
 				45818EAB176EFC42000EB06B /* PZUserInfo.m */,
 				4577F45C1776BFD9008977F9 /* PZDflyData.h */,
 				4577F45D1776BFD9008977F9 /* PZDflyData.m */,
+				4578D7B717786AD40012F07F /* PZAllWebFormData.h */,
+				4578D7B817786AD40012F07F /* PZAllWebFormData.m */,
 			);
 			name = coredata;
 			sourceTree = "<group>";
@@ -1726,6 +1741,9 @@
 				4577F4651776C554008977F9 /* MessView.m in Sources */,
 				4577F46D1776C90B008977F9 /* EGORefreshTableFooterView.m in Sources */,
 				4577F46E1776C90B008977F9 /* EGORefreshTableHeaderView.m in Sources */,
+				4578D7B3177819380012F07F /* PZAllWebFormRequest.m in Sources */,
+				4578D7B617781A860012F07F /* PZAllWebFormViewController.m in Sources */,
+				4578D7B917786AD40012F07F /* PZAllWebFormData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1801,6 +1819,8 @@
 		9561ACCF151286EE005889C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: WU WING (5X2H4P7D3A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: WU WING (5X2H4P7D3A)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1815,6 +1835,8 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = "培正梦飞翔";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1822,6 +1844,8 @@
 		9561ACD0151286EE005889C6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: WU WING (5X2H4P7D3A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: WU WING (5X2H4P7D3A)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1836,6 +1860,8 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = "培正梦飞翔";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

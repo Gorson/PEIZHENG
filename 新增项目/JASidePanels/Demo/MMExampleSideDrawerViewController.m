@@ -34,7 +34,6 @@
 #import "PZSetDetailController.h"
 #import "PZAboutController.h"
 #import "PZMapController.h"
-#import "PZUserInfo.h"
 
 @interface MMExampleSideDrawerViewController ()
 {

@@ -75,6 +75,7 @@
 
 - (void)initWithData
 {
+    catId = PeiZhengToday;
     _comboBoxDatasource = [[NSMutableArray array] retain];
     [self sendRequest:PeiZhengToday];
 }
@@ -82,12 +83,12 @@
 - (void)comboBoxAppear
 {
     if (!_comboBox) {
-        _comboBox = [[ComboBoxView alloc] initWithFrame:CGRectMake(15.0f, 150.0f, 216.0f, 234.0f)];
+        _comboBox = [[ComboBoxView alloc] initWithFrame:CGRectMake(15.0f, IPHONE_HEIGHT *0.314, 216.0f, IPHONE_HEIGHT * 0.4875)];
         newsButton = [PZMainButton buttonWithType:UIButtonTypeCustom];
         UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"cellBackground.png"]];
         [imageView setFrame:CGRectMake(0.0f, 0.0f, 300.0f, IPHONE_HEIGHT/3)];
         UIButton *searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [searchButton setFrame:CGRectMake(231.0f, 151.0f, 73.0f, 37.0f)];
+        [searchButton setFrame:CGRectMake(231.0f, IPHONE_HEIGHT *0.316, 73.0f, IPHONE_HEIGHT * 0.077)];
         [searchButton setBackgroundColor:[UIColor whiteColor]];
         [searchButton setTitleColor:BKColor forState:UIControlStateNormal];
         [searchButton.titleLabel setFont:[UIFont boldSystemFontOfSize:16.0f]];

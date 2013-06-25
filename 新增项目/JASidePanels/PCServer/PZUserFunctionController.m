@@ -8,7 +8,7 @@
 
 #import "PZUserFunctionController.h"
 #import "PZPCServerViewController.h"
-#import "PZUserInfo.h"
+#import "PZAllWebFormViewController.h"
 #import "PZPCUserLoginRequest.h"
 #import "PZNewsListData.h"
 
@@ -20,7 +20,7 @@
 }
 @property (nonatomic ,retain) UIButton *myDataDetaButton;
 @property (nonatomic ,retain) UIButton *myForm;
-@property (nonatomic ,retain) UIButton *sendForm;
+@property (nonatomic ,retain) UIButton *formOfOperation;
 @property (nonatomic, retain) UILabel *_userNameAndPassword;
 @property (nonatomic, retain) UILabel *_userRealnameAndSex;
 @property (nonatomic, retain) UILabel *_userAreaAndRoom;
@@ -29,7 +29,8 @@
 
 @implementation PZUserFunctionController
 @synthesize _userNameAndPassword,_userRealnameAndSex,_userAreaAndRoom,_userPhoneAndEmal;
-@synthesize myDataDetaButton,myForm,sendForm;
+@synthesize myDataDetaButton,myForm,formOfOperation;
+
 -(void)dealloc
 {
     [_userNameAndPassword release];
@@ -101,25 +102,41 @@
         [self.view addSubview:_userPhoneAndEmal];
         [label release];
         
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setFrame:CGRectMake(10.0f, 170.0f, 300.0f, 40.0f)];
+        UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(10.0f, 170.0f, 300.0f, 40.0f)];
         [button setBackgroundColor:[UIColor blueColor]];
+        [button addTarget:self action:@selector(changeMyData:) forControlEvents:UIControlEventTouchUpInside];
+        [button setTitle:@"修改资料" forState:UIControlStateNormal];
         self.myDataDetaButton = button;
         [self.view addSubview:myDataDetaButton];
         [button release];
         
-        button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setFrame:CGRectMake(10.0f, 220.0f, 300.0f, 40.0f)];
+        button = [[UIButton alloc]initWithFrame:CGRectMake(10.0f, 220.0f, 300.0f, 40.0f)];
         [button setBackgroundColor:[UIColor greenColor]];
+        [button addTarget:self action:@selector(myFormList:) forControlEvents:UIControlEventTouchUpInside];
+        [button setTitle:@"我的报修单" forState:UIControlStateNormal];
         self.myForm = button;
         [self.view addSubview:myForm];
         [button release];
         
-        button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setFrame:CGRectMake(10.0f, 270.0f, 300.0f, 40.0f)];
+        button = [[UIButton alloc]initWithFrame:CGRectMake(10.0f, 270.0f, 300.0f, 40.0f)];
         [button setBackgroundColor:[UIColor redColor]];
-        self.sendForm = button;
-        [self.view addSubview:sendForm];
+        
+        PZUserInfo *userInfo = [[PZUserInfo loadDataInDatabase] objectAtIndex:0];
+        if ([userInfo.identity isEqualToString:@"0"]) {
+            [button addTarget:self action:@selector(mySendFormList:) forControlEvents:UIControlEventTouchUpInside];
+            [button setTitle:@"发送报修单" forState:UIControlStateNormal];
+        }
+        else if ([userInfo.identity isEqualToString:@"1"])
+        {
+            [button addTarget:self action:@selector(acceptFormList:) forControlEvents:UIControlEventTouchUpInside];
+            [button setTitle:@"网上报修单" forState:UIControlStateNormal];
+        }
+        else
+        {
+            DLog(@"其他人员.");
+        }
+        self.formOfOperation = button;
+        [self.view addSubview:formOfOperation];
         [button release];
     }
     else
@@ -130,6 +147,9 @@
         [_userRealnameAndSex removeFromSuperview];
         [_userAreaAndRoom removeFromSuperview];
         [_userPhoneAndEmal removeFromSuperview];
+        [myDataDetaButton removeFromSuperview];
+        [myForm removeFromSuperview];
+        [formOfOperation removeFromSuperview];
 
         loginButton = [[UIButton alloc]initWithFrame:CGRectMake(60, 250, 200, 50)];
         loginButton.showsTouchWhenHighlighted = YES;
@@ -162,7 +182,7 @@
         _userRealnameAndSex.text = index;
         index = [NSString stringWithFormat:@"所住区域:%8@    所住宿舍:%8@",_userInfo.area,_userInfo.dorm];
         _userAreaAndRoom.text = index;
-        index = [NSString stringWithFormat:@"手机号码:%4@    用户邮箱:%4@",_userInfo.phone,_userInfo.email];
+        index = [NSString stringWithFormat:@"手机号码:%8@    用户邮箱:%8@",_userInfo.phone,_userInfo.email];
         _userPhoneAndEmal.text = index;
     }
     
@@ -220,5 +240,34 @@
 {
     [self initWithControl];
     [self initWithData];
+}
+
+#pragma mark -
+#pragma mark - userManagerOperation
+
+// 修改资料用户操作，无论管理员或普通用户均可修改
+- (void)changeMyData:(UIButton *)sender
+{
+    DLog(@"修改资料用户操作");
+}
+
+// 查询我的单子处理情况详情，管理员或用户均有,但内容不相同
+- (void)myFormList:(UIButton *)sender
+{
+    DLog(@"查询我的单子处理情况详情");
+}
+
+// 用户编辑及发送保修单操作
+- (void)mySendFormList:(UIButton *)sender
+{
+    DLog(@"用户编辑及发送保修单操作");
+}
+
+// 管理员接单操作
+- (void)acceptFormList:(UIButton *)sender
+{
+    DLog(@"管理员接单操作");
+    PZAllWebFormViewController *allWebFormViewController = [[PZAllWebFormViewController alloc]init];
+    [self.navigationController pushViewController:allWebFormViewController animated:YES];
 }
 @end

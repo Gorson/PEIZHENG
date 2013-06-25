@@ -22,9 +22,15 @@
 
     NSMutableArray *_dflyItemArray;
     NSString *_catid;
+    CustomActivityIndicatorView * _loadingView;     // 中部的菊花
 }
 @property (nonatomic, retain) NSMutableArray *dflyItemArray;
 @property (nonatomic, copy) NSString *catid;
 @property(nonatomic,strong)AOWaterView *aoView;
+@property (nonatomic, retain) CustomActivityIndicatorView * loadingView;
+@property (nonatomic, retain) EGORefreshTableFooterView *refreshFooterView;
 
+
+-(void)testFinishedLoadData;
+-(void)testEndLoadData;
 @end

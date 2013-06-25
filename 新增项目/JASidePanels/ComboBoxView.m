@@ -1,4 +1,4 @@
-//
+ //
 //  ComboBoxView.m
 //  comboBox
 //
@@ -33,26 +33,26 @@
 }
 
 - (void)initCompentWithFrame:(CGRect)frame {
-	_selectContentLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, frame.size.width - 10.0f, 39)];
+	_selectContentLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, frame.size.width - 10.0f, IPHONE_HEIGHT * 0.08125)];
 	_selectContentLabel.font = [UIFont boldSystemFontOfSize:16.0f];
 	_selectContentLabel.backgroundColor = [UIColor clearColor];
 	[self addSubview:_selectContentLabel];
 	[_selectContentLabel release];
 	
 	_pulldownButton = [UIButton buttonWithType:UIButtonTypeCustom];
-	[_pulldownButton setFrame:CGRectMake(frame.size.width - 25, 0, 25, 39)];
+	[_pulldownButton setFrame:CGRectMake(frame.size.width - 25, 0, 25, IPHONE_HEIGHT * 0.08125)];
 	[_pulldownButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"list_ico_d" ofType:@"png"]]
 							   forState:UIControlStateNormal];
 	[_pulldownButton addTarget:self action:@selector(pulldownButtonWasClicked:) forControlEvents:UIControlEventTouchUpInside];
 	[self addSubview:_pulldownButton];
 	
 	_hiddenButton = [UIButton buttonWithType:UIButtonTypeCustom];
-	[_hiddenButton setFrame:CGRectMake(0, 0, frame.size.width - 25, 39)];
+	[_hiddenButton setFrame:CGRectMake(0, 0, frame.size.width - 25, IPHONE_HEIGHT * 0.08125)];
 	_hiddenButton.backgroundColor = [UIColor clearColor];
 	[_hiddenButton addTarget:self action:@selector(pulldownButtonWasClicked:) forControlEvents:UIControlEventTouchUpInside];
 	[self addSubview:_hiddenButton];
 	
-	_comboBoxTableView = [[UITableView alloc] initWithFrame:CGRectMake(1, 39, frame.size.width - 2, frame.size.height - 40.0f)];
+	_comboBoxTableView = [[UITableView alloc] initWithFrame:CGRectMake(1, IPHONE_HEIGHT * 0.08125, frame.size.width - 2, frame.size.height - 40.0f)];
 	_comboBoxTableView.dataSource = self;
 	_comboBoxTableView.delegate = self;
 	_comboBoxTableView.backgroundColor = [UIColor whiteColor];
@@ -114,7 +114,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return 39.0f;
+	return IPHONE_HEIGHT * 0.08125;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -158,10 +158,10 @@
 		CGContextAddRect(context, CGRectMake(0.0f, 0.0f, frame.size.width, 0.0f));
 	}
 	CGContextDrawPath(context, kCGPathStroke);	
-	CGContextMoveToPoint(context, 0.0f, 39.0f);
-	CGContextAddLineToPoint(context, frame.size.width, 39.0f);
-	CGContextMoveToPoint(context, frame.size.width - 39, 0);
-	CGContextAddLineToPoint(context, frame.size.width - 39, 0.0f);
+	CGContextMoveToPoint(context, 0.0f, IPHONE_HEIGHT * 0.08125);
+	CGContextAddLineToPoint(context, frame.size.width, IPHONE_HEIGHT * 0.08125);
+	CGContextMoveToPoint(context, frame.size.width - IPHONE_HEIGHT * 0.08125, 0);
+	CGContextAddLineToPoint(context, frame.size.width - IPHONE_HEIGHT * 0.08125, 0.0f);
 	
 	CGContextStrokePath(context);
 }

@@ -1,31 +1,27 @@
 //
-//  PZPCUserLoginRequest.m
+//  PZAllWebFormRequest.m
 //  培正梦飞翔
 //
-//  Created by Air on 13-6-17.
+//  Created by Air on 13-6-24.
 //
 //
 
-#import "PZPCUserLoginRequest.h"
-#import "PZPCServerViewController.h"
-#import "PZUserFunctionController.h"
+#import "PZAllWebFormRequest.h"
+#import "PZAllWebFormViewController.h"
+#import "PZAllWebFormData.h"
 
-@interface PZPCUserLoginRequest()
+@interface PZAllWebFormRequest()
 {
-
+    NSInteger _startIndex;                                         // 页面数量
+    NSMutableArray *_elements;
 }
 @property (strong, nonatomic) BDKNotifyHUD *notify;
 @property (strong, nonatomic) NSString *imageName;
 @property (strong, nonatomic) NSString *notificationText;
 @end
-
-
-@implementation PZPCUserLoginRequest
-@synthesize username = _username;
-@synthesize password = _password;
-@synthesize pcServerViewController = _pcServerViewController;
-
-- (void)PCUserLoginRequest
+@implementation PZAllWebFormRequest
+@synthesize allWebFormViewController = _allWebFormViewController;
+- (void)AllWebFormRequest
 {
     [self startRequest];
 }
@@ -37,7 +33,7 @@
 {
     if (self = [super init])
     {
-        
+        _elements = [[NSMutableArray array]retain];
     }
     return self;
 }
@@ -46,7 +42,18 @@
 // 开始请求
 -(void)startRequest
 {
-    NSString *strURL = [[NSString alloc]initWithFormat:@"http://www.peizheng.cn/mobile/index.php?interfaceid=0202&uname=%@&upwd=%@&cname=dfly&cpwd=123456",_username,_password];
+    int i = 0;
+    if ([_allWebFormViewController.itemArray count]%12 > 0) {
+        i = 2; // 最后一页不够整除12时
+    }
+    else
+    {
+        i = 1;
+    }
+    _startIndex = [_allWebFormViewController.itemArray count]/12 + i;
+    NSString * p = [[NSString alloc]initWithFormat:@"%d",_startIndex];
+    PZUserInfo * userInfo = [[PZUserInfo loadDataInDatabase]objectAtIndex:0];
+    NSString *strURL = [[NSString alloc]initWithFormat:@"http://www.peizheng.cn/mobile/index.php?interfaceid=0211&workid=%@&page=%@&limit=10&type=web&cname=dfly&cpwd=123456",userInfo.uid,p];
     NSURL *url = [NSURL URLWithString:strURL];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request setDelegate:self];
@@ -63,28 +70,38 @@
     {
         if ([[resDict valueForKey:@"hasdata"]isEqualToString:@"1"])
         {
-            NSArray * userinfoArray =[resDict valueForKey:@"userinfo"];
-            NSMutableDictionary * userInfoDataDict = [userinfoArray objectAtIndex:0];
-            NSString * uidString = [userInfoDataDict valueForKey:@"uid"];
-            PZUserInfo * userInfo = [PZUserInfo loadADataInDatabaseWithUid:uidString];
-            if (userInfo) {
-                DLog(@"什么都不做..");
-            }
-            else
+            NSArray * dataContents =[resDict valueForKey:@"listHead"];
+            for (NSMutableDictionary *listHeadDict in dataContents)
             {
-                userInfo = [[PZUserInfo alloc]initWithDictionary:userInfoDataDict];
+                PZAllWebFormData * allWebFormData = [[PZAllWebFormData alloc]initWithDictionary:listHeadDict];
+                [_elements addObject:allWebFormData];
             }
-            self.notificationText = @"登陆成功";
+            [_allWebFormViewController.itemArray addObjectsFromArray:_elements];
+            [_allWebFormViewController.allWebFormTableView reloadData];
+            [_allWebFormViewController.loadingView stopAnimating];
+            [_allWebFormViewController.loadingView removeFromSuperview];
+            [_elements removeAllObjects];
+            [_elements release];
+//            NSArray * userinfoArray =[resDict valueForKey:@"userinfo"];
+//            NSMutableDictionary * userInfoDataDict = [userinfoArray objectAtIndex:0];
+//            NSString * uidString = [userInfoDataDict valueForKey:@"uid"];
+//            PZUserInfo * userInfo = [PZUserInfo loadADataInDatabaseWithUid:uidString];
+//            if (userInfo) {
+//                DLog(@"什么都不做..");
+//            }
+//            else
+//            {
+//                userInfo = [[PZUserInfo alloc]initWithDictionary:userInfoDataDict];
+//            }
+            self.notificationText = @"获取成功";
             self.imageName = @"PZ_True.png";
             self.notify.image = [UIImage imageNamed:self.imageName];
             self.notify.text = self.notificationText;
             [self displayNotification];
-            [_pcServerViewController.userFunctionController refleshData];
-            [_pcServerViewController dismissModalViewControllerAnimated:YES];
         }
         else
         {
-            self.notificationText = @"账户名密码错误";
+            self.notificationText = @"获取不了数据";
             self.imageName = @"PZ_Wrong.png";
             self.notify.image = [UIImage imageNamed:self.imageName];
             self.notify.text = self.notificationText;
@@ -93,7 +110,7 @@
     }
     else
     {
-        self.notificationText = @"账户名密码错误";
+        self.notificationText = @"获取失败";
         self.imageName = @"PZ_Wrong.png";
         self.notify.image = [UIImage imageNamed:self.imageName];
         self.notify.text = self.notificationText;
@@ -112,6 +129,9 @@
     self.notify.image = [UIImage imageNamed:self.imageName];
     self.notify.text = self.notificationText;
     [self displayNotification];
+    
+    [_allWebFormViewController.loadingView stopAnimating];
+    [_allWebFormViewController.loadingView removeFromSuperview];
 }
 
 -(void)dealloc

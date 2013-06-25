@@ -21,7 +21,6 @@
 }
 
 -(id)initWithData:(PZDflyData *)data yPoint:(float) y{
-   
     float imgW=[data.width floatValue];//图片原宽度
     float imgH=[data.height floatValue];//图片原高度
     float sImgW = WIDTH-4;//缩略图宽带
@@ -32,14 +31,19 @@
         if (data.imgurl!= NULL) {
             if ([data.imgurl hasPrefix:@"http"])
             {
-                [imageBtn setImageFromUrl:YES withUrl:data.imgurl];//设置图片地质
+                [imageBtn setImageFromUrl:YES withUrl:data.imgurl];//设置图片
 
             }
             else if([data.imgurl hasPrefix:@"uploadfile"])
             {
-                [imageBtn setImageFromUrl:YES withUrl:[NSString stringWithFormat:@"http://www.peizheng.cn/%@",data.imgurl]];//设置图片地质
+                [imageBtn setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.peizheng.cn/%@",data.imgurl]] placeholderImage:[UIImage imageNamed:[NSString stringWithFormat:@"Default.png"]] ];//设置图片
 
-            }else
+            }
+            else if([data.imgurl hasPrefix:@"/Article"])
+            {
+                [imageBtn setImageFromUrl:YES withUrl:[NSString stringWithFormat:@"http://www.peizheng.cn%@",data.imgurl]];//设置图片
+            }
+            else
             {
                 //获取一个随机整数范围在：[0,100)包括0，不包括100
                 int x = arc4random() % 20;
