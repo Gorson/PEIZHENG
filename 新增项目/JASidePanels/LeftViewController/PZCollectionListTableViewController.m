@@ -23,7 +23,7 @@
 @synthesize newsItemArray = _newsItemArray;
 @synthesize newsTableView = _newsTableView;
 @synthesize loadingView = _loadingView;
-@synthesize headTitle = _headTitle;
+//@synthesize headTitle = _headTitle;
 
 /*
  * 视图第一次展现时调用
@@ -31,9 +31,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    _backButton.hidden = YES;
-    _confirmButton.hidden = YES;
+    [self initWithData];
+    [self initWithControl];
 }
 
 
@@ -101,8 +100,7 @@
 {
     if (self = [super init])
     {
-        [self initWithControl];
-        [self initWithData];
+        
     }
     return self;
 }
@@ -122,7 +120,10 @@
  */
 - (void)initWithControl
 {
-    _headTitle = @"收藏夹";
+    _backButton.hidden = YES;
+    _confirmButton.hidden = YES;
+    _headerLabel.text = @"收藏夹";
+    
     _newsTableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, 44.0f, IPHONE_WIDTH, IPHONE_HEIGHT-64) style:UITableViewStylePlain];
     _newsTableView.backgroundColor = [UIColor whiteColor];
     _newsTableView.backgroundView.alpha = 0;
@@ -177,7 +178,6 @@
         {
             newsListCell = [[[PZNewsListTableCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
             newsListCell.selectionStyle = UITableViewCellSelectionStyleGray;
-            _headerLabel.text = _headTitle;
         }
         if ([_newsItemArray count]) {
             PZNewsDetailData * newsData = [_newsItemArray objectAtIndex:indexPath.row];

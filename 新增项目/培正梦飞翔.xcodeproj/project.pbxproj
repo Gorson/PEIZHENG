@@ -84,8 +84,6 @@
 		45747F261730E4D900D5D005 /* NSObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45747F1F1730E4D900D5D005 /* NSObject+Additions.m */; };
 		45747F271730E4D900D5D005 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45747F211730E4D900D5D005 /* NSString+Additions.m */; };
 		45747F281730E4D900D5D005 /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45747F231730E4D900D5D005 /* UIImage+Additions.m */; };
-		45747F2C1731624200D5D005 /* PZNewStudentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45747F2A1731624200D5D005 /* PZNewStudentController.m */; };
-		45747F2D1731624200D5D005 /* PZNewStudentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45747F2B1731624200D5D005 /* PZNewStudentController.xib */; };
 		45747F301731628800D5D005 /* PZNewsListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45747F2F1731628800D5D005 /* PZNewsListTableViewController.m */; };
 		45747F36173164E800D5D005 /* PZNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45747F35173164E700D5D005 /* PZNavigationViewController.m */; };
 		45747F3A1731676900D5D005 /* PZNewsListTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45747F391731676900D5D005 /* PZNewsListTableCell.m */; };
@@ -214,8 +212,13 @@
 		45810372174BA8F7006300ED /* MaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4581036F174BA8F7006300ED /* MaskView.m */; };
 		45810373174BA8F7006300ED /* Quare4MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45810371174BA8F7006300ED /* Quare4MenuViewController.m */; };
 		45818EAC176EFC42000EB06B /* PZUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 45818EAB176EFC42000EB06B /* PZUserInfo.m */; };
+		458581DE1779F16D007AAA5A /* PZDetailOfFormData.m in Sources */ = {isa = PBXBuildFile; fileRef = 458581DD1779F16D007AAA5A /* PZDetailOfFormData.m */; };
+		458581E11779FB34007AAA5A /* PZFormView.m in Sources */ = {isa = PBXBuildFile; fileRef = 458581E01779FB34007AAA5A /* PZFormView.m */; };
 		458A864C176CAD97002A531A /* rubbish.png in Resources */ = {isa = PBXBuildFile; fileRef = 458A864A176CAD97002A531A /* rubbish.png */; };
 		458A864D176CAD97002A531A /* rubbish@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 458A864B176CAD97002A531A /* rubbish@2x.png */; };
+		45A28A6217793DA300C29737 /* PZWebListTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A28A6117793DA300C29737 /* PZWebListTableCell.m */; };
+		45A28A6517794BAD00C29737 /* PZPCFormInfomation.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A28A6417794BAD00C29737 /* PZPCFormInfomation.m */; };
+		45A28A6817798DDE00C29737 /* PZPCFormDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A28A6717798DDE00C29737 /* PZPCFormDetailViewController.m */; };
 		95322A731517AEF40069C8D7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95322A701517AEEB0069C8D7 /* QuartzCore.framework */; };
 		9561ACB2151286EE005889C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9561ACB1151286EE005889C6 /* UIKit.framework */; };
 		9561ACB4151286EE005889C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9561ACB3151286EE005889C6 /* Foundation.framework */; };
@@ -368,9 +371,6 @@
 		45747F211730E4D900D5D005 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		45747F221730E4D900D5D005 /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
 		45747F231730E4D900D5D005 /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
-		45747F291731624200D5D005 /* PZNewStudentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PZNewStudentController.h; path = LeftViewController/PZNewStudentController.h; sourceTree = "<group>"; };
-		45747F2A1731624200D5D005 /* PZNewStudentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PZNewStudentController.m; path = LeftViewController/PZNewStudentController.m; sourceTree = "<group>"; };
-		45747F2B1731624200D5D005 /* PZNewStudentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PZNewStudentController.xib; path = LeftViewController/PZNewStudentController.xib; sourceTree = "<group>"; };
 		45747F2E1731628800D5D005 /* PZNewsListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PZNewsListTableViewController.h; path = MainViewController/PZNewsListTableViewController.h; sourceTree = "<group>"; };
 		45747F2F1731628800D5D005 /* PZNewsListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PZNewsListTableViewController.m; path = MainViewController/PZNewsListTableViewController.m; sourceTree = "<group>"; };
 		45747F34173164E700D5D005 /* PZNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PZNavigationViewController.h; path = MainViewController/PZNavigationViewController.h; sourceTree = "<group>"; };
@@ -588,8 +588,18 @@
 		45810371174BA8F7006300ED /* Quare4MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quare4MenuViewController.m; sourceTree = "<group>"; };
 		45818EAA176EFC42000EB06B /* PZUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PZUserInfo.h; sourceTree = "<group>"; };
 		45818EAB176EFC42000EB06B /* PZUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZUserInfo.m; sourceTree = "<group>"; };
+		458581DC1779F16D007AAA5A /* PZDetailOfFormData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PZDetailOfFormData.h; sourceTree = "<group>"; };
+		458581DD1779F16D007AAA5A /* PZDetailOfFormData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZDetailOfFormData.m; sourceTree = "<group>"; };
+		458581DF1779FB34007AAA5A /* PZFormView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PZFormView.h; path = MainViewController/PZFormView.h; sourceTree = "<group>"; };
+		458581E01779FB34007AAA5A /* PZFormView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PZFormView.m; path = MainViewController/PZFormView.m; sourceTree = "<group>"; };
 		458A864A176CAD97002A531A /* rubbish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rubbish.png; path = AppImage/rubbish.png; sourceTree = "<group>"; };
 		458A864B176CAD97002A531A /* rubbish@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rubbish@2x.png"; path = "AppImage/rubbish@2x.png"; sourceTree = "<group>"; };
+		45A28A6017793DA300C29737 /* PZWebListTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PZWebListTableCell.h; path = MainViewController/PZWebListTableCell.h; sourceTree = "<group>"; };
+		45A28A6117793DA300C29737 /* PZWebListTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PZWebListTableCell.m; path = MainViewController/PZWebListTableCell.m; sourceTree = "<group>"; };
+		45A28A6317794BAD00C29737 /* PZPCFormInfomation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PZPCFormInfomation.h; sourceTree = "<group>"; };
+		45A28A6417794BAD00C29737 /* PZPCFormInfomation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PZPCFormInfomation.m; sourceTree = "<group>"; };
+		45A28A6617798DDD00C29737 /* PZPCFormDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PZPCFormDetailViewController.h; path = MainViewController/PZPCFormDetailViewController.h; sourceTree = "<group>"; };
+		45A28A6717798DDE00C29737 /* PZPCFormDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PZPCFormDetailViewController.m; path = MainViewController/PZPCFormDetailViewController.m; sourceTree = "<group>"; };
 		95322A701517AEEB0069C8D7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9561ACAD151286EE005889C6 /* 培正梦飞翔.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "培正梦飞翔.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9561ACB1151286EE005889C6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -868,6 +878,8 @@
 		45747F0E1730C4AA00D5D005 /* PeizhengRequest */ = {
 			isa = PBXGroup;
 			children = (
+				45A28A6317794BAD00C29737 /* PZPCFormInfomation.h */,
+				45A28A6417794BAD00C29737 /* PZPCFormInfomation.m */,
 				457AF5AA1770155100F300BD /* PZPCUserLoginRequest.h */,
 				457AF5AB1770155100F300BD /* PZPCUserLoginRequest.m */,
 				45087EDD176F478200CCEE0D /* PZPCRegisterDataRequest.h */,
@@ -1126,23 +1138,18 @@
 		45792AEC17718E62008ABED6 /* PZSideController */ = {
 			isa = PBXGroup;
 			children = (
+				45A28A5F17793CCE00C29737 /* cell */,
+				45A28A5E17793C9900C29737 /* sideControler */,
 				457AF5A61770155100F300BD /* PZPCRegisterViewController.h */,
 				457AF5A71770155100F300BD /* PZPCRegisterViewController.m */,
 				457AF5A81770155100F300BD /* PZPCServerViewController.h */,
 				457AF5A91770155100F300BD /* PZPCServerViewController.m */,
 				457AF5AC1770155100F300BD /* PZUserFunctionController.h */,
 				457AF5AD1770155100F300BD /* PZUserFunctionController.m */,
-				45747F291731624200D5D005 /* PZNewStudentController.h */,
-				45747F2A1731624200D5D005 /* PZNewStudentController.m */,
-				45747F2B1731624200D5D005 /* PZNewStudentController.xib */,
-				457AF5FB177037D300F300BD /* MMExampleSideDrawerViewController.h */,
-				457AF5FC177037D300F300BD /* MMExampleSideDrawerViewController.m */,
-				457AF5F7177037D200F300BD /* MMExampleLeftSideDrawerViewController.h */,
-				457AF5F8177037D200F300BD /* MMExampleLeftSideDrawerViewController.m */,
-				457AF5F9177037D300F300BD /* MMExampleRightSideDrawerViewController.h */,
-				457AF5FA177037D300F300BD /* MMExampleRightSideDrawerViewController.m */,
 				4578D7B417781A850012F07F /* PZAllWebFormViewController.h */,
 				4578D7B517781A850012F07F /* PZAllWebFormViewController.m */,
+				45A28A6617798DDD00C29737 /* PZPCFormDetailViewController.h */,
+				45A28A6717798DDE00C29737 /* PZPCFormDetailViewController.m */,
 			);
 			name = PZSideController;
 			sourceTree = "<group>";
@@ -1239,6 +1246,8 @@
 			children = (
 				457AA7C2170B3A7600D952DD /* PZLeftView.h */,
 				457AA7C3170B3A7600D952DD /* PZLeftView.m */,
+				458581DF1779FB34007AAA5A /* PZFormView.h */,
+				458581E01779FB34007AAA5A /* PZFormView.m */,
 			);
 			name = LeftView;
 			sourceTree = "<group>";
@@ -1337,6 +1346,28 @@
 			);
 			name = 4quareMenuController;
 			path = Utility/4quareMenuController;
+			sourceTree = "<group>";
+		};
+		45A28A5E17793C9900C29737 /* sideControler */ = {
+			isa = PBXGroup;
+			children = (
+				457AF5FB177037D300F300BD /* MMExampleSideDrawerViewController.h */,
+				457AF5FC177037D300F300BD /* MMExampleSideDrawerViewController.m */,
+				457AF5F7177037D200F300BD /* MMExampleLeftSideDrawerViewController.h */,
+				457AF5F8177037D200F300BD /* MMExampleLeftSideDrawerViewController.m */,
+				457AF5F9177037D300F300BD /* MMExampleRightSideDrawerViewController.h */,
+				457AF5FA177037D300F300BD /* MMExampleRightSideDrawerViewController.m */,
+			);
+			name = sideControler;
+			sourceTree = "<group>";
+		};
+		45A28A5F17793CCE00C29737 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				45A28A6017793DA300C29737 /* PZWebListTableCell.h */,
+				45A28A6117793DA300C29737 /* PZWebListTableCell.m */,
+			);
+			name = cell;
 			sourceTree = "<group>";
 		};
 		9561ACA2151286EE005889C6 = {
@@ -1464,6 +1495,8 @@
 				4577F45D1776BFD9008977F9 /* PZDflyData.m */,
 				4578D7B717786AD40012F07F /* PZAllWebFormData.h */,
 				4578D7B817786AD40012F07F /* PZAllWebFormData.m */,
+				458581DC1779F16D007AAA5A /* PZDetailOfFormData.h */,
+				458581DD1779F16D007AAA5A /* PZDetailOfFormData.m */,
 			);
 			name = coredata;
 			sourceTree = "<group>";
@@ -1558,7 +1591,6 @@
 				45783CBE170875AF00328EA0 /* view_surface@2x.png in Resources */,
 				45744F80170DD0060043AB75 /* backToMain.png in Resources */,
 				45744F81170DD0060043AB75 /* backToMain@2x.png in Resources */,
-				45747F2D1731624200D5D005 /* PZNewStudentController.xib in Resources */,
 				454469FD1734EE8100B823BE /* tb1.jpg in Resources */,
 				454469FE1734EE8100B823BE /* tb10.jpg in Resources */,
 				454469FF1734EE8100B823BE /* tb11.jpg in Resources */,
@@ -1655,7 +1687,6 @@
 				45747F261730E4D900D5D005 /* NSObject+Additions.m in Sources */,
 				45747F271730E4D900D5D005 /* NSString+Additions.m in Sources */,
 				45747F281730E4D900D5D005 /* UIImage+Additions.m in Sources */,
-				45747F2C1731624200D5D005 /* PZNewStudentController.m in Sources */,
 				45747F301731628800D5D005 /* PZNewsListTableViewController.m in Sources */,
 				45747F36173164E800D5D005 /* PZNavigationViewController.m in Sources */,
 				45747F3A1731676900D5D005 /* PZNewsListTableCell.m in Sources */,
@@ -1744,6 +1775,11 @@
 				4578D7B3177819380012F07F /* PZAllWebFormRequest.m in Sources */,
 				4578D7B617781A860012F07F /* PZAllWebFormViewController.m in Sources */,
 				4578D7B917786AD40012F07F /* PZAllWebFormData.m in Sources */,
+				45A28A6217793DA300C29737 /* PZWebListTableCell.m in Sources */,
+				45A28A6517794BAD00C29737 /* PZPCFormInfomation.m in Sources */,
+				45A28A6817798DDE00C29737 /* PZPCFormDetailViewController.m in Sources */,
+				458581DE1779F16D007AAA5A /* PZDetailOfFormData.m in Sources */,
+				458581E11779FB34007AAA5A /* PZFormView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

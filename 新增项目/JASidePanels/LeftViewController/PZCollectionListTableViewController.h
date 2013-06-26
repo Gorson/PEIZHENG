@@ -19,6 +19,6 @@
 @property (nonatomic,copy) NSMutableArray * newsItemArray;                      // 资讯新闻数组
 @property (nonatomic,retain) UITableView * newsTableView;                       // 资讯新闻表格视图
 @property (nonatomic, retain) CustomActivityIndicatorView * loadingView;        // 表格中部的菊花
-@property (nonatomic, copy) NSString * headTitle;                               // 头标题
+//@property (nonatomic, copy) NSString * headTitle;                               // 头标题
 
 @end

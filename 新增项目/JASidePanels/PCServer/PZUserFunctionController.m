@@ -64,7 +64,7 @@
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 40.0f, 320.0f, 30.0f)];
         label.backgroundColor = [UIColor clearColor];
-        label.font = [UIFont boldSystemFontOfSize:16.0f];
+        label.font = [UIFont boldSystemFontOfSize:15.0f];
         label.textAlignment = UITextAlignmentLeft;
         label.lineBreakMode = UILineBreakModeMiddleTruncation;
         label.textColor = [UIColor blackColor];
@@ -74,7 +74,7 @@
         
         label = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 70.0f, 320.0f, 30.0f)];
         label.backgroundColor = [UIColor clearColor];
-        label.font = [UIFont boldSystemFontOfSize:16.0f];
+        label.font = [UIFont boldSystemFontOfSize:15.0f];
         label.textAlignment = UITextAlignmentLeft;
         label.lineBreakMode = UILineBreakModeMiddleTruncation;
         label.textColor = [UIColor blackColor];
@@ -84,7 +84,7 @@
         
         label = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 100.0f, 320.0f, 30.0f)];
         label.backgroundColor = [UIColor clearColor];
-        label.font = [UIFont boldSystemFontOfSize:16.0f];
+        label.font = [UIFont boldSystemFontOfSize:15.0f];
         label.textAlignment = UITextAlignmentLeft;
         label.lineBreakMode = UILineBreakModeMiddleTruncation;
         label.textColor = [UIColor blackColor];
@@ -94,7 +94,7 @@
         
         label = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 130.0f, 320.0f, 30.0f)];
         label.backgroundColor = [UIColor clearColor];
-        label.font = [UIFont boldSystemFontOfSize:16.0f];
+        label.font = [UIFont boldSystemFontOfSize:15.0f];
         label.textAlignment = UITextAlignmentLeft;
         label.lineBreakMode = UILineBreakModeMiddleTruncation;
         label.textColor = [UIColor blackColor];

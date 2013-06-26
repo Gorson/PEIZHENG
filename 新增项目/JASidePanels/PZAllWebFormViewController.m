@@ -9,6 +9,8 @@
 #import "PZAllWebFormViewController.h"
 #import "PZAllWebFormRequest.h"
 #import "PZAllWebFormData.h"
+#import "PZWebListTableCell.h"
+#import "PZPCFormDetailViewController.h"
 
 @interface PZAllWebFormViewController ()
 {
@@ -95,15 +97,19 @@
     {
         static NSString * CellIdentifier = @"Cell1";
         
-        UITableViewCell * allWebFormListCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        PZWebListTableCell * allWebFormListCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (allWebFormListCell == nil)
         {
-            allWebFormListCell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
-            allWebFormListCell.selectionStyle = UITableViewCellSelectionStyleGray;
+            allWebFormListCell = [[[PZWebListTableCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+            allWebFormListCell.selectionStyle = UITableViewCellSelectionStyleBlue;
         }
         if ([_itemArray count]) {
             PZAllWebFormData * allWebFormData = [_itemArray objectAtIndex:indexPath.row];
-            allWebFormListCell.textLabel.text = allWebFormData.computertype;
+            allWebFormListCell.titleLabel.text = [NSString stringWithFormat:@"电脑类型：%@",allWebFormData.computertype];
+            allWebFormListCell.timeLabel.text = [NSString stringWithFormat:@"报单时间：%@",allWebFormData.submittime];
+            allWebFormListCell.contentLabel.text = [NSString stringWithFormat:@"预约时间：%@",allWebFormData.booktime];
+            allWebFormListCell.stateLabel.text = allWebFormData.state;
+//            [allWebFormListCell.acceptBtn setTitle:allWebFormData.state forState:UIControlStateNormal];
 //            if ([_catid isEqualToString:@"249" ] || [_catid isEqualToString:@"51" ]) {
 //                [newsListCell.image setFrame:CGRectMake(210.0f, 3.0f, 100.0f, 140.0f)];
 //                [newsListCell.headImageView setFrame:CGRectMake(210.0f, 3.0f, 100.0f, 140.0f)];
@@ -150,7 +156,7 @@
 //    {
 //        return 150.0f;
 //    }
-    return 100.0f;
+    return 80.0f;
     
 }
 
@@ -217,7 +223,12 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath: indexPath animated:YES];
-
+    PZPCFormDetailViewController *PCFormDetailViewController = [[PZPCFormDetailViewController alloc]init];
+    if ([_itemArray count]) {
+        PZAllWebFormData * allWebFormData = [_itemArray objectAtIndex:indexPath.row];
+        PCFormDetailViewController.oid = allWebFormData.listid;
+        [self.navigationController pushViewController:PCFormDetailViewController animated:YES];
+    }
 }
 
 
