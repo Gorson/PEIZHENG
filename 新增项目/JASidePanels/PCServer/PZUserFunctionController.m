@@ -11,6 +11,7 @@
 #import "PZAllWebFormViewController.h"
 #import "PZPCUserLoginRequest.h"
 #import "PZNewsListData.h"
+#import "PZSendMyFormListController.h"
 
 @interface PZUserFunctionController ()
 {
@@ -121,6 +122,9 @@
         button = [[UIButton alloc]initWithFrame:CGRectMake(10.0f, 270.0f, 300.0f, 40.0f)];
         [button setBackgroundColor:[UIColor redColor]];
         
+        /*
+         从数据库表中获取一条数据
+         */
         PZUserInfo *userInfo = [[PZUserInfo loadDataInDatabase] objectAtIndex:0];
         if ([userInfo.identity isEqualToString:@"0"]) {
             [button addTarget:self action:@selector(mySendFormList:) forControlEvents:UIControlEventTouchUpInside];
@@ -261,6 +265,8 @@
 - (void)mySendFormList:(UIButton *)sender
 {
     DLog(@"用户编辑及发送保修单操作");
+    PZSendMyFormListController *sendMyFormListCotroller = [[PZSendMyFormListController alloc]init];
+    [self.navigationController pushViewController:sendMyFormListCotroller animated:YES];
 }
 
 // 管理员接单操作

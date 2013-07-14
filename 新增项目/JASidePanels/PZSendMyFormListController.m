@@ -1,34 +1,35 @@
 //
-//  PZPCRegisterViewController.m
+//  PZSendMyFormListController.m
 //  培正梦飞翔
 //
-//  Created by Air on 13-6-17.
+//  Created by Air on 13-7-13.
 //
 //
 
-#import "PZPCRegisterViewController.h"
-#import "PZPCServerViewController.h"
-#import "PZPCRegisterDataRequest.h"
-#import "userRegist.h"
+#import "PZSendMyFormListController.h"
+#import "PZUserFormList.h"
+#import "PZUserFormListRequest.h"
+#import "PZUserFunctionController.h"
 
-@interface PZPCRegisterViewController ()
+@interface PZSendMyFormListController ()
 {
     UITextField *_textField;
-    UIButton *_goBack;
-    UIButton *_Enter;
+    NSArray *itemArray;
+    PZUserFormList *user;
     UIImageView *_backgoundImage;
-    userRegist * user;
-    NSArray * itemArray;
+    UIButton *_Enter;
 }
 @end
 
-@implementation PZPCRegisterViewController
+@implementation PZSendMyFormListController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self.view setBackgroundColor:[UIColor whiteColor]];
+
+        // Custom initialization
     }
     return self;
 }
@@ -36,8 +37,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self initWithData];
     [self initWithUI];
+    [self initWithData];
+	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,8 +53,8 @@
  */
 -(void)initWithUI
 {
-    NSInteger i = 1;
-    for (i = 1; i<9; i++) {
+    NSInteger i=1 ;
+    for (i=1; i<10; i++) {
         _textField = [[[UITextField alloc] init] autorelease];
         _textField.tag = i;
         _textField.frame = CGRectMake(20, 10 + 40*i, 280, 40);
@@ -62,19 +64,7 @@
         _textField.delegate = self;
         [self.view addSubview:_textField];
 
-     }
-    
-    _goBack = [[UIButton alloc] init];
-    [_goBack setFrame:CGRectMake(IPHONE_WIDTH/2.0f+45.0f, IPHONE_HEIGHT/2.0f, 90.0f, 44.0f)];
-    [_goBack setTitle:@"返回" forState:UIControlStateNormal];
-    _goBack.titleLabel.font=[UIFont boldSystemFontOfSize:13.0f];
-    [_goBack setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_goBack setBackgroundImage:[UIImage imageNamed:@"PZBackButton.png"]
-                      forState:UIControlStateNormal];
-    [_goBack addTarget:self
-               action:@selector(_goBack:)
-     forControlEvents:UIControlEventTouchUpInside];
-    
+    }
     _Enter = [[UIButton alloc] init];
     [_Enter setFrame:CGRectMake(IPHONE_WIDTH/2.0f+35.0f, IPHONE_HEIGHT/2.0f+70.0f, 70.0f, 44.0f)];
     [_Enter setTitle:@"确定" forState:UIControlStateNormal];
@@ -85,16 +75,17 @@
     [_Enter addTarget:self
                action:@selector(_Enter:)
      forControlEvents:UIControlEventTouchUpInside];
-        
+    
     [self.view addSubview:_backgoundImage];
-//    [self.view addSubview:_goBack];
-//    [self.view addSubview:_Enter];
+
 }
+
+
 
 - (void)initWithData
 {
-    user = [[userRegist alloc]init];
-    itemArray = [[NSArray alloc]initWithObjects:@"用户名",@"密码",@"真实名",@"性别",@"区域",@"宿舍号",@"联系电话",@"联系邮箱", nil];
+    user = [[PZUserFormList alloc]init];
+    itemArray = [[NSArray alloc]initWithObjects:@"用户编号",@"用户名",@"维修类型",@"故障描述",@"联系电话",@"宿舍号",@"电子邮箱",@"区域", @"预约时间",nil];
 }
 
 -(void)_Enter:(UIButton *)sender
@@ -114,9 +105,9 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [_textField resignFirstResponder];
-     PZPCRegisterDataRequest *pcRegisterDataRequest = [[PZPCRegisterDataRequest alloc]init];
-    pcRegisterDataRequest.user = user;
-    [pcRegisterDataRequest PCRegisterDataRequest];
+    PZUserFormListRequest *pzUserFormListRequest = [[PZUserFormListRequest alloc]init];
+    pzUserFormListRequest.user = user;
+    [pzUserFormListRequest PZUserFormListRequest];
     
     return YES;
 }
@@ -133,28 +124,31 @@
     [self animateTextField:textField up:NO];
     switch (textField.tag) {
         case 1:
-            user.uname = textField.text;
+            user.uid = textField.text;
             break;
         case 2:
-            user.upwd = textField.text;
+            user.uname = textField.text;
             break;
         case 3:
-            user.realname = textField.text;
+            user.comtype= textField.text;
             break;
         case 4:
-            user.sex = textField.text;
+            user.faultdesc = textField.text;
             break;
         case 5:
-            user.area = textField.text;
-            break;
-        case 6:
-            user.roomnumber = textField.text;
-            break;
-        case 7:
             user.phone = textField.text;
             break;
-        case 8:
+        case 6:
+            user.dorm = textField.text;
+            break;
+        case 7:
             user.email = textField.text;
+            break;
+        case 8:
+            user.area = textField.text;
+            break;
+        case 9:
+            user.booktime = textField.text;
             break;
             
         default:
@@ -177,20 +171,22 @@
             movementDistance = 0; // 根据需要调整上升高度
             break;
         case 4:
-            movementDistance = 50; // 根据需要调整上升高度
+            movementDistance = 0; // 根据需要调整上升高度
             break;
         case 5:
-            movementDistance = 100; // 根据需要调整上升高度
+            movementDistance = 40; // 根据需要调整上升高度
             break;
         case 6:
-            movementDistance = 150; // 根据需要调整上升高度
+            movementDistance = 80; // 根据需要调整上升高度
             break;
         case 7:
-            movementDistance = 200; // 根据需要调整上升高度
+            movementDistance = 120; // 根据需要调整上升高度
             break;
         case 8:
-            movementDistance = 250; // 根据需要调整上升高度
+            movementDistance = 160; // 根据需要调整上升高度
             break;
+        case 9:
+            movementDistance = 200; // 根据需要调整上升高度
             
         default:
             break;
@@ -204,11 +200,5 @@
     self.view.frame = CGRectOffset(self.view.frame, 0, movement);
     [UIView commitAnimations];
 }
-
-//-(void)_goBack:(UIButton *)sender
-//{
-//    PZPCServerViewController *_pzPCServerController = [[PZPCServerViewController alloc] init];
-//    [self presentModalViewController:_pzPCServerController animated:YES];
-//}
 
 @end
