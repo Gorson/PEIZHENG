@@ -54,6 +54,7 @@
     NSString * p = [[NSString alloc]initWithFormat:@"%d",_startIndex];
     
     NSString *strURL = [[NSString alloc]initWithFormat:@"http://www.peizheng.cn/mobile/index.php?interfaceid=0102&page=%@&limit=12&catid=%@&cname=dfly&cpwd=123456",p,catid];
+
     NSURL *url = [NSURL URLWithString:strURL];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request setDelegate:self];

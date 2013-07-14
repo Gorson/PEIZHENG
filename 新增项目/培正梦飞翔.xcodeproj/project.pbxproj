@@ -706,7 +706,6 @@
 			isa = PBXGroup;
 			children = (
 				4577F4661776C90B008977F9 /* EGO */,
-				457DC71C1771A9390080FADE /* ComboBox */,
 				457AF5E41770372600F300BD /* MMDrawerController */,
 				4575B51D176C72C7005F3FFA /* GuideInterFaceVC */,
 				4576876F1759EA41004FB655 /* REMenu */,
@@ -1010,6 +1009,7 @@
 		4576876F1759EA41004FB655 /* REMenu */ = {
 			isa = PBXGroup;
 			children = (
+				457DC71C1771A9390080FADE /* ComboBox */,
 				457687701759EA63004FB655 /* REMenu.h */,
 				457687711759EA63004FB655 /* REMenu.m */,
 				457687721759EA63004FB655 /* REMenuContainerView.h */,
